@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:#F2EDE3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:12px">
+    <div style="font-weight:700;font-size:15px;letter-spacing:-.02em">Feel<span style="color:#857C70">Works</span></div>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em">
+      <span style="padding:8px 12px;color:#17140F;border-bottom:2px solid #FF5C3D">Perfil do negócio</span>
+      <span style="padding:8px 12px;color:#857C70">Programação</span>
+      <span style="padding:8px 12px;color:#857C70">Oportunidades</span>
+    </div>
+    <div style="display:flex;gap:2px;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:99px;padding:3px;margin-left:10px">
+      <a href="Feel - Perfil FeelWorks.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;border-radius:99px;padding:6px 12px;color:#4A443C;white-space:nowrap">RAYANNE</a>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;border-radius:99px;padding:6px 12px;background:#FF5C3D;color:#FBF9F3;white-space:nowrap">TU VENS</span>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:1080px;margin:0 auto;padding:40px 24px 80px">
+
+  <section data-screen-label="Cabeçalho do perfil de negócio" style="display:grid;grid-template-columns:5fr 8fr;gap:32px;align-items:center;background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:32px;margin-top:16px">
+    <div style="position:relative;aspect-ratio:1;border-radius:18px;overflow:hidden">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="tuvens-avatar" shape="rounded" radius="18" placeholder="Fachada / ambiente do Tu Vens" hint-size="100%,100%" style="width:100%;height:100%"></x-import>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Espaço cultural · Bar & gastronomia · Olinda-PE</div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #22A06B;border-radius:99px;padding:4px 10px;color:#22A06B">NEGÓCIO VERIFICADO</span>
+      </div>
+      <h1 style="font-weight:600;font-size:clamp(34px,4.4vw,52px);line-height:1.0;letter-spacing:-.03em;margin-top:12px">Tu Vens</h1>
+      <p style="font-size:16px;color:#4A443C;max-width:50ch;margin-top:14px">Bar e recanto cultural no Sítio Histórico de Olinda. Programação viva de música, feira e encontro — um palco pra economia criativa local se provar ao vivo.</p>
+      <div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
+        <button style="font-family:'Archivo';font-weight:500;font-size:14.5px;color:#FBF9F3;background:#FF5C3D;border:none;border-radius:11px;padding:12px 22px;cursor:pointer">Propor parceria</button>
+        <button style="font-family:'Archivo';font-weight:500;font-size:14.5px;color:#17140F;background:transparent;border:1px solid #17140F;border-radius:11px;padding:11px 21px;cursor:pointer">Seguir o fio</button>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Lastro do negócio" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px">
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">4 anos</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">DE ATUAÇÃO</div></div>
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">62</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">EVENTOS REALIZADOS</div></div>
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">19</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">CRIADORES PARCEIROS</div></div>
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">100%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">PARCERIAS CO-ASSINADAS</div></div>
+  </section>
+
+  <section data-screen-label="Sobre o espaço" style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:32px;margin-top:16px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Sobre o espaço</div>
+    <h2 style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:8px;max-width:26ch">Um recanto que vira prova pra quem passa por ele.</h2>
+    <p style="font-size:14.5px;color:#4A443C;max-width:66ch;margin-top:10px">Casa fixa de música ao vivo, feiras de criadores locais e saraus — o tipo de presença que a Feel entende como lastro: recorrente, testemunhado, difícil de fingir.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Música ao vivo</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Feira de criadores</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Sarau</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Gastronomia local</span>
+    </div>
+  </section>
+
+  <section data-screen-label="Parcerias co-assinadas" style="margin-top:16px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Parcerias co-assinadas</div>
+    <h2 style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:8px;max-width:26ch">Criadores que já provaram trabalho aqui.</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:22px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:#E9E2D2;border:1px solid #E3DCCE;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:#4A443C;flex:none">RM</div>
+          <div><div style="font-weight:600;font-size:15px">Rayanne Menezes</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70">CRIADORA DE CONTEÚDO · 10+ ANOS</div></div>
+        </div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:12px">"Cobertura mensal da programação — conteúdo que já nasce com o Tu Vens co-assinando o resultado."</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#22A06B;margin-top:10px">✓ VERIFICADO PELO TU VENS</div>
+      </div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:22px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:44px;height:44px;border-radius:50%;background:#E9E2D2;border:1px solid #E3DCCE;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:#4A443C;flex:none">JM</div>
+          <div><div style="font-weight:600;font-size:15px">João Marreiro</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70">FOTÓGRAFO DE EVENTO</div></div>
+        </div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:12px">"Registro fixo dos saraus há 8 meses — virou parte do acervo visual do espaço."</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#22A06B;margin-top:10px">✓ VERIFICADO PELO TU VENS</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Oportunidades abertas" style="margin-top:16px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Oportunidades abertas</div>
+    <h2 style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:8px;max-width:26ch">Chamadas pra criadores agora.</h2>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:20px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:600;font-size:16px">Cobertura da Feira de Inverno</div>
+          <p style="font-size:13px;color:#4A443C;margin-top:4px">Fotografia + reels · 1 dia de evento · faixa R$ 800–1.200</p>
+        </div>
+        <button style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid #17140F;border-radius:99px;padding:10px 16px;background:transparent;cursor:pointer">CANDIDATAR-SE</button>
+      </div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:600;font-size:16px">Residência criativa mensal</div>
+          <p style="font-size:13px;color:#4A443C;margin-top:4px">Conteúdo recorrente do espaço · 1 criador/mês · faixa R$ 1.500–2.500</p>
+        </div>
+        <button style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;border:1px solid #17140F;border-radius:99px;padding:10px 16px;background:transparent;cursor:pointer">CANDIDATAR-SE</button>
+      </div>
+    </div>
+  </section>
+
+  <div style="margin-top:56px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">FEELWORKS · PERFIL DE NEGÓCIO · SEGUE A FEEL</div>
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#F2EDE3"/><rect x="18" y="18" width="64" height="64" rx="12" fill="#FBF9F3" stroke="#FF5C3D" stroke-width="2"/><circle cx="50" cy="42" r="10" fill="none" stroke="#17140F" stroke-width="2"/><rect x="30" y="60" width="40" height="6" rx="3" fill="#857C70"/></svg>
+</template>
+
+</x-dc>
+</body>
+</html>

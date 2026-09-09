@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:#FBF9F3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:12px">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.1">Grid social</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#857C70;text-transform:uppercase;margin-top:2px">@segueafeel</div>
+    </div>
+    <div style="flex:1"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">O PERFIL INTEIRO É UM FIO — {{ fioLabel }}</div>
+  </div>
+</div>
+
+<section data-screen-label="Intro grid" style="max-width:1080px;margin:0 auto;padding:56px 24px 24px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#FF5C3D;margin-bottom:18px">aplicação · social</div>
+  <h1 style="font-weight:600;font-size:clamp(28px,4.2vw,50px);line-height:1.03;letter-spacing:-.035em;max-width:18ch">O perfil não é um mural. É uma <em style="font-style:normal;color:#FF5C3D">narrativa.</em></h1>
+  <p style="color:#4A443C;font-size:16px;max-width:60ch;margin-top:18px">Cada post continua o anterior: um fio único atravessa as nove casas do grid. Quem chega no perfil não vê peças soltas — vê uma trajetória. Quem percebe a linha, segue o fio.</p>
+</section>
+
+<!-- GRID 3x3 com fio contínuo -->
+<section data-screen-label="Grid 3x3" style="max-width:1080px;margin:0 auto;padding:8px 24px 24px">
+  <div style="position:relative;border:1px solid #E3DCCE;border-radius:20px;overflow:hidden;background:#FBF9F3">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr)">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="9">
+        <div style="position:relative;aspect-ratio:1;background:{{ p.bg }};border-right:1px solid #E3DCCE;border-bottom:1px solid #E3DCCE;overflow:hidden;display:flex;flex-direction:column;justify-content:{{ p.justify }};padding:20px">
+          <sc-if value="{{ p.kicker }}" hint-placeholder-val="texto">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:{{ p.kickerColor }};position:relative;z-index:2">{{ p.kicker }}</div>
+          </sc-if>
+          <div style="font-weight:600;font-size:{{ p.size }};line-height:.98;letter-spacing:-.025em;color:{{ p.fg }};position:relative;z-index:2;max-width:12ch">{{ p.titulo }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <!-- o fio único por cima de todo o grid -->
+    <canvas data-draw="grid-fio" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3"></canvas>
+  </div>
+  <p style="font-size:12.5px;color:#857C70;margin-top:14px">Um único traço, desenhado sobre as nove casas. Ao publicar de baixo para cima, a linha se completa a cada post — o perfil está sempre "em processo".</p>
+</section>
+
+<!-- STORIES / FORMATO VERTICAL -->
+<section data-screen-label="Stories" style="max-width:1080px;margin:0 auto;padding:40px 24px 80px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70;margin-bottom:20px">Stories · o fio entra e sai do quadro</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+
+    <div style="position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#14110F;padding:22px;display:flex;flex-direction:column;justify-content:flex-end">
+      <canvas data-draw="story-topo" style="position:absolute;inset:0;width:100%;height:100%;opacity:.6"></canvas>
+      <div style="position:relative;z-index:2">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:#FF5C3D;text-transform:uppercase">Segue a Feel</div>
+        <div style="font-weight:600;font-size:26px;letter-spacing:-.02em;color:#F2EDE3;margin-top:8px;line-height:1.02">A prova de hoje.</div>
+      </div>
+    </div>
+
+    <div style="position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#F2EDE3;padding:0">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="social-story-foto" shape="rounded" radius="18" placeholder="Foto documental vertical" hint-size="100%,100%" style="width:100%;height:100%"></x-import>
+    </div>
+
+    <div style="position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#FBF9F3;border:1px solid #E3DCCE;padding:22px;display:flex;flex-direction:column;justify-content:center">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Trajetória</div>
+      <div style="font-weight:600;font-size:44px;letter-spacing:-.03em;font-variant-numeric:tabular-nums;margin-top:10px">34</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#857C70">PROVAS ASSINADAS</div>
+      <div style="position:relative;height:60px;margin-top:16px"><canvas data-draw="story-fio" style="position:absolute;inset:0;width:100%;height:100%"></canvas></div>
+    </div>
+
+    <div style="position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:#FF5C3D;padding:22px;display:flex;flex-direction:column;justify-content:space-between">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.2em;color:rgba(251,249,243,.7);text-transform:uppercase">Convite</div>
+      <div style="font-weight:600;font-size:30px;letter-spacing:-.025em;color:#FBF9F3;line-height:1.0">Segue o fio.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:56px;border-top:1px solid #E3DCCE;padding-top:36px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70;margin-bottom:20px">Carrossel · a prova em 3 lâminas</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+      <div style="aspect-ratio:4/5;border-radius:16px;background:#14110F;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#FF5C3D;text-transform:uppercase">Prova 01/03</div>
+        <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;color:#F2EDE3;line-height:1.05">A campanha começou assim.</div>
+      </div>
+      <div style="aspect-ratio:4/5;border-radius:16px;background:#F2EDE3;border:1px solid #E3DCCE;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Prova 02/03</div>
+        <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;color:#17140F;line-height:1.05">Verificado na fonte, dia a dia.</div>
+      </div>
+      <div style="aspect-ratio:4/5;border-radius:16px;background:#FF5C3D;padding:24px;display:flex;flex-direction:column;justify-content:space-between">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:rgba(251,249,243,.7);text-transform:uppercase">Prova 03/03</div>
+        <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;color:#FBF9F3;line-height:1.05">Assinada por quem contratou.</div>
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:#857C70;margin-top:14px">Mesma lógica do grid: cada lâmina do carrossel continua a anterior — nunca uma peça isolada.</p>
+  </div>
+
+  <div style="margin-top:36px;display:flex;align-items:center;gap:12px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">GRID SOCIAL · SEGUE A FEEL</span>
+  </div>
+</section>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#FBF9F3"/><g stroke="#E3DCCE" stroke-width="1"><line x1="33" y1="20" x2="33" y2="80"/><line x1="67" y1="20" x2="67" y2="80"/><line x1="20" y1="40" x2="80" y2="40"/><line x1="20" y1="60" x2="80" y2="60"/></g><path d="M22 30 q11 20 22 0 q11 20 22 0 q6 12 14 -2" fill="none" stroke="#FF5C3D" stroke-width="4" stroke-linecap="round"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;fio&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Visível&quot;, &quot;Oculto&quot;], &quot;default&quot;: &quot;Visível&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;O fio contínuo&quot; },
+  &quot;ondulacao&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Calmo&quot;, &quot;Padrão&quot;, &quot;Intenso&quot;], &quot;default&quot;: &quot;Padrão&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Ondulação do fio&quot; }
+}">
+const POSTS = [
+  { bg: '#14110F', fg: '#F2EDE3', kicker: 'Segue a Feel', kickerColor: '#FF5C3D', titulo: 'A trajetória começa.', size: '30px', justify: 'space-between' },
+  { bg: '#F2EDE3', fg: '#17140F', kicker: '', kickerColor: '#857C70', titulo: '', size: '0', justify: 'center' },
+  { bg: '#FBF9F3', fg: '#17140F', kicker: 'Prova 01', kickerColor: '#857C70', titulo: 'Campanha de moda.', size: '24px', justify: 'space-between' },
+  { bg: '#F2EDE3', fg: '#17140F', kicker: '', kickerColor: '#857C70', titulo: '', size: '0', justify: 'center' },
+  { bg: '#FF5C3D', fg: '#FBF9F3', kicker: 'O fio', kickerColor: 'rgba(251,249,243,.7)', titulo: 'Reputação é rastro.', size: '28px', justify: 'space-between' },
+  { bg: '#FBF9F3', fg: '#17140F', kicker: 'Prova 02', kickerColor: '#857C70', titulo: 'Editorial gastronômico.', size: '24px', justify: 'space-between' },
+  { bg: '#F2EDE3', fg: '#17140F', kicker: '', kickerColor: '#857C70', titulo: '', size: '0', justify: 'center' },
+  { bg: '#14110F', fg: '#F2EDE3', kicker: 'Trajetória', kickerColor: '#857C70', titulo: '34 provas assinadas.', size: '26px', justify: 'space-between' },
+  { bg: '#FBF9F3', fg: '#17140F', kicker: 'Convite', kickerColor: '#FF5C3D', titulo: 'Segue o fio.', size: '28px', justify: 'space-between' }
+];
+
+class Component extends DCLogic {
+  componentDidMount() {
+    this._raf = requestAnimationFrame(() => this.drawAll());
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(() => this.drawAll(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentDidUpdate() { this.drawAll(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  fioOn() { return (this.props.fio || 'Visível') === 'Visível'; }
+  ondulacao() {
+    const o = this.props.ondulacao || 'Padrão';
+    return o === 'Calmo' ? 0.6 : o === 'Intenso' ? 1.5 : 1;
+  }
+
+  setup(c) {
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 2;
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-draw]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      const kind = c.getAttribute('data-draw');
+      if (kind === 'grid-fio') this.drawGridFio(s.ctx, s.w, s.h);
+      else if (kind === 'story-topo') this.drawStoryTopo(s.ctx, s.w, s.h);
+      else if (kind === 'story-fio') this.drawStoryFio(s.ctx, s.w, s.h);
+    });
+  }
+
+  // one continuous fio snaking across the 3x3, boustrophedon path
+  drawGridFio(ctx, w, h) {
+    if (!this.fioOn()) return;
+    const amp = this.ondulacao();
+    const rows = 3, cols = 3;
+    const cellW = w / cols, cellH = h / rows;
+    const path = [];
+    for (let r = 0; r < rows; r++) {
+      const ltr = r % 2 === 0;
+      for (let i = 0; i <= 40; i++) {
+        const f = i / 40;
+        const cx = ltr ? f * w : (1 - f) * w;
+        const cy = r * cellH + cellH * 0.5 + Math.sin(f * Math.PI * 6) * cellH * 0.28 * amp;
+        path.push([cx, cy]);
+      }
+    }
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = 3.5;
+    ctx.beginPath();
+    path.forEach(([x, y], i) => { if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+    ctx.stroke();
+    // small node where fio 'ties' at grid centers
+    for (let r = 0; r < rows; r++) {
+      const cx = (r % 2 === 0 ? cols - 1 : 0) * cellW + cellW * 0.5;
+      const cy = r * cellH + cellH * 0.5;
+      ctx.fillStyle = '#FF5C3D';
+      ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+
+  drawStoryTopo(ctx, w, h) {
+    const lines = 6;
+    for (let k = 0; k < lines; k++) {
+      const accent = k === 3;
+      ctx.strokeStyle = accent ? '#FF5C3D' : 'rgba(242,237,227,.14)';
+      ctx.lineWidth = accent ? 2.4 : 1.2;
+      const baseY = h * (0.12 + (0.76 * k) / (lines - 1));
+      ctx.beginPath();
+      for (let x = -10; x <= w + 10; x += 6) {
+        const y = baseY + Math.sin(x / 70 + k * 1.7) * 12 + Math.sin(x / 30 + k * 3) * 5;
+        if (x <= -10) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  }
+
+  drawStoryFio(ctx, w, h) {
+    const b = 1.5;
+    const pts = this.cycloidPts(-2, 2 * Math.PI + 2, b, 120);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = 2.6;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = 2 + nx * (w - 4);
+      const py = h * 0.5 + (y / b) * h * 0.34;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+  }
+
+  renderVals() {
+    return { posts: POSTS, fioLabel: this.fioOn() ? 'VISÍVEL' : 'oculto' };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -Eq 'docs[\\\\/]+decisoes[\\\\/]+log\\.md|marca[\\\\/]+00-tese|DESIGN\\.md|SISTEMA-DE-MARCA\\.md|EVOLUTION\\.md|CLAUDE\\.md' && printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Arquivo constitucional. D-05: o agente nao se auto-aprova. Alterar exige decisao registrada em docs/decisoes/log.md com os quatro campos (o que, por que, o que impede, o que reabre).\"}}' || true",
+            "timeout": 10,
+            "statusMessage": "Checando arquivo constitucional"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -Eq 'web[\\\\/]+src[\\\\/]+(data|components|tokens)|\\.dc\\.html|docs[\\\\/]+02-boards' && printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"Peca visual alterada. Antes de considerar travada, rode O Teste (5 perguntas): sem logo / sem cor / sem efeitos / em P&B / paleta copiada. Verifique tambem: UM unico elemento coral, nenhum matiz fora do DESIGN.md, nenhuma categoria codificada por cor (D-09), 5:8:5 com corte assimetrico, o fio entra e sai do quadro (nao fecha), motion e draw-in por stroke-dashoffset (D-11), numeros tabulares, nenhum dado inventado. Referencia: .claude/skills/feel-diagram/SKILL.md e docs/01-linguagem/LINGUAGEM.md\"}}' || true",
+            "timeout": 10,
+            "statusMessage": "Lembrando de O Teste"
+          }
+        ]
+      }
+    ]
+  }
+}

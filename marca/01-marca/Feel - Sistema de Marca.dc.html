@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#FBF9F3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+  ::-webkit-scrollbar{width:0;height:0}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+
+<!-- ============ NAV ============ -->
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1120px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:14px">
+    <img src="assets/feel-mark.png" alt="Feel" style="width:30px;height:auto;flex:none">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.1">Feel</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#857C70;text-transform:uppercase;margin-top:2px">Constituição + manual · v2</div>
+    </div>
+    <div style="flex:1"></div>
+    <nav id="feelnav" style="display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em">
+      <a href="#tese" data-nav="tese" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">00</span>Tese</a>
+      <a href="#marca" data-nav="marca" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">01</span>Marca</a>
+      <a href="#logo" data-nav="logo" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">02</span>Logo</a>
+      <a href="#tipo" data-nav="tipo" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">03</span>Tipo</a>
+      <a href="#cor" data-nav="cor" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">04</span>Cor</a>
+      <a href="#fio" data-nav="fio" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">05</span>Fio</a>
+      <a href="#glass" data-nav="glass" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">06</span>Glass</a>
+      <a href="#modos" data-nav="modos" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">07</span>Modos</a>
+      <a href="#voz" data-nav="voz" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">08</span>Voz</a>
+      <a href="#teste" data-nav="teste" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">09</span>Teste</a>
+      <a href="#obras" data-nav="obras" style="padding:9px 11px;color:#857C70;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">10</span>Obras</a>
+      <a href="#evolucao" data-nav="evolucao" style="padding:9px 11px;color:#17140F;border-bottom:2px solid transparent;white-space:nowrap"><span style="color:#FF5C3D;margin-right:6px">11</span>Evolução</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ 00 TESE ============ -->
+<section id="tese" data-screen-label="00 Tese" style="scroll-margin-top:82px">
+  <div style="max-width:1120px;margin:0 auto;padding:104px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#FF5C3D;margin-bottom:26px">Sistema de marca-mãe · v2 · linguagem consolidada</div>
+    <div style="display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center">
+      <div>
+        <h1 style="font-weight:600;font-size:clamp(36px,5.6vw,66px);line-height:1.0;letter-spacing:-.035em;max-width:15ch">A Feel não cria valor. Ela <em style="font-style:normal;color:#FF5C3D">revela</em>.</h1>
+        <p style="color:#4A443C;font-size:17px;max-width:56ch;margin-top:28px">A marca-mãe do grupo <b>Feel</b> não precisa de sobrenome — precisa de confiança. Este é o sistema que trava as decisões antes da tentação de improvisar: base clara, silêncio, coral raro, e um <b>fio</b> que atravessa tudo como rastro de trajetória.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:20px;background:#F7F2E9;padding:22px;position:relative;overflow:hidden">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">A marca se desenha</div>
+        <canvas data-fio-motion="hero" style="width:100%;height:180px;display:block;margin-top:8px"></canvas>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.16em;color:#857C70;margin-top:4px">DESENHAR · REVELAR · CONECTAR · RESPIRAR</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:64px">
+      <div style="border-top:2px solid #17140F;padding-top:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Hierarquia conceitual</div>
+        <p style="font-size:14.5px;color:#4A443C;margin-top:10px">Transformação → experiência → percepção → trajetória → <b style="color:#17140F">fio</b> → forma. O fio é consequência, nunca origem. Reputação não é currículo — é <b style="color:#17140F">rastro</b>.</p>
+      </div>
+      <div style="border-top:2px solid #17140F;padding-top:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Essencialismo</div>
+        <p style="font-size:14.5px;color:#4A443C;margin-top:10px">Toda peça deve poder perder 30% dos elementos e melhorar. A personalidade mora no detalhe — como um anel numa roupa preta — nunca na composição inteira.</p>
+      </div>
+      <div style="border-top:2px solid #17140F;padding-top:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Dosagem 90 / 8 / 2</div>
+        <p style="font-size:14.5px;color:#4A443C;margin-top:10px">90% neutros, 8% cor institucional, 2% efeitos. O glass é <b style="color:#17140F">comportamento</b>, não linguagem — só aparece sobre o que existe mas não foi revelado.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;border:1px solid #E3DCCE;border-radius:18px;background:#F7F2E9;padding:28px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#857C70">A física da Feel · as leis que geram o sistema</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px 28px;margin-top:18px">
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">1</span><span style="font-size:14px;color:#4A443C">Tudo está em transformação — nunca existe estado final.</span></div>
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">2</span><span style="font-size:14px;color:#4A443C">Toda trajetória deixa memória — nada some por completo.</span></div>
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">3</span><span style="font-size:14px;color:#4A443C">Nada acontece isolado — sentimento nasce de relação.</span></div>
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">4</span><span style="font-size:14px;color:#4A443C">Encontros nunca são forçados — o sistema cria condições.</span></div>
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">5</span><span style="font-size:14px;color:#4A443C">A identidade evolui sem perder a essência.</span></div>
+        <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">6</span><span style="font-size:14px;color:#4A443C">O design revela — nunca grita.</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:34px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#857C70">O que uma peça da Feel deve provocar</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">
+        <span style="border:1px solid #17140F;border-radius:99px;padding:8px 18px;font-size:14px;font-weight:500">Clareza</span>
+        <span style="border:1px solid #17140F;border-radius:99px;padding:8px 18px;font-size:14px;font-weight:500">Inteligência</span>
+        <span style="border:1px solid #17140F;border-radius:99px;padding:8px 18px;font-size:14px;font-weight:500">Pertencimento</span>
+        <span style="border:1px solid #17140F;border-radius:99px;padding:8px 18px;font-size:14px;font-weight:500">Curiosidade</span>
+        <span style="border:1px solid #FF5C3D;color:#FF5C3D;border-radius:99px;padding:8px 18px;font-size:14px;font-weight:500">Inevitabilidade</span>
+      </div>
+      <p style="font-size:13px;color:#857C70;margin-top:12px">E nunca: excesso, futurismo exagerado, frieza corporativa, infantilização, artificialidade.</p>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:0 28px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 01 MARCA & ARQUITETURA ============ -->
+<section id="marca" data-screen-label="01 Marca e arquitetura" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">01 · Marca &amp; arquitetura</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:22ch">Casa de <em style="font-style:normal;color:#FF5C3D">marca</em>, não casa de marcas.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">Feel é a mãe e a fonte de confiança. Cada braço é <b>Feel + um substantivo de ofício</b> — herda a confiança e só especializa o território. "Group" fica de fora: soa holding financeiro, o oposto do DNA de builder. O descritor jurídico, quando exigido, é <b>Feel Company</b> — nunca Feel Group.</p>
+
+    <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:36px 24px;margin-top:40px">
+      <div style="display:flex;justify-content:center">
+        <div style="display:inline-flex;align-items:center;gap:12px;border:1px solid #E3DCCE;border-radius:14px;background:#F2EDE3;padding:14px 22px">
+          <img src="assets/feel-mark.png" alt="" style="width:26px;height:26px;flex:none;object-fit:contain">
+          <div>
+            <div style="font-weight:700;font-size:20px;letter-spacing:-.02em">Feel</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#857C70">marca-mãe · a fonte</div>
+          </div>
+        </div>
+      </div>
+      <canvas data-fio="arvore" style="width:100%;height:66px;display:block;margin:2px auto"></canvas>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:820px;margin:0 auto">
+        <div style="border:1px solid #E3DCCE;border-radius:12px;background:#F2EDE3;padding:16px">
+          <div style="font-weight:600;font-size:19px;letter-spacing:-.01em">Feel<span style="color:#857C70">Works</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#857C70;margin-top:6px">rede · digital · dado</div>
+          <p style="font-size:12.5px;color:#4A443C;margin-top:9px">A infraestrutura de reputação da creator economy. O eixo — precisão de ferramenta, modo claro.</p>
+        </div>
+        <div style="border:1px solid rgba(240,166,59,.5);border-radius:12px;background:#F2EDE3;padding:16px">
+          <div style="font-weight:600;font-size:19px;letter-spacing:-.01em">Feel<span style="color:#F0A63B">Makers</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:#857C70;margin-top:6px">físico · cena · gesto</div>
+          <p style="font-size:12.5px;color:#4A443C;margin-top:9px">O braço físico nos shoppings — palco, pertencimento, calor. Puxa âmbar e o modo escuro de cena.</p>
+        </div>
+        <div style="border:1px dashed #C9BFAC;border-radius:12px;background:transparent;padding:16px;display:flex;flex-direction:column;justify-content:center;text-align:center">
+          <div style="font-weight:600;font-size:19px;letter-spacing:-.01em;color:#857C70">Feel<span style="color:#C9BFAC">____</span></div>
+          <p style="font-size:12px;color:#857C70;margin-top:9px">O slot está pronto. Um braço novo é só um descritor novo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:20px">
+      <div style="border:1px solid #E3DCCE;border-radius:12px;background:#FBF9F3;padding:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#FF5C3D;margin-bottom:8px">Herança</div>
+        <p style="font-size:13.5px;color:#4A443C">Todo braço nasce da mãe e carrega o nome. <b>Nunca uma marca órfã</b> que precise construir confiança do zero.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:12px;background:#FBF9F3;padding:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#FF5C3D;margin-bottom:8px">Nome só quando existe</div>
+        <p style="font-size:13.5px;color:#4A443C">Um braço só ganha nome quando é real — domínio e @ assegurados, INPI limpo. <b>Nada de marca para uma ideia.</b></p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:12px;background:#FBF9F3;padding:18px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#FF5C3D;margin-bottom:8px">Endosso por ênfase</div>
+        <p style="font-size:13.5px;color:#4A443C">Mesma família, dosagem diferente: o físico puxa <b>calor e gesto</b>, o digital puxa <b>dado e frieza</b>. Coerência sem achatar.</p>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 0"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+  <div style="height:40px"></div>
+</section>
+
+<!-- ============ 02 LOGO ============ -->
+<section id="logo" data-screen-label="02 Logotipo" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">02 · Logotipo</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:22ch">O logo já <em style="font-style:normal;color:#FF5C3D">é</em> a estratégia.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:66ch;margin-top:16px">As <b>consoantes duras</b> (f, l) são a ferramenta; as <b>vogais à mão</b> (ee) são a alma — ferramenta séria com alma criativa, dentro da própria tipografia. A anatomia não se mexe. O que existe é refino óptico de curva, para deixar o logo <b>inevitável</b>, não diferente.</p>
+
+    <div style="position:relative;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:18px;margin-top:40px;padding:60px 8%;overflow:hidden">
+      <div style="position:relative">
+        <img src="assets/feel-wordmark.png" alt="Wordmark Feel" style="width:100%;height:auto;display:block">
+        <sc-if value="{{ guiasVisiveis }}" hint-placeholder-val="{{ true }}">
+          <div style="position:absolute;inset:0;pointer-events:none">
+            <div style="position:absolute;left:-4%;right:-4%;top:87%;border-top:1px dashed rgba(23,20,15,.32)"></div>
+            <div style="position:absolute;left:-4%;right:-4%;top:14%;border-top:1px dashed rgba(23,20,15,.18)"></div>
+            <div style="position:absolute;left:1.5%;top:44%;width:24px;height:24px;border-radius:50%;background:#FBF9F3;border:1.5px solid #17140F;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px">f</div>
+            <div style="position:absolute;left:52%;top:22%;width:24px;height:24px;border-radius:50%;background:#FBF9F3;border:1.5px solid #17140F;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px">e</div>
+            <div style="position:absolute;left:90%;top:64%;width:24px;height:24px;border-radius:50%;background:#FBF9F3;border:1.5px solid #17140F;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px">l</div>
+          </div>
+        </sc-if>
+      </div>
+      <span style="position:absolute;bottom:12px;left:18px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#857C70">clearspace = altura do olho do "e"</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:26px;display:flex;flex-direction:column;gap:16px">
+        <img src="assets/feel-wordmark-coral.png" alt="Feel coral" style="width:70%;align-self:center;height:auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#4A443C">CORAL / PAPER — assinatura padrão</div>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#14110F;padding:26px;display:flex;flex-direction:column;gap:16px">
+        <img src="assets/feel-wordmark-bone.png" alt="Feel bone" style="width:70%;align-self:center;height:auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#857C70">BONE / INK — palco e evento</div>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:26px;display:flex;flex-direction:column;gap:16px">
+        <img src="assets/feel-wordmark-steel.png" alt="Feel steel" style="width:70%;align-self:center;height:auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#4A443C">STEEL — documentos e coexistência</div>
+      </div>
+      <div style="border:1px dashed #C9BFAC;border-radius:14px;background:#FBF9F3;padding:26px;display:flex;flex-direction:column;gap:16px">
+        <img src="assets/feel-wordmark-bicolor.png" alt="Feel bicolor" style="width:70%;align-self:center;height:auto;opacity:.9">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#4A443C">BICOLOR — exceção de campanha</div>
+      </div>
+    </div>
+    <p style="color:#4A443C;font-size:14px;max-width:66ch;margin-top:18px">A v2 inverte a regra: <b>monocromático é o padrão</b>. A bicolor diz duas coisas ao mesmo tempo toda vez que aparece; no mono, a palavra diz <b>uma</b> coisa, e a segunda camada fica para quem descobre. <b>Tamanho mínimo:</b> 96px digital · 22mm impresso. O símbolo isolado (os dois loops) só ganha autonomia do wordmark depois que "Feel" tiver equity.</p>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 03 TIPOGRAFIA ============ -->
+<section id="tipo" data-screen-label="03 Tipografia" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">03 · Tipografia</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:24ch">Duas famílias. E que desapareçam.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">Fora Space Grotesk / Inter / JetBrains — viraram o template das startups de IA. A voz da Feel é <b>Archivo + IBM Plex Mono</b>: grotesca neutra sem tique geométrico, e um mono que herda o registro builder (lastro, prova, ritmo) sem cheiro de IDE. A hierarquia nasce de <b>peso, escala e espaço</b> — nunca de trocar fonte.</p>
+
+    <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:40px">
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:30px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Archivo · display &amp; texto</div>
+        <div style="font-weight:600;font-size:clamp(30px,4vw,46px);line-height:1.0;letter-spacing:-.035em;margin-top:16px">O valor criativo já existe.<br>A Feel revela.</div>
+        <div style="border-top:1px solid #E3DCCE;margin:22px 0"></div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;width:64px;flex:none">700 · H1</span><span style="font-weight:700;font-size:22px;letter-spacing:-.02em">Segue a Feel</span></div>
+          <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;width:64px;flex:none">600 · H2</span><span style="font-weight:600;font-size:20px;letter-spacing:-.02em">Um rastro contável</span></div>
+          <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;width:64px;flex:none">500 · UI</span><span style="font-weight:500;font-size:16px">Ver trajetória</span></div>
+          <div style="display:flex;align-items:baseline;gap:16px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;width:64px;flex:none">400 · body</span><span style="font-weight:400;font-size:15px;color:#4A443C">A reputação não é uma nota; é um rastro de provas assinadas.</span></div>
+        </div>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:30px;display:flex;flex-direction:column">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">IBM Plex Mono · dados &amp; etiquetas</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.08em;color:#17140F;margin-top:16px;background:#F2EDE3;border-radius:8px;padding:12px 14px">LASTRO — 128 PROVAS · 14 OBRAS · RECIFE-PE</div>
+        <div style="display:flex;gap:24px;margin-top:18px">
+          <div><div style="font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">34</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">PROVAS</div></div>
+          <div><div style="font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">08</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">OBRAS</div></div>
+          <div><div style="font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">4.800</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">TICKET R$</div></div>
+        </div>
+        <div style="border-top:1px solid #E3DCCE;margin:20px 0"></div>
+        <p style="font-size:13px;color:#4A443C">Números <b>sempre tabulares</b> no mono. O mono nomeia o dado e o registro builder; nunca corre em texto longo. Neue Haas Grotesk fica como upgrade licenciado quando houver caixa — não é o ponto de partida.</p>
+        <div style="flex:1"></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;margin-top:18px">O MAIOR ATIVO TIPOGRÁFICO NÃO É A FONTE — É O RESPIRO.</div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 04 COR ============ -->
+<section id="cor" data-screen-label="04 Cor" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">04 · Cor</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:24ch">O coral aparece menos. Por isso vale mais.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">A paleta não muda de família — muda de dosagem. Base clara é o default; o ink escuro vira palco. O coral segue a regra do anel: <b>um elemento por composição</b>.</p>
+
+    <div data-no-pb style="display:flex;border-radius:12px;overflow:hidden;margin-top:36px;height:56px;border:1px solid #E3DCCE">
+      <div style="width:90%;background:#F2EDE3;display:flex;align-items:center;padding:0 18px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#4A443C">90% NEUTROS</div>
+      <div style="width:8%;background:#FF5C3D;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FBF9F3">8%</div>
+      <div style="width:2%;background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.2));backdrop-filter:blur(4px)"></div>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;margin-top:8px">NEUTROS · COR INSTITUCIONAL · EFEITOS (GLASS)</div>
+
+    <div data-no-pb style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:32px">
+      <div><div style="height:80px;border-radius:12px;background:#FBF9F3;border:1px solid #E3DCCE"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;margin-top:8px;color:#17140F">PAPER<br>#FBF9F3</div></div>
+      <div><div style="height:80px;border-radius:12px;background:#F2EDE3;border:1px solid #E3DCCE"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;margin-top:8px;color:#17140F">BONE<br>#F2EDE3</div></div>
+      <div><div style="height:80px;border-radius:12px;background:#857C70"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;margin-top:8px;color:#17140F">STEEL<br>#857C70</div></div>
+      <div><div style="height:80px;border-radius:12px;background:#17140F"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;margin-top:8px;color:#17140F">INK<br>#17140F</div></div>
+      <div><div style="height:80px;border-radius:12px;background:#FF5C3D"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;margin-top:8px;color:#17140F">CORAL · 8%<br>#FF5C3D</div></div>
+      <div><div style="height:80px;border-radius:12px;background:#F0A63B"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;margin-top:8px;color:#17140F">AMBER · Makers<br>#F0A63B</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:30px">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;padding:20px;background:#FBF9F3">
+        <b style="font-size:14.5px">Onde o coral pode</b>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Links, o dado-chave de um card, a palavra grifada do título, a linha do fio, o estado ativo. Sempre <b>um</b> por composição.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;padding:20px;background:#FBF9F3">
+        <b style="font-size:14.5px">Onde o coral não pode</b>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Fundos grandes, texto longo, dois elementos disputando, gradiente decorativo. Se a peça só funciona colorida, ainda não está pronta.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;padding:20px;background:#FBF9F3">
+        <b style="font-size:14.5px">Amber</b>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Exclusivo do FeelMakers (cena, palco, físico). Nunca convive com coral na mesma peça — a família é a mesma, a ênfase troca.</p>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 05 O FIO ============ -->
+<section id="fio" data-screen-label="05 O fio" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">05 · O fio</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:26ch">Três comportamentos. Um vira regra.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">O fio é rastro de trajetória — consequência, não origem. A pergunta não é "onde desenhar linhas", é <b>quando o fio tem função</b>. A espessura é ajustável nos Tweaks.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:40px">
+      <div style="border:1.5px solid #17140F;border-radius:18px;background:#FBF9F3;padding:26px;position:relative">
+        <div style="position:absolute;top:-12px;left:22px;background:#FF5C3D;color:#FBF9F3;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;padding:4px 10px;border-radius:99px">PADRÃO</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">A · Assinatura</div>
+        <div style="font-weight:600;font-size:22px;letter-spacing:-.02em;margin-top:14px;line-height:1.15">Toda trajetória<br>deixa rastro.</div>
+        <canvas data-fio="assinatura" style="width:100%;height:120px;display:block;margin-top:10px"></canvas>
+        <p style="font-size:13px;color:#4A443C;margin-top:10px">Uma linha, um gesto, no fim da composição — como quem assina. Uma vez por peça, sempre com o loop do símbolo. É o anel da roupa preta.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">B · Estrutural</div>
+        <div style="display:flex;flex-direction:column;margin-top:14px">
+          <div style="border:1px solid #E3DCCE;border-radius:10px;padding:12px 14px;font-size:13px;color:#4A443C;background:#F7F2E9">Prova assinada · 12 mar</div>
+          <canvas data-fio="estrutural" style="width:100%;height:64px;display:block"></canvas>
+          <div style="border:1px solid #E3DCCE;border-radius:10px;padding:12px 14px;font-size:13px;color:#4A443C;background:#F7F2E9">Obra publicada · 28 mar</div>
+        </div>
+        <p style="font-size:13px;color:#4A443C;margin-top:14px">Conector de eventos (timeline de Lastro, divisores). <b>Restrito:</b> fora da timeline vira ornamento e compete com o conteúdo.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">C · Topografia</div>
+        <canvas data-fio="topografia" style="width:100%;height:186px;display:block;margin-top:14px;border-radius:10px;background:#17140F"></canvas>
+        <p style="font-size:13px;color:#4A443C;margin-top:14px">Malha de trajetórias como superfície — só em <b>capa, palco e abertura de deck</b>. Nunca atrás de texto. É o único lugar onde muitos fios convivem.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin-top:18px">
+      <div style="border:1px solid #322B24;border-radius:18px;background:#14110F;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Motion · a marca se desenha</div>
+        <canvas data-fio-motion="palco" style="width:100%;height:130px;display:block;margin-top:14px"></canvas>
+        <p style="font-size:13px;color:#B9B0A2;margin-top:12px">Nada "aparece" — tudo se desenha, descansa e recomeça. Verbos: <b style="color:#F2EDE3">desenhar · revelar · conectar · respirar · deslizar · entrelaçar</b>. Proibidos: explodir, quicar, girar sem motivo, piscar.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Ícones · derivados do gesto</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px">
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+            <div style="width:100%;aspect-ratio:1;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:12px;display:flex;align-items:center;justify-content:center"><canvas data-icon="prova" style="width:52px;height:52px"></canvas></div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#4A443C">PROVA</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+            <div style="width:100%;aspect-ratio:1;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:12px;display:flex;align-items:center;justify-content:center"><canvas data-icon="lastro" style="width:52px;height:52px"></canvas></div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#4A443C">LASTRO</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+            <div style="width:100%;aspect-ratio:1;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:12px;display:flex;align-items:center;justify-content:center"><canvas data-icon="rede" style="width:52px;height:52px"></canvas></div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#4A443C">REDE</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+            <div style="width:100%;aspect-ratio:1;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:12px;display:flex;align-items:center;justify-content:center"><canvas data-icon="ritmo" style="width:52px;height:52px"></canvas></div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#4A443C">RITMO</span>
+          </div>
+        </div>
+        <p style="font-size:13px;color:#4A443C;margin-top:14px">Mesmo peso do gesto, terminais redondos, mesmo raio mínimo do wordmark. Nunca packs prontos.</p>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 06 GLASS ============ -->
+<section id="glass" data-screen-label="06 Glass funcional" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">06 · Glass</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:26ch">O vidro significa: existe, mas não foi revelado.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">Glass sai da identidade e entra no comportamento. Só aparece sobre conteúdo em estado de descoberta — e por isso ganha significado, em vez de virar decoração.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;align-items:start">
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px;overflow:hidden">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Oportunidade · ticket estruturado</div>
+        <div style="font-weight:600;font-size:20px;letter-spacing:-.02em;margin-top:12px">Campanha UGC · marca de moda · Recife</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;border:1px solid #E3DCCE;border-radius:99px;padding:5px 11px;color:#4A443C">3 VÍDEOS</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;border:1px solid #E3DCCE;border-radius:99px;padding:5px 11px;color:#4A443C">ENTREGA 15 DIAS</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;border:1px solid #E3DCCE;border-radius:99px;padding:5px 11px;color:#FF5C3D">PERMUTA + CACHÊ</span>
+        </div>
+        <div style="position:relative;margin-top:18px;border-radius:12px;overflow:hidden">
+          <div style="padding:16px;background:#F2EDE3;font-size:13.5px;color:#4A443C;line-height:1.6">Orçamento: R$ 4.800 · contato direto com a assessoria · briefing completo com referências e cronograma por entrega.</div>
+          <div style="position:absolute;inset:0;background:rgba(251,249,243,.35);backdrop-filter:blur(12px) saturate(1.15);border:1px solid rgba(255,255,255,.65);border-radius:12px;display:flex;align-items:center;justify-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#17140F;background:rgba(251,249,243,.75);border-radius:99px;padding:6px 14px">EM DESCOBERTA — ENTRE PARA REVELAR</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="border-left:2px solid #17140F;padding:4px 0 4px 18px;font-size:14px;color:#4A443C">Aparece <b style="color:#17140F">só</b> sobre o que existe e ainda não foi revelado: preview de oportunidade, prova aguardando 2ª assinatura, perfil em construção.</div>
+        <div style="border-left:2px solid #17140F;padding:4px 0 4px 18px;font-size:14px;color:#4A443C">Máximo <b style="color:#17140F">20%</b> da composição. Nunca atrás do logotipo. Nunca sobre fotografia inteira.</div>
+        <div style="border-left:2px solid #17140F;padding:4px 0 4px 18px;font-size:14px;color:#4A443C">Física fixa: blur 12px · borda de 1px de luz vinda de cima · sem gradiente colorido dentro do vidro.</div>
+        <div style="border-left:2px solid #17140F;padding:4px 0 4px 18px;font-size:14px;color:#4A443C">Quando o conteúdo é revelado, o vidro <b style="color:#17140F">sai</b> — o efeito é um estado, não um estilo.</div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 07 MODOS + FOTO ============ -->
+<section id="modos" data-screen-label="07 Modos e fotografia" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">07 · Modos &amp; fotografia</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:26ch">Claro é o sistema. Escuro é o palco.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">O default do produto, dos documentos e do institucional é o claro — respiro, papel, silêncio. O ink vira o modo de cena: evento, keynote, FeelMakers.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;margin-top:40px">
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:30px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:50px;height:50px;border-radius:50%;background:#F2EDE3;border:1px solid #E3DCCE;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:16px;color:#4A443C">MD</div>
+          <div>
+            <div style="font-weight:600;font-size:17px;letter-spacing:-.01em">Marina Duarte</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">FOTÓGRAFA · RECIFE-PE</div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #E3DCCE;margin:20px 0"></div>
+        <div style="display:flex;gap:26px;align-items:center">
+          <div><div style="font-weight:600;font-size:21px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">34</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">PROVAS</div></div>
+          <div><div style="font-weight:600;font-size:21px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">08</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">OBRAS</div></div>
+          <div style="flex:1"></div>
+          <a href="#modos" style="font-size:13.5px;font-weight:500">Ver trajetória →</a>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;margin-top:22px">MODO CLARO — produto · documentos · institucional</div>
+      </div>
+
+      <div style="border:1px solid #322B24;border-radius:18px;background:#14110F;padding:30px;position:relative;overflow:hidden">
+        <canvas data-fio="topografia" style="position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none"></canvas>
+        <div style="position:relative">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="width:50px;height:50px;border-radius:50%;background:#1D1915;border:1px solid #322B24;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:16px;color:#B9B0A2">MD</div>
+            <div>
+              <div style="font-weight:600;font-size:17px;letter-spacing:-.01em;color:#F2EDE3">Marina Duarte</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">FOTÓGRAFA · RECIFE-PE</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid #322B24;margin:20px 0"></div>
+          <div style="display:flex;gap:26px;align-items:center">
+            <div><div style="font-weight:600;font-size:21px;letter-spacing:-.02em;color:#F2EDE3;font-variant-numeric:tabular-nums">34</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">PROVAS</div></div>
+            <div><div style="font-weight:600;font-size:21px;letter-spacing:-.02em;color:#F2EDE3;font-variant-numeric:tabular-nums">08</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">OBRAS</div></div>
+            <div style="flex:1"></div>
+            <a href="#modos" style="font-size:13.5px;font-weight:500">Ver trajetória →</a>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;margin-top:22px">MODO ESCURO — evento · keynote · FeelMakers</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#857C70;margin-top:44px">Fotografia — documental, em relação. Nunca performática.</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:16px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="width:100%;height:280px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="foto-relacao" shape="rounded" radius="14" placeholder="Dupla em troca de trabalho — luz natural" hint-size="100%,280px" style="width:100%;height:280px"></x-import></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#4A443C">RELAÇÃO · duas pessoas, escuta real</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="width:100%;height:280px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="foto-processo" shape="rounded" radius="14" placeholder="Bastidor de produção — mãos, equipamento" hint-size="100%,280px" style="width:100%;height:280px"></x-import></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#4A443C">PROCESSO · o making, não o resultado</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="width:100%;height:280px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="foto-textura" shape="rounded" radius="14" placeholder="Textura de material — papel, tecido, metal" hint-size="100%,280px" style="width:100%;height:280px"></x-import></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#4A443C">MATÉRIA · close de material real</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:#4A443C;max-width:70ch;margin-top:14px"><b>Tratamento:</b> luz disponível, −8% de saturação, sombras quentes puxando para o ink (nunca preto puro), grão fino 2–3%. Sem flash performático, sem "creator com ring light", sem 3D decorativo. Se parece anúncio de SaaS, está errado.</p>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 08 VOZ ============ -->
+<section id="voz" data-screen-label="08 Voz e convite" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">08 · Voz &amp; convite</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:26ch">A marca é Feel. O convite é "Segue a Feel."</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">Marca e convite não disputam o mesmo lugar. E o "fio" é uma <b>camada descoberta</b> — aparece em campanha e motion, mas nunca é explicado de cara. Quem percebe, sente que encontrou algo da marca.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:40px">
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:24px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Marca</div>
+        <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:10px">Feel</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">O nome, o wordmark, a instituição. Domínio institucional <b>feelbrasil.com</b> — apresentações, investidores, imprensa, parceiros.</p>
+      </div>
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:24px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Convite</div>
+        <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:10px">Segue a Feel.</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">O CTA institucional. Instagram <b>@segueafeel</b>; <b>segueafeel.com.br</b> em campanha, QR, evento e onboarding. Gira em torno da marca — nunca ocupa o lugar dela.</p>
+      </div>
+      <div style="border:1px dashed #C9BFAC;border-radius:16px;background:#FBF9F3;padding:24px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Camada descoberta</div>
+        <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:10px;color:#FF5C3D">Segue o fio.</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">O trocadilho Feel→fio e a cultura de internet são recompensa de quem descobre. Recurso recorrente de campanha — jamais a explicação oficial.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Social · o grid inteiro é um fio</div>
+      <div style="position:relative;margin-top:16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+          <div style="aspect-ratio:1;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:10px"></div>
+          <div style="aspect-ratio:1;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:10px"></div>
+          <div style="aspect-ratio:1;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:10px"></div>
+        </div>
+        <canvas data-fio="social" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+      </div>
+      <p style="font-size:13px;color:#4A443C;margin-top:14px">Cada post continua o anterior — carrosséis emendam, capas dividem a mesma linha. O perfil não é mural: é narrativa. Quem entra, segue o fio.</p>
+    </div>
+
+    <div style="margin-top:32px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Vocabulário · registro de builder, nunca SaaS corporativo</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">lastro</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">prova</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">obra</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">ritmo</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">oportunidade</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">ticket</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">permuta</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">publi</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:8px;padding:6px 12px;color:#17140F">assessor</span>
+      </div>
+      <p style="font-size:13px;color:#4A443C;margin-top:12px">A voz nunca explica — sugere. Nunca "plataforma inovadora que conecta"; sempre o fato: "34 provas assinadas". Reputação não é score — é rastro contável.</p>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 09 TESTE ============ -->
+<section id="teste" data-screen-label="09 O teste da Feel" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE;background:#14110F">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">09 · O teste da Feel</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;max-width:26ch;color:#F2EDE3">Cinco perguntas antes de aprovar qualquer peça.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:40px">
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">01</div>
+        <p style="font-size:14px;color:#F2EDE3;margin-top:10px;font-weight:500">Sem o logotipo — ainda parece Feel?</p>
+      </div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">02</div>
+        <p style="font-size:14px;color:#F2EDE3;margin-top:10px;font-weight:500">Sem a cor — ainda parece Feel?</p>
+      </div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">03</div>
+        <p style="font-size:14px;color:#F2EDE3;margin-top:10px;font-weight:500">Sem os efeitos — ainda comunica clareza?</p>
+      </div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">04</div>
+        <p style="font-size:14px;color:#F2EDE3;margin-top:10px;font-weight:500">Em preto e branco — continua elegante?</p>
+      </div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">05</div>
+        <p style="font-size:14px;color:#F2EDE3;margin-top:10px;font-weight:500">Se copiarem a paleta — sobra algo impossível de copiar?</p>
+      </div>
+    </div>
+    <p style="font-size:14px;color:#B9B0A2;margin-top:22px;max-width:64ch">Uma resposta "não" significa que a peça ainda depende de elementos superficiais. Volta para a mesa — remover 30% e testar de novo. <span style="color:#857C70">Dica: o Tweak "Teste P&amp;B" tira o coral do documento inteiro para provar isto ao vivo.</span></p>
+
+  </div>
+</section>
+
+<!-- ============ 10 AS OBRAS ============ -->
+<section id="obras" data-screen-label="10 As obras" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">10 · As obras</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em">O sistema, provado em campo.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:66ch;margin-top:16px">As peças deste espaço aplicam a mesma gramática sem repetir layout. Os outros espaços — produto (FeelWorks), físico (FeelMakers) e parcerias — vivem no <a href="../Feel — Índice.dc.html">índice geral</a>.</p>
+    <div style="display:flex;flex-direction:column;gap:2px;margin-top:28px">
+      <a href="Feel - Gramática do Fio.dc.html" style="display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid #E3DCCE;color:#17140F"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">01</span><span style="font-weight:600;font-size:17px">Gramática do Fio — o motor gerador</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">LEI</span></a>
+      <a href="Feel - Componentes.dc.html" style="display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid #E3DCCE;color:#17140F"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">02</span><span style="font-weight:600;font-size:17px">Componentes — o DNA aplicado</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">SISTEMA</span></a>
+      <a href="Feel - Deck Institucional.dc.html" style="display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid #E3DCCE;color:#17140F"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">03</span><span style="font-weight:600;font-size:17px">Deck Institucional — a tese em slides</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">APLICAÇÃO</span></a>
+      <a href="Feel - Grid Social.dc.html" style="display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid #E3DCCE;color:#17140F"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">04</span><span style="font-weight:600;font-size:17px">Grid Social — o perfil como narrativa</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">APLICAÇÃO</span></a>
+      <a href="Feel - Materialidade.dc.html" style="display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid #E3DCCE;color:#17140F"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">05</span><span style="font-weight:600;font-size:17px">Materialidade — a marca como ambiente</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">MATÉRIA</span></a>
+      <a href="Feel - Palco FeelMakers.dc.html" style="display:grid;grid-template-columns:60px 1fr auto;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid #E3DCCE;color:#17140F"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">06</span><span style="font-weight:600;font-size:17px">Palco FeelMakers — o físico, modo escuro</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">APLICAÇÃO</span></a>
+    </div>
+  </div>
+  <div style="max-width:1120px;margin:0 auto;padding:36px 28px 40px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- ============ 11 REGRAS DE EVOLUÇÃO ============ -->
+<section id="evolucao" data-screen-label="11 Regras de evolução" style="scroll-margin-top:82px;border-top:1px solid #E3DCCE;background:#14110F">
+  <div style="max-width:1120px;margin:0 auto;padding:88px 28px 64px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:16px">11 · Regras de evolução</div>
+    <h2 style="font-weight:600;font-size:clamp(27px,3.8vw,42px);line-height:1.05;letter-spacing:-.03em;color:#F2EDE3;max-width:24ch">Como a marca cresce sem quem a criou.</h2>
+    <p style="color:#B9B0A2;font-size:15px;max-width:62ch;margin-top:16px">Isto não é um brandbook — é uma constituição. Define as leis que geram qualquer decisão futura, de qualquer equipe. Quem seguir este documento não precisa de quem o escreveu.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:32px">
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FF5C3D">R1</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px;font-weight:500">Toda peça nova segue o ciclo: contexto → gerar → avaliar (O Teste) → remover 30% → travar.</p></div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FF5C3D">R2</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px;font-weight:500">Decisão nova vira lei escrita (DESIGN.md) ou não existe. O sistema evolui pelo documento, não pela memória.</p></div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FF5C3D">R3</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px;font-weight:500">Pode-se trocar fonte, refinar cor, evoluir o produto. Não se pode tocar: a gramática do fio, a dosagem, e "revela, não grita".</p></div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FF5C3D">R4</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px;font-weight:500">Um braço novo = Feel + ofício, com domínio e registro assegurados. Nunca uma marca órfã, nunca nome para uma ideia.</p></div>
+    </div>
+    <p style="font-size:14px;color:#B9B0A2;margin-top:28px;max-width:60ch">Em 2040, nada daqui deve parecer datado — porque nada daqui é tendência. O que envelhece é superfície; o que fica é a lei.</p>
+    <div style="margin-top:44px;display:flex;align-items:center;gap:16px;border-top:1px solid #322B24;padding-top:24px">
+      <img src="assets/feel-wordmark-bone.png" alt="Feel" style="width:88px;height:auto;opacity:.95">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">SISTEMA DE MARCA V2 · CONSTITUIÇÃO + MANUAL · SEGUE A FEEL</span>
+    </div>
+  </div>
+</section>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#FBF9F3"/><path d="M20 62 q10 -30 20 0 q10 -30 20 0 q6 14 20 -6" fill="none" stroke="#FF5C3D" stroke-width="6" stroke-linecap="round"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;espessuraDoFio&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 3.5, &quot;min&quot;: 1.5, &quot;max&quot;: 7, &quot;step&quot;: 0.5, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;O fio&quot; },
+  &quot;provaPB&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;O teste da Feel&quot; },
+  &quot;guiasVisiveis&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Auditoria do logo&quot; }
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._raf = requestAnimationFrame(() => { this.applyPB(); this.drawAll(); this.startMotion(); });
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(() => { this._motion = null; this.drawAll(); }, 150); };
+    window.addEventListener('resize', this._onResize);
+    this.initNav();
+  }
+  componentDidUpdate() { this.applyPB(); this.drawAll(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    cancelAnimationFrame(this._motionRaf);
+    clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  lw() { return this.props.espessuraDoFio ?? 3.5; }
+  pb() { return !!this.props.provaPB; }
+  coral() { return this.pb() ? '#17140F' : '#FF5C3D'; }
+
+  // ---- Teste P&B: strip the 8% coral to ink across the whole document ----
+  applyPB() {
+    const ink = '#17140F', inkHover = '#17140F', inkRgb = '23,20,15';
+    this._orig = this._orig || new Map();
+    document.querySelectorAll('[style]').forEach((el) => {
+      if (el.closest('[data-no-pb]')) return;
+      if (!this._orig.has(el)) this._orig.set(el, el.getAttribute('style') || '');
+      let s = this._orig.get(el);
+      if (this.pb()) {
+        s = s.replace(/#FF5C3D/gi, ink).replace(/#D9431F/gi, inkHover)
+             .replace(/255\s*,\s*92\s*,\s*61/g, inkRgb);
+      }
+      el.setAttribute('style', s);
+    });
+    let tag = document.getElementById('feel-pb');
+    if (!tag) { tag = document.createElement('style'); tag.id = 'feel-pb'; document.head.appendChild(tag); }
+    tag.textContent = this.pb()
+      ? 'a{color:#17140F!important}a:hover{color:#4A443C!important}::selection{background:#17140F!important;color:#FBF9F3!important}'
+      : '';
+  }
+
+  initNav() {
+    const links = Array.from(document.querySelectorAll('#feelnav a[data-nav]'));
+    const setActive = (id) => links.forEach(a => {
+      const on = a.getAttribute('data-nav') === id;
+      a.style.color = on ? '#17140F' : '#857C70';
+      a.style.borderBottomColor = on ? this.coral() : 'transparent';
+    });
+    const sections = links.map(a => document.getElementById(a.getAttribute('data-nav'))).filter(Boolean);
+    if (!('IntersectionObserver' in window) || !sections.length) return;
+    const io = new IntersectionObserver((entries) => {
+      const vis = entries.filter(e => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (vis[0]) setActive(vis[0].target.id);
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: [0, .3, .6, 1] });
+    sections.forEach(s => io.observe(s));
+    setActive('tese');
+  }
+
+  setup(c) {
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 2;
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  // prolate cycloid — the looping "ee" gesture of the mark
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-fio]').forEach((c) => {
+      const kind = c.getAttribute('data-fio');
+      const s = this.setup(c); if (!s) return;
+      const { ctx, w, h } = s; ctx.clearRect(0, 0, w, h);
+      if (kind === 'assinatura') this.drawSig(ctx, w, h, this.coral(), 0.55);
+      else if (kind === 'divider') this.drawDivider(ctx, w, h);
+      else if (kind === 'arvore') this.drawArvore(ctx, w, h);
+      else if (kind === 'estrutural') this.drawEstrutural(ctx, w, h);
+      else if (kind === 'topografia') this.drawTopografia(ctx, w, h);
+      else if (kind === 'social') this.drawSocial(ctx, w, h);
+    });
+    document.querySelectorAll('canvas[data-icon]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      this.drawIcon(c.getAttribute('data-icon'), s.ctx, s.w, s.h);
+    });
+  }
+
+  // shared signature curve; frac 0..1 draws partially (for motion)
+  drawSig(ctx, w, h, color, yBase, frac) {
+    const b = 1.6;
+    const pts = this.cycloidPts(-2.6, 2 * Math.PI + 2.6, b, 160);
+    const xs = pts.map(p => p[0]);
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const n = frac == null ? pts.length : Math.max(2, Math.floor(pts.length * frac));
+    ctx.strokeStyle = color; ctx.lineWidth = this.lw();
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const nx = (pts[i][0] - minX) / (maxX - minX);
+      const px = 14 + nx * (w - 28);
+      const py = h * yBase + (pts[i][1] / b) * h * 0.24 - nx * h * 0.12;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+  }
+
+  drawDivider(ctx, w, h) {
+    // faint steel baseline with one coral loop mid-way — a whisper of the gesture
+    const b = 1.5;
+    const pts = this.cycloidPts(-6.5, 2 * Math.PI + 6.5, b, 260);
+    const xs = pts.map(p => p[0]);
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = this.pb() ? 'rgba(23,20,15,.5)' : this.coral();
+    ctx.lineWidth = Math.max(1.5, this.lw() * 0.55);
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = nx * w;
+      const damp = Math.exp(-Math.pow((nx - 0.5) / 0.1, 2));
+      const py = h * 0.5 + (y / b) * h * 0.42 * damp;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+  }
+
+  drawArvore(ctx, w, h) {
+    // mother -> three arms connector, drawn as flowing threads
+    ctx.strokeStyle = this.pb() ? 'rgba(23,20,15,.45)' : 'rgba(133,124,112,.7)';
+    ctx.lineWidth = Math.max(1.5, this.lw() * 0.5);
+    const cx = w / 2, top = 4, mid = h * 0.42, bot = h - 4;
+    const arms = [w * 0.17, w * 0.5, w * 0.83];
+    ctx.beginPath(); ctx.moveTo(cx, top); ctx.lineTo(cx, mid); ctx.stroke();
+    arms.forEach((ax) => {
+      ctx.beginPath();
+      ctx.moveTo(cx, mid);
+      ctx.bezierCurveTo(cx, mid + (bot - mid) * 0.6, ax, mid + (bot - mid) * 0.4, ax, bot);
+      ctx.stroke();
+    });
+  }
+
+  drawEstrutural(ctx, w, h) {
+    const b = 1.35;
+    const pts = this.cycloidPts(-7, 2 * Math.PI + 7, b, 240);
+    const xs = pts.map(p => p[0]);
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = this.pb() ? 'rgba(23,20,15,.5)' : '#857C70';
+    ctx.lineWidth = Math.max(1.5, this.lw() * 0.6);
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = 10 + nx * (w - 20);
+      const damp = Math.exp(-Math.pow((nx - 0.5) / 0.16, 2));
+      const py = h * 0.5 + (y / b) * h * 0.34 * damp;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+  }
+
+  drawTopografia(ctx, w, h) {
+    const lines = 7;
+    for (let k = 0; k < lines; k++) {
+      const coralLine = k === 3 && !this.pb();
+      ctx.strokeStyle = coralLine ? '#FF5C3D' : 'rgba(242,237,227,.26)';
+      ctx.lineWidth = coralLine ? this.lw() : Math.max(1, this.lw() * 0.45);
+      const baseY = h * (0.14 + (0.72 * k) / (lines - 1));
+      ctx.beginPath();
+      for (let x = 12; x <= w - 12; x += 6) {
+        const y = baseY + Math.sin(x / 92 + k * 1.7) * 9 + Math.sin(x / 41 + k * 3.1) * 5;
+        if (x === 12) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  }
+
+  drawSocial(ctx, w, h) {
+    const b = 1.45;
+    const pts = this.cycloidPts(-4, 4 * Math.PI + 4, b, 300);
+    const xs = pts.map(q => q[0]);
+    const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = this.coral();
+    ctx.lineWidth = Math.max(2, this.lw() * 0.7);
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = nx * w;
+      const py = h * 0.58 + (y / b) * h * 0.26 - nx * h * 0.12;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+  }
+
+  drawIcon(name, ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#17140F'; ctx.lineWidth = 2.6;
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    const u = w / 24; ctx.beginPath();
+    if (name === 'prova') { ctx.moveTo(5*u,13*u); ctx.lineTo(10*u,18*u); ctx.lineTo(19*u,7*u); }
+    else if (name === 'lastro') { ctx.moveTo(5*u,8*u); ctx.lineTo(19*u,8*u); ctx.moveTo(5*u,13*u); ctx.lineTo(16*u,13*u); ctx.moveTo(5*u,18*u); ctx.lineTo(12*u,18*u); }
+    else if (name === 'rede') {
+      const pts = this.cycloidPts(-2, 4*Math.PI+2, 1.6, 200);
+      const xs = pts.map(q=>q[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+      pts.forEach(([x,y],i)=>{ const px = 4*u+((x-minX)/(maxX-minX))*16*u; const py = 12*u+(y/1.6)*5*u; if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py); });
+    } else if (name === 'ritmo') {
+      ctx.moveTo(6*u,17*u); ctx.lineTo(6*u,12*u); ctx.moveTo(10.5*u,17*u); ctx.lineTo(10.5*u,7*u);
+      ctx.moveTo(15*u,17*u); ctx.lineTo(15*u,14*u); ctx.moveTo(19*u,17*u); ctx.lineTo(19*u,9*u);
+    }
+    ctx.stroke();
+  }
+
+  startMotion() {
+    if (this._motionRaf) return;
+    const tick = (ts) => {
+      const cycle = (ts % 5200) / 5200;
+      const p = Math.min(1, cycle / 0.55);
+      const e = 1 - Math.pow(1 - p, 3);
+      this.drawMotion(e);
+      this._motionRaf = requestAnimationFrame(tick);
+    };
+    this._motionRaf = requestAnimationFrame(tick);
+  }
+
+  drawMotion(frac) {
+    if (!this._motion) {
+      this._motion = [];
+      document.querySelectorAll('canvas[data-fio-motion]').forEach((c) => {
+        const s = this.setup(c);
+        if (s) this._motion.push({ ...s, dark: c.getAttribute('data-fio-motion') === 'palco' });
+      });
+    }
+    this._motion.forEach(({ ctx, w, h }) => {
+      ctx.clearRect(0, 0, w, h);
+      this.drawSig(ctx, w, h, this.coral(), 0.55, frac);
+    });
+  }
+
+  renderVals() {
+    return { guiasVisiveis: this.props.guiasVisiveis ?? true };
+  }
+}
+</script>
+</body>
+</html>

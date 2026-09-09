@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#FBF9F3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1120px;margin:0 auto;padding:0 28px;height:60px;display:flex;align-items:center;gap:12px">
+    <img src="../assets/feel-mark.png" alt="Feel" style="width:26px;height:auto;flex:none">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.05">Plano de Produção</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;color:#857C70;text-transform:uppercase;margin-top:1px">O que falta · waves · agentes</div>
+    </div>
+    <div style="flex:1"></div>
+    <a href="Feel — Tese Estratégica.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">← TESE</a>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section data-screen-label="Abertura" style="max-width:1120px;margin:0 auto;padding:88px 28px 40px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#FF5C3D;margin-bottom:22px">Plano de produção · v1</div>
+  <h1 style="font-weight:600;font-size:clamp(32px,5vw,58px);line-height:1.0;letter-spacing:-.035em;max-width:18ch">Tudo o que falta produzir — em ondas, em paralelo.</h1>
+  <p style="color:#4A443C;font-size:17px;max-width:66ch;margin-top:24px">Este é o backlog executável da Feel: cada material que ainda precisa existir, agrupado por <b>público</b>, sequenciado em <b>waves</b>, com <b>frentes paralelas</b>, o <b>tier de modelo</b> recomendado e um <b>prompt-semente</b> pronto para colar. O objetivo é produzir muito, consistente e barato — sem re-derivar o que já está travado.</p>
+</section>
+
+<!-- COMO OPERAR -->
+<section data-screen-label="Como operar" style="border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1120px;margin:0 auto;padding:72px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">Como operar</div>
+    <h2 style="font-weight:600;font-size:clamp(24px,3.4vw,38px);line-height:1.05;letter-spacing:-.03em;max-width:24ch">Um harness, waves paralelas, tiers de modelo.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:30px">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">O harness (contexto fixo)</div><p style="font-size:14px;color:#4A443C;margin-top:8px">Toda frente carrega, nesta ordem: <b>DESIGN.md · CLAUDE.md · Tese Estratégica</b> + <b>1 doc de referência de estilo</b> do espaço. Um entregável = um arquivo. Fecha rodando <b>O Teste</b>. Nada de re-derivar tokens ou tese.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Paralelismo</div><p style="font-size:14px;color:#4A443C;margin-top:8px">Itens sem dependência rodam em <b>sessões separadas ao mesmo tempo</b>. Cada wave só espera a anterior fechar os itens dos quais depende — dentro da wave, tudo é lane paralela.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Economia de tokens</div><p style="font-size:14px;color:#4A443C;margin-top:8px"><b>Referencie</b> arquivos, não recopie. Um arquivo por prompt. Contexto limpo a cada frente. Trave o padrão uma vez (Tier A) e <b>multiplique</b> em Tier B.</p></div>
+    </div>
+
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#857C70;margin-top:38px;margin-bottom:12px">Tiers de modelo · qual frente usa o quê</div>
+    <div style="display:flex;flex-direction:column;gap:2px;border-top:1px solid #E3DCCE">
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5C3D;font-weight:500">TIER A<br><span style="color:#857C70;font-size:10px">raciocínio alto</span></div><p style="font-size:14px;color:#4A443C">Argumento denso e decisões novas: <b>decks de investidor e shopping</b>, refino da Tese, copy de posicionamento, category design. Onde errar custa caro e o texto precisa persuadir.</p></div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#17140F;font-weight:500">TIER B<br><span style="color:#857C70;font-size:10px">execução eficiente</span></div><p style="font-size:14px;color:#4A443C">Multiplicação sobre padrão já travado: <b>one-pagers, telas de produto, social tiles, variações</b>. Depois que o Tier A define o molde, o Tier B replica barato e consistente.</p></div>
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#17140F;font-weight:500">TIER C<br><span style="color:#857C70;font-size:10px">visão / recriação</span></div><p style="font-size:14px;color:#4A443C">A partir de referências visuais, plantas ou fotos: <b>materialidade, sinalização, mockups do espaço, recriação de telas</b> a partir de imagem.</p></div>
+    </div>
+    <p style="font-size:12.5px;color:#857C70;margin-top:16px;max-width:76ch">Nota honesta: eu não disparo agentes nem escolho o modelo por conta própria. Este plano é desenhado para <b>você orquestrar</b> — cada item abaixo é um prompt autossuficiente que roda sozinho, em paralelo, no tier indicado.</p>
+  </div>
+</section>
+
+<!-- MATRIZ POR PÚBLICO -->
+<section data-screen-label="Matriz por público" style="border-top:1px solid #E3DCCE">
+  <div style="max-width:1120px;margin:0 auto;padding:72px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">A matriz</div>
+    <h2 style="font-weight:600;font-size:clamp(24px,3.4vw,38px);line-height:1.05;letter-spacing:-.03em;max-width:24ch">Cada público, seus materiais.</h2>
+    <p style="color:#4A443C;font-size:15px;max-width:64ch;margin-top:14px">Verde = existe. Coral = produzir. Assim nada de público fica sem peça.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:30px">
+
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em">Investidor</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px">
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Deck de investidor · tese → mercado → moat → tração → ask</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">One-pager executivo · resumo de 1 página</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Data room · índice + modelo financeiro <span style="color:#857C70">(não-design)</span></span></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em">Shopping / varejo-âncora</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px">
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Proposta para shopping · nova âncora de categoria</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">One-page comercial · modelo de ocupação + fluxo</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#22A06B;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Espaço FeelMakers (Patteo) · <a href="../03-feelmakers/Feel - FeelMakers — Espaço (Patteo).dc.html">existe</a></span></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em">Creator</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px">
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Landing / campanha segueafeel · convite + onboarding</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#22A06B;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Perfil (produto) · <a href="../02-feelworks/Feel - Perfil FeelWorks.dc.html">existe</a></span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#22A06B;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Grid social · <a href="../01-marca/Feel - Grid Social.dc.html">existe</a></span></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em">Profissional criativo</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px">
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Deck/página · "prove sem depender de indicação"</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#22A06B;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Perfil assessor · <a href="../02-feelworks/Feel - Perfil Assessor FeelWorks.dc.html">existe</a></span></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em">Varejo local (anunciante)</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px">
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">One-pager · "contrate quem tem prova"</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Explicador "como funciona" · risco reduzido</span></div>
+        </div>
+      </div>
+
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em">Parceiros &amp; imprensa</div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-top:12px">
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#22A06B;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Feel × Você · <a href="../04-parcerias/Feel × Você - Sinergias.dc.html">existe</a> (vira template)</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Template de parceria · reutilizável</span></div>
+          <div style="display:flex;gap:9px;align-items:baseline"><span style="width:8px;height:8px;border-radius:99px;background:#FF5C3D;flex:none;transform:translateY(2px)"></span><span style="font-size:13.5px;color:#4A443C">Press kit / fact sheet</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AS WAVES -->
+<section data-screen-label="As waves" style="border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1120px;margin:0 auto;padding:72px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">A estratégia de produção</div>
+    <h2 style="font-weight:600;font-size:clamp(24px,3.4vw,38px);line-height:1.05;letter-spacing:-.03em;max-width:22ch">Cinco waves. Dentro de cada, lanes em paralelo.</h2>
+
+    <!-- WAVE 0 -->
+    <div style="margin-top:34px;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#FF5C3D;font-weight:700">WAVE 0 · FUNDAÇÃO &amp; ESTRUTURA</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">SEQUENCIAL · TIER A · quase pronta</div></div>
+      <p style="font-size:14px;color:#4A443C;margin-top:12px;max-width:76ch">Tudo depende disto. Já travado: Tese, Sistema de Marca (constituição+manual), Índice. <b>Falta fechar:</b></p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;border:1px solid #FF5C3D;color:#FF5C3D;border-radius:99px;padding:6px 12px">R3 · fundir Patteo/FeelMakers (3→1)</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;border:1px solid #FF5C3D;color:#FF5C3D;border-radius:99px;padding:6px 12px">R4 · O Teste no conjunto + travar DESIGN.md</span>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#22A06B;margin-top:10px">✓ concluído</div>
+    </div>
+
+    <!-- WAVE 1 -->
+    <div style="margin-top:14px;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#17140F;font-weight:700">WAVE 1 · NARRATIVAS POR PÚBLICO</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">6 LANES PARALELAS · depende da W0</div></div>
+      <p style="font-size:14px;color:#4A443C;margin-top:12px;max-width:76ch">Os decks e páginas de venda — a maior alavanca. Todas as seis frentes já existem em <a href="../05-narrativas/Feel - Deck Investidor.dc.html">05-narrativas/</a> com placeholders explícitos onde faltam números reais.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:14px">
+        <a href="../05-narrativas/Feel - Deck Investidor.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Deck de investidor</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO · TIER A</div></a>
+        <a href="../05-narrativas/Feel - Proposta Shopping.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Proposta shopping</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO · TIER A</div></a>
+        <a href="../05-narrativas/Feel - One-pager Varejo.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">One-pager varejo</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO · TIER B</div></a>
+        <a href="../05-narrativas/Feel - One-pager Profissional Criativo.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Página profissional criativo</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO · TIER B</div></a>
+        <a href="../05-narrativas/Feel - Landing Creator (segueafeel).dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Landing creator (segueafeel)</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO · TIER B</div></a>
+        <a href="../05-narrativas/Feel - Press Kit.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Press kit / fact sheet</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO · TIER B</div></a>
+      </div>
+    </div>
+
+    <!-- WAVE 2 -->
+    <div style="margin-top:14px;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#17140F;font-weight:700">WAVE 2 · PROFUNDIDADE DE PRODUTO</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#22A06B">✓ CONCLUÍDA</div></div>
+      <p style="font-size:14px;color:#4A443C;margin-top:12px;max-width:76ch">As telas que faltavam no <a href="../02-feelworks/Feel - FeelWorks — Wireframe.dc.html">inventário</a> — todas prontas em <a href="../02-feelworks/">02-feelworks/</a>.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:14px">
+        <a href="../02-feelworks/Feel - Onboarding FeelWorks.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Onboarding (profissão→kit→canais)</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO</div></a>
+        <a href="../02-feelworks/Feel - Modo de Edição FeelWorks.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Modo de edição + galeria</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO</div></a>
+        <a href="../02-feelworks/Feel - Área Pessoal FeelWorks.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Área pessoal / analytics</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO</div></a>
+        <a href="../02-feelworks/Feel - Descoberta & Prova FeelWorks.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Marca: descoberta + propor</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO</div></a>
+        <a href="../02-feelworks/Feel - Descoberta & Prova FeelWorks.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Criar prova (dupla assinatura)</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO</div></a>
+        <a href="../02-feelworks/Feel - Área Pessoal FeelWorks.dc.html" style="display:block;border:1px solid #E3DCCE;border-radius:12px;background:#F7F2E9;padding:14px;color:#17140F"><div style="font-weight:600;font-size:14px">Selo de verificação</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:#22A06B;margin-top:6px">✓ FEITO</div></a>
+      </div>
+    </div>
+
+    <!-- WAVE 3 -->
+    <div style="margin-top:14px;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:26px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#17140F;font-weight:700">WAVE 3 · ATIVAÇÃO &amp; MATERIALIDADE</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">PARALELA · TIER B/C · depende da W1</div></div>
+      <p style="font-size:14px;color:#4A443C;margin-top:12px;max-width:76ch">Levar a marca ao mundo: social, espaço e evento — a partir das narrativas já validadas.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#857C70">
+        <span style="border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px">Social kit expandido (segueafeel) ✓ <a href="../01-marca/Feel - Grid Social.dc.html" style="color:#FF5C3D">Grid Social</a></span>
+        <span style="border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px">Sinalização &amp; materialidade ✓ já em <a href="../01-marca/Feel - Materialidade.dc.html" style="color:#FF5C3D">Materialidade</a></span>
+        <span style="border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px">Keynote de evento ✓ já é o <a href="../01-marca/Feel - Palco FeelMakers.dc.html" style="color:#FF5C3D">Palco FeelMakers</a></span>
+      </div>
+    </div>
+
+    <!-- WAVE 4 -->
+    <div style="margin-top:14px;border:1px solid #17140F;border-radius:18px;background:#FBF9F3;padding:26px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#FF5C3D;font-weight:700">WAVE 4 · CONSOLIDAÇÃO</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#22A06B">✓ CONCLUÍDA</div></div>
+      <p style="font-size:14px;color:#4A443C;margin-top:12px;max-width:76ch">O Teste rodado no conjunto: nenhuma violação de tipografia (só Archivo + IBM Plex Mono fora de <code>uploads/</code>), nenhum "Feel Group", âmbar nunca ao lado de coral. DESIGN.md atualizado com as novas aplicações (02-feelworks, 05-narrativas).</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#857C70">
+        <span style="border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px">Trilha não-design · modelo financeiro — pendente, fora deste sistema</span>
+        <span style="border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px">Trilha não-design · registros (INPI/domínios) — pendente, fora deste sistema</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMPTS-SEMENTE -->
+<section data-screen-label="Prompts-semente" style="border-top:1px solid #E3DCCE;background:#14110F">
+  <div style="max-width:1120px;margin:0 auto;padding:72px 28px 64px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">Direção para os agentes</div>
+    <h2 style="font-weight:600;font-size:clamp(24px,3.4vw,38px);line-height:1.05;letter-spacing:-.03em;color:#F2EDE3;max-width:24ch">Prompts-semente — cola e roda.</h2>
+    <p style="color:#B9B0A2;font-size:15px;max-width:66ch;margin-top:14px">Cada frente começa com o mesmo preâmbulo (harness) + o bloco específico. Enxutos de propósito: economizam token e garantem consistência.</p>
+
+    <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px;margin-top:26px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF5C3D;text-transform:uppercase">Preâmbulo · harness (todas as frentes)</div>
+      <pre style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.7;color:#F2EDE3;margin-top:12px;white-space:pre-wrap">Você é o Diretor Criativo da Feel. Leia, nesta ordem: DESIGN.md, CLAUDE.md,
+00-tese/Feel — Tese Estratégica.dc.html, e [DOC DE REFERÊNCIA DE ESTILO].
+Produza em Design Component (.dc.html), estilo inline, uma peça por arquivo.
+A marca revela, não grita — se dá pra remover 30% e melhorar, remova.
+Antes de entregar, rode O Teste (5 perguntas). Referencie os arquivos; não recopie.</pre>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:12px">
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5C3D">DECK INVESTIDOR · TIER A</div>
+        <pre style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;color:#F2EDE3;margin-top:10px;white-space:pre-wrap">[harness · ref: Deck Institucional]
+Construa "Feel - Deck Investidor.dc.html" com deck-stage,
+modo escuro. Arco: problema → categoria → moat →
+sequência de produto → PMF → tração/ask. Uma ideia por
+slide, número tabular, coral pela regra do anel.</pre>
+      </div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5C3D">PROPOSTA SHOPPING · TIER A</div>
+        <pre style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;color:#F2EDE3;margin-top:10px;white-space:pre-wrap">[harness · ref: FeelMakers — Espaço (Patteo)]
+Construa "Feel - Proposta Shopping.dc.html", modo claro.
+Narrativa: nova âncora de categoria, fluxo qualificado,
+modelo de ocupação, ativação da economia criativa local.
+Fecho com CTA de parceria.</pre>
+      </div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#17140F;background:#F2EDE3;border-radius:4px;padding:1px 6px;display:inline-block">ONE-PAGER · TIER B</div>
+        <pre style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;color:#F2EDE3;margin-top:10px;white-space:pre-wrap">[harness · ref: Análise/estratégia do público]
+Construa "Feel - One-pager [PÚBLICO].dc.html" com doc-page
+(1 página imprimível). Uma dor, uma promessa, três provas,
+um CTA. Varejo: "contrate quem tem prova".</pre>
+      </div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#17140F;background:#F2EDE3;border-radius:4px;padding:1px 6px;display:inline-block">TELA DE PRODUTO · TIER B</div>
+        <pre style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.7;color:#F2EDE3;margin-top:10px;white-space:pre-wrap">[harness · ref: Perfil FeelWorks + Wireframe]
+Construa a tela "[NOME]" do inventário, modo claro,
+componentes do Sistema. Estado padrão "em processo"
+(glass de descoberta). Reaproveite o padrão dos perfis.</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#FBF9F3"/><rect x="16" y="22" width="20" height="56" rx="3" fill="#F2EDE3" stroke="#17140F" stroke-width="2"/><rect x="40" y="22" width="20" height="56" rx="3" fill="#F2EDE3" stroke="#17140F" stroke-width="2"/><rect x="64" y="22" width="20" height="56" rx="3" fill="#FF5C3D"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

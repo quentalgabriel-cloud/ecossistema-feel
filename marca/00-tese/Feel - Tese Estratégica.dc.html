@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:#FBF9F3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:0 28px;height:60px;display:flex;align-items:center;gap:12px">
+    <img src="../assets/feel-mark.png" alt="Feel" style="width:26px;height:auto;flex:none">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.05">Tese Estratégica</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;color:#857C70;text-transform:uppercase;margin-top:1px">A tese de negócio · v1</div>
+    </div>
+    <div style="flex:1"></div>
+    <nav style="display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em">
+      <a href="#virada" style="padding:8px 9px;color:#857C70;white-space:nowrap">Virada</a>
+      <a href="#problema" style="padding:8px 9px;color:#857C70;white-space:nowrap">Problema</a>
+      <a href="#teste" style="padding:8px 9px;color:#857C70;white-space:nowrap">Teste</a>
+      <a href="#moat" style="padding:8px 9px;color:#857C70;white-space:nowrap">Moat</a>
+      <a href="#sequencia" style="padding:8px 9px;color:#857C70;white-space:nowrap">Sequência</a>
+      <a href="#pmf" style="padding:8px 9px;color:#857C70;white-space:nowrap">PMF</a>
+      <a href="#categoria" style="padding:8px 9px;color:#857C70;white-space:nowrap">Categoria</a>
+      <a href="#narrativas" style="padding:8px 9px;color:#857C70;white-space:nowrap">Narrativas</a>
+      <a href="#mapa" style="padding:8px 9px;color:#857C70;white-space:nowrap">Mapa</a>
+      <a href="#futuro" style="padding:8px 9px;color:#17140F;white-space:nowrap">Futuro</a>
+    </nav>
+  </div>
+</div>
+
+<!-- 00 A VIRADA -->
+<section id="virada" data-screen-label="00 A virada" style="scroll-margin-top:76px">
+  <div style="max-width:1080px;margin:0 auto;padding:96px 28px 48px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#FF5C3D;margin-bottom:22px">00 · A virada</div>
+    <h1 style="font-weight:600;font-size:clamp(34px,5.2vw,62px);line-height:1.0;letter-spacing:-.035em;max-width:19ch">A Feel não é uma plataforma de creator. É <em style="font-style:normal;color:#FF5C3D">infraestrutura de confiança.</em></h1>
+    <p style="color:#4A443C;font-size:17px;max-width:64ch;margin-top:26px">A hipótese amadureceu. Não é "mais uma plataforma para creators" — é a <b>camada de reputação, confiança e coordenação</b> de um mercado inteiro: varejo, profissionais da indústria criativa, creators e marcas. O espaço físico no shopping não é o produto; é o <b>catalisador</b> que dá liquidez e confiança iniciais a essa rede.</p>
+    <p style="color:#4A443C;font-size:17px;max-width:64ch;margin-top:14px">Coerente com o princípio-raiz: a Feel <b>revela</b> valor que já existe — não o cria. A reputação criativa já existe; o que falta é infraestrutura para torná-la <b>verificável, portável e contável</b>.</p>
+    <div style="border:1px solid #E3DCCE;border-radius:18px;background:#F7F2E9;padding:26px;margin-top:36px;max-width:64ch">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">A pergunta que orienta tudo</div>
+      <p style="font-weight:600;font-size:22px;letter-spacing:-.02em;margin-top:10px;line-height:1.2">"Se a Feel der muito certo, o que passa a existir no mercado que hoje simplesmente não existe?"</p>
+      <p style="font-size:14px;color:#4A443C;margin-top:10px">Resposta na seção <a href="#futuro">09</a>. Ela orienta produto, narrativa e roadmap melhor do que qualquer lista de features.</p>
+    </div>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:0 28px"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- 01 O PROBLEMA -->
+<section id="problema" data-screen-label="01 Problema" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">01 · O problema estrutural</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;max-width:22ch">Contratar criatividade é apostar às cegas.</h2>
+    <p style="color:#4A443C;font-size:16px;max-width:66ch;margin-top:16px">O mercado da comunicação e da influência funciona por indicação e círculo fechado. Não há como <b>provar competência</b> sem depender de quem te conhece — e não há como <b>contratar com confiança</b> sem correr risco. O valor real é invisível; a decisão é opaca dos dois lados.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:32px">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Quem mais sofre</div><p style="font-size:14px;color:#4A443C;margin-top:8px">O <b>profissional sem rede</b> (fotógrafo, filmmaker, designer, social, creator em ascensão) e o <b>varejista local</b> que precisa contratar e não sabe em quem confiar. Ambos pagam o custo da opacidade.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Por que segue sem solução</div><p style="font-size:14px;color:#4A443C;margin-top:8px">O mercado é <b>fragmentado</b> e a prova é <b>auto-declarada</b> (mediakit em PDF, print de depoimento). Ninguém <b>possui a camada de confiança</b>: redes sociais organizam audiência, freelancer sites organizam preço — nenhum organiza <b>reputação aplicada ao trabalho</b>.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">O custo econômico</div><p style="font-size:14px;color:#4A443C;margin-top:8px">É um problema de <b>custo de coordenação e assimetria de informação</b>: encontrar, avaliar e confiar custa caro demais. Reduzir esse custo é o gargalo que a Feel ataca.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 TESTE DA TESE (STRESS) -->
+<section id="teste" data-screen-label="02 Teste da tese" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE;background:#14110F">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">02 · O teste da tese</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;color:#F2EDE3;max-width:24ch">Antes de defender: tentar destruir.</h2>
+    <p style="color:#B9B0A2;font-size:15.5px;max-width:66ch;margin-top:16px">Uma tese só vale quando sobrevive à tentativa de derrubá-la. As premissas frágeis, os riscos ocultos — e o que fica de pé.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px">
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5C3D">RISCO 01 · LIQUIDEZ</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px">Rede de dois lados morre sem massa crítica. <b style="color:#fff">Mitigação:</b> o espaço físico e uma praça única (Recife/Patteo) criam densidade local antes de escalar — liquidez por geografia, não por marketing nacional.</p></div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5C3D">RISCO 02 · PROVA FALSÁVEL</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px">Se a reputação for auto-declarada, vira mais um mediakit. <b style="color:#fff">Mitigação:</b> dupla assinatura (marca co-assina) + dados na fonte (OAuth carimbado). Sem isso, não há tese.</p></div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5C3D">RISCO 03 · DESINTERMEDIAÇÃO</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px">Fechado o 1º trabalho, as partes saem da plataforma. <b style="color:#fff">Mitigação:</b> o valor está no <b>acúmulo</b> — o lastro só cresce dentro da Feel; sair é perder o histórico verificável.</p></div>
+      <div style="border:1px solid #322B24;border-radius:14px;background:#1D1915;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FF5C3D">RISCO 04 · CATEGORIA CONFUSA</div><p style="font-size:14px;color:#F2EDE3;margin-top:8px">"Hub", "marketplace", "clube" — cada rótulo atrai o concorrente errado. <b style="color:#fff">Mitigação:</b> nomear e possuir a categoria (seção <a href="#categoria" style="color:#FF5C3D">06</a>).</p></div>
+    </div>
+    <div style="border-left:2px solid #FF5C3D;padding:6px 0 6px 18px;margin-top:28px;max-width:70ch"><p style="font-size:15px;color:#F2EDE3">O que sobrevive ao teste: <b>a camada de confiança verificável + o catalisador físico</b>. O que deve ser abandonado por ora: virar inbox/CRM, IA de conteúdo e ambição nacional precoce (seção <a href="#sequencia" style="color:#FF5C3D">04</a>).</p></div>
+  </div>
+</section>
+
+<!-- 03 MOAT -->
+<section id="moat" data-screen-label="03 Moat" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">03 · Os ativos difíceis de copiar</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;max-width:22ch">O que sobra quando copiam a ideia.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:32px">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-weight:600;font-size:17px">O catalisador físico</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Um endereço no shopping gera confiança e densidade local que nenhum concorrente puramente digital replica. Presença é moat.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-weight:600;font-size:17px">O lastro acumulado</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Rastro verificável que só engorda com o tempo e é portável para o profissional. Quanto maior, mais caro de reconstruir em outro lugar.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-weight:600;font-size:17px">A prova co-assinada</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Reputação testemunhada pela marca, não alegada. O dado de confiança é proprietário e cresce por transação.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:22px"><div style="font-weight:600;font-size:17px">A rede coordenada</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Efeitos de rede locais: cada pro, varejista e marca a mais torna o match melhor. Densidade por praça vira barreira.</p></div>
+    </div>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:36px 28px 0"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- 04 SEQUÊNCIA -->
+<section id="sequencia" data-screen-label="04 Sequência" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">04 · A sequência</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;max-width:24ch">Primeiro a confiança. Depois a coordenação.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:32px">
+      <div style="border:1.5px solid #17140F;border-radius:16px;background:#FBF9F3;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF5C3D">1º PRODUTO</div><div style="font-weight:600;font-size:19px;margin-top:8px;letter-spacing:-.01em">O perfil verificável</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">A camada de confiança: lastro + prova de dupla assinatura + dados na fonte. Wedge por praça, ativado pelo espaço físico. É o FeelWorks (Fase A).</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">2º PRODUTO</div><div style="font-weight:600;font-size:19px;margin-top:8px;letter-spacing:-.01em">A coordenação</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Matching varejo↔profissional sobre a confiança já estabelecida: oportunidades, tickets, contratação de baixo risco. Só depois que o lastro tem massa.</p></div>
+      <div style="border:1px dashed #C9BFAC;border-radius:16px;background:transparent;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">NÃO CONSTRUIR AGORA</div><p style="font-size:13.5px;color:#4A443C;margin-top:12px">Inbox/CRM de e-mail, IA de conteúdo, automação pesada, marketplace nacional e monetização precoce. Cada um dilui o foco na camada de confiança. Ficam para depois do PMF.</p></div>
+    </div>
+    <p style="font-size:13px;color:#857C70;margin-top:20px">Detalhe operacional do produto no <a href="../02-feelworks/Feel - FeelWorks — Estratégia & Definições.dc.html">FeelWorks · Estratégia</a>. Ativação física no <a href="../03-feelmakers/Feel - FeelMakers — Espaço (Patteo).dc.html">FeelMakers</a>.</p>
+  </div>
+</section>
+
+<!-- 05 PMF -->
+<section id="pmf" data-screen-label="05 PMF" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">05 · Sinais de Product-Market Fit</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;max-width:22ch">O que provaria que funciona.</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:32px">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:20px"><div style="font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">% perfis</div><p style="font-size:13px;color:#4A443C;margin-top:6px">com ≥ 1 prova de dupla assinatura — a métrica que separa vitrine de infraestrutura.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:20px"><div style="font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">recorrência</div><p style="font-size:13px;color:#4A443C;margin-top:6px">varejo→profissional: quem contrata uma vez volta a contratar pela Feel.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:20px"><div style="font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">tempo até</div><p style="font-size:13px;color:#4A443C;margin-top:6px">a 1ª contratação de um profissional novo — velocidade de confiança.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:20px"><div style="font-weight:600;font-size:26px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">densidade</div><p style="font-size:13px;color:#4A443C;margin-top:6px">de rede por praça — nº de pros/varejistas/marcas ativos no mesmo raio.</p></div>
+    </div>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:36px 28px 0"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- 06 CATEGORIA -->
+<section id="categoria" data-screen-label="06 Categoria" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">06 · A categoria</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;max-width:26ch">Não competir numa categoria. Criar uma.</h2>
+    <p style="color:#4A443C;font-size:16px;max-width:66ch;margin-top:16px">Se a Feel se chamar "plataforma de creator", compete com TikTok. "Agência", com agências. "Marketplace", com Fiverr. Todas guerras de preço e alcance. A saída é nomear e possuir um espaço vazio:</p>
+    <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:28px;margin-top:24px;max-width:70ch">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">A categoria Feel</div>
+      <p style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:10px;line-height:1.2">Infraestrutura de reputação verificável para a economia criativa.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">CATEGORY DESIGN</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Nomear o problema (a reputação não-verificável) é possuir a resposta. Quem cria a categoria define as regras.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">JOBS TO BE DONE</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Dois jobs: "prove que sou confiável sem depender de indicação" e "encontre alguém em quem eu possa confiar".</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:20px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">BLUE OCEAN</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Sai da disputa por preço e alcance para um eixo novo: <b>confiança verificável</b> — onde ninguém compete ainda.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 NARRATIVAS -->
+<section id="narrativas" data-screen-label="07 Narrativas" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">07 · As narrativas</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;max-width:24ch">Uma tese. Cinco públicos. Cinco frases.</h2>
+    <div style="display:flex;flex-direction:column;gap:2px;margin-top:28px;border-top:1px solid #E3DCCE">
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#FF5C3D">SHOPPING</div><p style="font-size:15px;color:#4A443C">Não é mais uma loja — é uma <b>âncora de nova categoria</b> que ativa a economia criativa local e traz fluxo qualificado que o mall não consegue gerar sozinho.</p></div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#857C70">INVESTIDOR</div><p style="font-size:15px;color:#4A443C">A <b>camada de confiança</b> de um mercado grande, fragmentado e sem infraestrutura — com moat físico, dado verificável proprietário e efeitos de rede locais.</p></div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#857C70">CREATOR</div><p style="font-size:15px;color:#4A443C">Sua reputação vira um <b>rastro contável</b> que você leva com você — não um mediakit que envelhece.</p></div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#857C70">PROFISSIONAL CRIATIVO</div><p style="font-size:15px;color:#4A443C">Prove competência <b>sem depender de indicação</b>. O trabalho fala, e fica registrado.</p></div>
+      <div style="display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #E3DCCE"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#857C70">VAREJO LOCAL</div><p style="font-size:15px;color:#4A443C">Contrate quem tem <b>prova</b>, não quem tem lábia. Reduza o risco de cada real investido em comunicação.</p></div>
+    </div>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:36px 28px 0"><canvas data-fio="divider" style="width:100%;height:40px;display:block"></canvas></div>
+</section>
+
+<!-- 08 MAPA DO SISTEMA -->
+<section id="mapa" data-screen-label="08 Mapa do sistema" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE;background:#F7F2E9">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 56px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">08 · O mapa do sistema</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;max-width:24ch">Como a confiança circula.</h2>
+    <p style="color:#4A443C;font-size:15.5px;max-width:64ch;margin-top:16px">A reputação sobe da oferta; a confiança e a oportunidade descem para a demanda; as provas circulam e se acumulam. O espaço físico é o catalisador que dá a partida.</p>
+    <div style="display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:14px;margin-top:32px;align-items:stretch">
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Oferta</div><div style="font-weight:600;font-size:16px;margin-top:8px">Profissionais &amp; creators</div><p style="font-size:13px;color:#4A443C;margin-top:8px">Fotógrafos, filmmakers, designers, social, estrategistas, creators. Geram <b>reputação</b>.</p></div>
+      <div style="border:1.5px solid #17140F;border-radius:16px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF5C3D;text-transform:uppercase">Feel · camada de confiança</div><div style="font-weight:600;font-size:16px;margin-top:8px">Prova · lastro · coordenação</div><p style="font-size:13px;color:#4A443C;margin-top:8px">Verifica, carimba, acumula e conecta. Transforma reputação em <b>confiança contável</b>.</p></div>
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:22px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Demanda</div><div style="font-weight:600;font-size:16px;margin-top:8px">Varejo &amp; marcas</div><p style="font-size:13px;color:#4A443C;margin-top:8px">Contratam com <b>risco reduzido</b>. Devolvem provas co-assinadas ao sistema.</p></div>
+    </div>
+    <div style="border:1px dashed #C9BFAC;border-radius:14px;background:transparent;padding:18px 22px;margin-top:14px;text-align:center"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Catalisador físico · o espaço no shopping (FeelMakers) dá liquidez e confiança iniciais</span></div>
+  </div>
+</section>
+
+<!-- 09 FUTURO -->
+<section id="futuro" data-screen-label="09 Se der certo" style="scroll-margin-top:76px;border-top:1px solid #E3DCCE;background:#14110F">
+  <div style="max-width:1080px;margin:0 auto;padding:80px 28px 64px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D;margin-bottom:14px">09 · Se a Feel der muito certo</div>
+    <h2 style="font-weight:600;font-size:clamp(26px,3.6vw,40px);line-height:1.05;letter-spacing:-.03em;color:#F2EDE3;max-width:22ch">O que passa a existir que hoje não existe.</h2>
+    <p style="color:#F2EDE3;font-size:18px;max-width:64ch;margin-top:20px">Um <b>registro público e verificável de reputação profissional criativa</b> — um lastro portável que hoje simplesmente não existe. Contratar deixa de depender de quem você conhece. A confiança vira <b>infraestrutura</b>, não sorte.</p>
+    <p style="color:#B9B0A2;font-size:15px;max-width:64ch;margin-top:14px">É essa transformação — não a soma de features — que orienta o produto, o posicionamento e a narrativa. Tudo o mais deriva daqui.</p>
+    <canvas data-fio="assinatura" style="width:100%;height:80px;display:block;margin-top:36px"></canvas>
+    <div style="margin-top:20px;display:flex;align-items:center;gap:16px;border-top:1px solid #322B24;padding-top:24px">
+      <img src="../assets/feel-wordmark-bone.png" alt="Feel" style="width:82px;height:auto;opacity:.95">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">TESE ESTRATÉGICA · V1 · SEGUE A FEEL</span>
+    </div>
+  </div>
+</section>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#14110F"/><circle cx="50" cy="50" r="15" fill="none" stroke="#FF5C3D" stroke-width="3"/><circle cx="20" cy="30" r="5" fill="#F2EDE3"/><circle cx="80" cy="30" r="5" fill="#F2EDE3"/><circle cx="20" cy="72" r="5" fill="#F2EDE3"/><circle cx="80" cy="72" r="5" fill="#F2EDE3"/><path d="M25 32 L40 46 M75 32 L60 46 M25 70 L40 54 M75 70 L60 54" stroke="#857C70" stroke-width="2"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;espessuraDoFio&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:3.5,&quot;min&quot;:1.5,&quot;max&quot;:7,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;O fio&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._raf = requestAnimationFrame(() => this.drawAll());
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(() => this.drawAll(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentDidUpdate() { this.drawAll(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+  lw() { return this.props.espessuraDoFio ?? 3.5; }
+
+  setup(c) {
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 2;
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+  drawAll() {
+    document.querySelectorAll('canvas[data-fio]').forEach((c) => {
+      const kind = c.getAttribute('data-fio');
+      const s = this.setup(c); if (!s) return;
+      const { ctx, w, h } = s; ctx.clearRect(0, 0, w, h);
+      if (kind === 'divider') this.drawDivider(ctx, w, h);
+      else if (kind === 'assinatura') this.drawSig(ctx, w, h);
+    });
+  }
+  drawDivider(ctx, w, h) {
+    const b = 1.5;
+    const pts = this.cycloidPts(-6.5, 2 * Math.PI + 6.5, b, 260);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = Math.max(1.5, this.lw() * 0.55);
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = nx * w;
+      const damp = Math.exp(-Math.pow((nx - 0.5) / 0.1, 2));
+      const py = h * 0.5 + (y / b) * h * 0.42 * damp;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+  }
+  drawSig(ctx, w, h) {
+    const b = 1.6;
+    const pts = this.cycloidPts(-2.6, 2 * Math.PI + 2.6, b, 160);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = this.lw();
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = 14 + nx * (w - 28);
+      const py = h * 0.55 + (y / b) * h * 0.24 - nx * h * 0.12;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

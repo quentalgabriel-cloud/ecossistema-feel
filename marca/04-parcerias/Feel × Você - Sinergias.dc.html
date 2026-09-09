@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{margin:0;background:#FBF9F3;font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="background:#FBF9F3;color:#17140F;width:100%;overflow-x:hidden">
+
+  <!-- ================= CAPA ================= -->
+  <section style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden">
+    <canvas data-draw="capa-topo" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.6"></canvas>
+    <div style="position:relative;max-width:1120px;margin:0 auto;padding:0 48px;width:100%">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#857C70;margin-bottom:56px">Feel · conversa de parceria · Jul 2026</div>
+      <h1 style="font-weight:600;font-size:88px;line-height:.98;letter-spacing:-.04em;max-width:16ch">Onde a Você move,<br>a Feel <em style="font-style:normal;color:#FF5C3D">revela</em>.</h1>
+      <p style="font-size:21px;line-height:1.55;color:#4A443C;max-width:52ch;margin-top:40px">A Você e a Afilio constroem a venda do creator — a loja, o catálogo, o link, a comissão. A Feel constrói o lastro dele: a reputação como prova contável. Este é o mapa dos pontos onde os dois fios se cruzam.</p>
+      <div style="display:flex;gap:44px;margin-top:64px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#857C70">
+        <span>Para <span style="color:#17140F">Aline</span> · Plataforma Você / Afilio</span>
+        <span>De <span style="color:#17140F">Feel</span> · economia criativa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 01 · AS TRÊS PEÇAS ================= -->
+  <section style="border-top:1px solid #E3DCCE;padding:88px 0">
+    <div style="max-width:1120px;margin:0 auto;padding:0 48px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#857C70">01 · o ponto de partida</div>
+      <h2 style="font-weight:600;font-size:42px;line-height:1.05;letter-spacing:-.03em;max-width:20ch;margin-top:24px">Três peças que já falam a mesma língua: o creator que monetiza.</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px">
+        <!-- Afilio -->
+        <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:32px;display:flex;flex-direction:column">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Afilio</div>
+          <div style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:14px">A rede</div>
+          <p style="font-size:15px;line-height:1.55;color:#4A443C;margin-top:14px">18 anos de marketing de performance. Grandes anunciantes conectados à maior rede de afiliados da América Latina — só se paga por resultado.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:24px">
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">Anunciantes</span><span>+200</span></div>
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">Afiliados</span><span>+100 mil</span></div>
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">Marcas</span><span>Nespresso · LATAM · Uber</span></div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#857C70;margin-top:24px;border-top:1px dashed #C9BFAC;padding-top:16px">o inventário e a régua</div>
+        </div>
+        <!-- Você -->
+        <div style="border:1px solid #E3DCCE;border-radius:18px;background:#F7F2E9;padding:32px;display:flex;flex-direction:column">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Você</div>
+          <div style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:14px">A loja do creator</div>
+          <p style="font-size:15px;line-height:1.55;color:#4A443C;margin-top:14px">Loja online grátis e personalizada, com produtos de grandes marcas. O creator revende, ganha comissão por venda e não se preocupa com estoque, entrega ou pagamento.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:24px">
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">Produtos</span><span>+30 mil</span></div>
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">Custo p/ creator</span><span>R$ 0</span></div>
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">Monetização</span><span>direta, sem cookie</span></div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#857C70;margin-top:24px;border-top:1px dashed #C9BFAC;padding-top:16px">o ponto de venda e o link</div>
+        </div>
+        <!-- Feel -->
+        <div style="border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:32px;display:flex;flex-direction:column">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#FF5C3D">Feel</div>
+          <div style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:14px">O lastro</div>
+          <p style="font-size:15px;line-height:1.55;color:#4A443C;margin-top:14px">A infraestrutura de reputação da economia criativa. A Feel não cria valor — revela. Cada obra e cada venda deixa um rastro, e a Feel torna esse rastro prova contável.</p>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:24px">
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">FeelWorks</span><span>perfil · reputação</span></div>
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">FeelMakers</span><span>palco físico</span></div>
+            <div style="display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:12px;font-variant-numeric:tabular-nums;color:#17140F"><span style="color:#857C70">Prova</span><span>rastro, não print</span></div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#857C70;margin-top:24px;border-top:1px dashed #C9BFAC;padding-top:16px">a reputação e a relação</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 02 · A TESE ================= -->
+  <section style="border-top:1px solid #E3DCCE;padding:88px 0;background:#F7F2E9">
+    <div style="max-width:1120px;margin:0 auto;padding:0 48px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#857C70">02 · a tese de conexão</div>
+      <h2 style="font-weight:600;font-size:52px;line-height:1.02;letter-spacing:-.03em;max-width:20ch;margin-top:24px">Vocês já geram o rastro.<br>Ele só não está sendo contado como <em style="font-style:normal;color:#FF5C3D">prova</em>.</h2>
+      <p style="font-size:19px;line-height:1.6;color:#4A443C;max-width:56ch;margin-top:32px">Cada venda assinada na Você, cada campanha rodada na Afilio, cada link que converteu — é matéria-prima de reputação. Hoje isso vive em dashboard. A Feel transforma esse histórico em lastro: um perfil que prova o que o creator entregou, para a próxima marca ver antes de fechar.</p>
+      <div style="position:relative;height:150px;margin-top:44px"><canvas data-draw="tese-fio" style="position:absolute;inset:0;width:100%;height:100%"></canvas></div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#857C70">
+        <span>venda</span><span style="color:#C9BFAC">→</span><span>rastro</span><span style="color:#C9BFAC">→</span><span>prova</span><span style="color:#C9BFAC">→</span><span>próxima marca</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 03 · ONDE OS FIOS SE CRUZAM ================= -->
+  <section style="border-top:1px solid #E3DCCE;padding:88px 0">
+    <div style="max-width:1120px;margin:0 auto;padding:0 48px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#857C70">03 · onde os fios se cruzam</div>
+      <h2 style="font-weight:600;font-size:42px;line-height:1.05;letter-spacing:-.03em;max-width:22ch;margin-top:24px">Quatro pontos de conexão concretos.</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px">
+        <div style="border:1px solid #E3DCCE;border-radius:18px;padding:36px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#857C70">01</div>
+          <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:16px">O público é o mesmo</div>
+          <p style="font-size:16px;line-height:1.6;color:#4A443C;margin-top:14px">Creators que querem monetizar. A Você resolve <em style="font-style:normal;color:#17140F">o que vender</em>; a Feel resolve <em style="font-style:normal;color:#17140F">quem é esse creator</em>. Um dá catálogo, o outro dá diferenciação. Nenhum dos dois compete pelo mesmo espaço.</p>
+        </div>
+        <div style="border:1px solid #E3DCCE;border-radius:18px;padding:36px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#857C70">02</div>
+          <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:16px">A venda vira prova</div>
+          <p style="font-size:16px;line-height:1.6;color:#4A443C;margin-top:14px">Cada venda na Você/Afilio pode alimentar uma prova no perfil Feel do creator — lastro real, não print de tela. Resolve a Feel (precisa de dado de performance) e a Você (creator quer se destacar).</p>
+        </div>
+        <div style="border:1px solid #E3DCCE;border-radius:18px;padding:36px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#857C70">03</div>
+          <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:16px">Marca ↔ creator, com curadoria</div>
+          <p style="font-size:16px;line-height:1.6;color:#4A443C;margin-top:14px">A Afilio traz +200 anunciantes e a régua de performance. A Feel traz relação e curadoria. O assessor FeelWorks conversa direto com o gestor de afiliados — inventário de marca somado a reputação de creator.</p>
+        </div>
+        <div style="border:1px solid #E3DCCE;border-radius:18px;padding:36px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;color:#857C70">04</div>
+          <div style="font-weight:600;font-size:24px;letter-spacing:-.02em;margin-top:16px">Do link ao palco</div>
+          <p style="font-size:16px;line-height:1.6;color:#4A443C;margin-top:14px">FeelMakers, a ativação física da Feel, pode ser ativação da comunidade de creators da Você — do online ao offline. É exatamente o discurso da própria Afilio: performance em todas as fases, do digital ao PDV.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 04 · POSSIBILIDADES ================= -->
+  <section style="border-top:1px solid #E3DCCE;padding:88px 0;background:#F7F2E9">
+    <div style="max-width:1120px;margin:0 auto;padding:0 48px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#857C70">04 · três possibilidades para explorar</div>
+      <h2 style="font-weight:600;font-size:42px;line-height:1.05;letter-spacing:-.03em;max-width:22ch;margin-top:24px">Formatos, não decisões — pontos de partida para a conversa.</h2>
+
+      <div style="display:flex;flex-direction:column;gap:16px;margin-top:56px">
+        <div style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:baseline;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:36px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:500;color:#857C70;letter-spacing:-.02em">A</div>
+          <div>
+            <div style="font-weight:600;font-size:24px;letter-spacing:-.02em">Integração de dado</div>
+            <p style="font-size:16px;line-height:1.6;color:#4A443C;margin-top:12px;max-width:64ch">O feed de vendas e comissões da Você abastece as provas do perfil Feel. O creator não digita nada — o rastro se preenche sozinho a cada venda.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:baseline;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:36px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:500;color:#857C70;letter-spacing:-.02em">B</div>
+          <div>
+            <div style="font-weight:600;font-size:24px;letter-spacing:-.02em">Camada de reputação</div>
+            <p style="font-size:16px;line-height:1.6;color:#4A443C;margin-top:12px;max-width:64ch">O perfil Feel como selo dentro da loja Você — ou a loja Você como prova dentro do perfil Feel. Uma superfície de confiança que a marca consulta antes de ativar o creator.</p>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:80px 1fr;gap:28px;align-items:baseline;border:1px solid #E3DCCE;border-radius:18px;background:#FBF9F3;padding:36px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:34px;font-weight:500;color:#857C70;letter-spacing:-.02em">C</div>
+          <div>
+            <div style="font-weight:600;font-size:24px;letter-spacing:-.02em">Co-ativação</div>
+            <p style="font-size:16px;line-height:1.6;color:#4A443C;margin-top:12px;max-width:64ch">FeelMakers com a comunidade de creators da Você, e marcas da Afilio no palco. Um encontro físico que gera conteúdo, venda e prova ao mesmo tempo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 05 · PARA A CONVERSA ================= -->
+  <section style="border-top:1px solid #322B24;padding:96px 0;background:#1D1915;color:#F2EDE3">
+    <div style="max-width:1120px;margin:0 auto;padding:0 48px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#FF5C3D">05 · para a conversa</div>
+      <h2 style="font-weight:600;font-size:48px;line-height:1.02;letter-spacing:-.03em;max-width:20ch;margin-top:24px;color:#F2EDE3">O que eu queria ouvir da Aline.</h2>
+      <div style="display:flex;flex-direction:column;gap:0;margin-top:48px;max-width:80ch">
+        <div style="display:flex;gap:24px;padding:24px 0;border-top:1px solid #322B24">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B9B0A2;padding-top:4px">01</span>
+          <p style="font-size:21px;line-height:1.5;color:#F2EDE3">Onde está o maior gargalo hoje: atrair creator, reter, ou diferenciar quem já está na plataforma?</p>
+        </div>
+        <div style="display:flex;gap:24px;padding:24px 0;border-top:1px solid #322B24">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B9B0A2;padding-top:4px">02</span>
+          <p style="font-size:21px;line-height:1.5;color:#F2EDE3">O que a Você já mede que poderia virar prova de reputação para o creator?</p>
+        </div>
+        <div style="display:flex;gap:24px;padding:24px 0;border-top:1px solid #322B24;border-bottom:1px solid #322B24">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B9B0A2;padding-top:4px">03</span>
+          <p style="font-size:21px;line-height:1.5;color:#F2EDE3">Existe abertura para um piloto com um recorte pequeno de creators?</p>
+        </div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.2em;color:#857C70;margin-top:64px">SEGUE O FIO</div>
+    </div>
+  </section>
+
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#FBF9F3"></rect><rect x="16" y="28" width="40" height="8" rx="2" fill="#17140F"></rect><rect x="16" y="42" width="26" height="5" rx="2" fill="#857C70"></rect><path d="M16 68 q8 -18 16 0 q8 -18 16 0 q6 10 14 -4" fill="none" stroke="#FF5C3D" stroke-width="4" stroke-linecap="round"></path></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._draw = () => this.drawAll();
+    this._raf = requestAnimationFrame(this._draw);
+    this._t = setInterval(this._draw, 500);
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(this._draw, 150); };
+    window.addEventListener('resize', this._onResize);
+    setTimeout(() => { clearInterval(this._t); this._t = setInterval(this._draw, 1500); }, 4000);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearInterval(this._t); clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  setup(c) {
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 1.5;
+    if (c.width !== Math.round(r.width * dpr)) { c.width = r.width * dpr; c.height = r.height * dpr; }
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, r.width, r.height);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-draw]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      const kind = c.getAttribute('data-draw');
+      if (kind === 'capa-topo') this.drawTopo(s.ctx, s.w, s.h);
+      else if (kind === 'tese-fio') this.drawFio(s.ctx, s.w, s.h);
+    });
+  }
+
+  // Topografia neutra (sem coral — o coral da capa é a palavra "revela")
+  drawTopo(ctx, w, h) {
+    const lines = 7;
+    for (let k = 0; k < lines; k++) {
+      ctx.strokeStyle = 'rgba(133,124,112,.16)';
+      ctx.lineWidth = 1.4;
+      const baseY = h * (0.12 + (0.76 * k) / (lines - 1));
+      ctx.beginPath();
+      for (let x = -10; x <= w + 10; x += 8) {
+        const y = baseY + Math.sin(x / 220 + k * 1.6) * 26 + Math.sin(x / 90 + k * 3) * 11;
+        if (x <= -10) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  }
+
+  // Fio assinatura — o único coral da seção da tese; não fecha, sai do quadro
+  drawFio(ctx, w, h) {
+    const b = 1.5;
+    const pts = this.cycloidPts(-3, 2 * Math.PI + 3, b, 220);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const proj = (x, y) => {
+      const nx = (x - minX) / (maxX - minX);
+      return [6 + nx * (w - 12), h * 0.5 + (y / b) * h * 0.30 - nx * h * 0.10];
+    };
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = 3.4;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => { const [px, py] = proj(x, y); if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py); });
+    ctx.stroke();
+    [0.14, 0.5, 0.86].forEach((f) => {
+      const [x, y] = pts[Math.floor(f * pts.length)];
+      const [px, py] = proj(x, y);
+      ctx.fillStyle = '#FF5C3D';
+      ctx.beginPath(); ctx.arc(px, py, 5.5, 0, Math.PI * 2); ctx.fill();
+    });
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

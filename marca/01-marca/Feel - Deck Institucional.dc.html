@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{margin:0;background:#0F0D0B;font-family:'Archivo',system-ui,sans-serif}
+  a{color:#FF5C3D}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <!-- 01 CAPA -->
+  <section data-label="Capa" data-speaker-notes="Abrir devagar. A Feel não cria valor — revela. Esta é a única frase que precisa ficar." style="position:relative;width:100%;height:100%;background:#FBF9F3;overflow:hidden;padding:120px 130px;display:flex;flex-direction:column;justify-content:center">
+    <canvas data-draw="capa-topo" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.5"></canvas>
+    <div style="position:relative">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:.34em;text-transform:uppercase;color:#FF5C3D;margin-bottom:44px">Feel · infraestrutura da economia criativa</div>
+      <h1 style="font-weight:600;font-size:150px;line-height:.9;letter-spacing:-.04em;color:#17140F;max-width:15ch">A Feel não cria valor.<br><em style="font-style:normal;color:#FF5C3D">Ela revela.</em></h1>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.16em;color:#857C70;margin-top:56px">DECK INSTITUCIONAL · 2026</div>
+    </div>
+  </section>
+
+  <!-- 02 O PROBLEMA -->
+  <section data-label="O problema" data-speaker-notes="O mercado criativo funciona por indicação e círculo fechado. O valor real é invisível." style="position:relative;width:100%;height:100%;background:#FBF9F3;padding:120px 130px;display:grid;grid-template-columns:5fr 8fr;gap:80px;align-items:center">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.24em;text-transform:uppercase;color:#857C70">01 · o problema</div>
+      <div style="width:64px;height:3px;background:#17140F;margin-top:28px"></div>
+    </div>
+    <div>
+      <h2 style="font-weight:600;font-size:82px;line-height:1.02;letter-spacing:-.03em;color:#17140F;max-width:20ch">O talento existe. A prova dele, não.</h2>
+      <p style="font-size:30px;line-height:1.5;color:#4A443C;max-width:34ch;margin-top:40px">A economia criativa ainda roda em indicação, círculo fechado e reputação informal. O crescimento é lento, a contratação é ineficiente, e o <b style="color:#17140F">valor real do profissional permanece invisível</b>.</p>
+    </div>
+  </section>
+
+  <!-- 03 A TESE -->
+  <section data-label="A tese" data-speaker-notes="Não vendemos emoção. Criamos condições para o valor ser percebido, organizado e potencializado." style="position:relative;width:100%;height:100%;background:#F7F2E9;padding:120px 130px;display:flex;flex-direction:column;justify-content:center;overflow:hidden">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.24em;text-transform:uppercase;color:#857C70;margin-bottom:40px">02 · a tese</div>
+    <h2 style="font-weight:600;font-size:92px;line-height:1.0;letter-spacing:-.035em;color:#17140F;max-width:20ch">Tornar o valor criativo <em style="font-style:normal;color:#FF5C3D">visível, confiável e acessível.</em></h2>
+    <div style="display:flex;gap:70px;margin-top:70px">
+      <div style="max-width:24ch"><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Visível</div><p style="font-size:24px;color:#4A443C;margin-top:12px">A trajetória deixa de ser boato e vira rastro.</p></div>
+      <div style="max-width:24ch"><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Confiável</div><p style="font-size:24px;color:#4A443C;margin-top:12px">Cada prova é assinada pelas duas pontas.</p></div>
+      <div style="max-width:24ch"><div style="font-family:'IBM Plex Mono',monospace;font-size:17px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Acessível</div><p style="font-size:24px;color:#4A443C;margin-top:12px">A oportunidade chega a quem tem lastro, não a quem tem alcance.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 O COMO / O FIO -->
+  <section data-label="Reputação é rastro" data-speaker-notes="O fio é a mecânica: reputação não é currículo, é rastro contável de provas." style="position:relative;width:100%;height:100%;background:#FBF9F3;padding:120px 130px;display:grid;grid-template-columns:8fr 5fr;gap:80px;align-items:center;overflow:hidden">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.24em;text-transform:uppercase;color:#857C70">03 · o mecanismo</div>
+      <h2 style="font-weight:600;font-size:82px;line-height:1.02;letter-spacing:-.03em;color:#17140F;max-width:16ch;margin-top:28px">A reputação é um <em style="font-style:normal;color:#FF5C3D">fio</em>, não um currículo.</h2>
+      <p style="font-size:28px;line-height:1.5;color:#4A443C;max-width:38ch;margin-top:36px">Cada projeto, cliente e obra deixa um rastro. A Feel torna esse rastro contável — e quando dois fios se cruzam, nasce uma oportunidade real.</p>
+      <div style="position:relative;height:180px;margin-top:20px"><canvas data-draw="deck-fio" style="position:absolute;inset:0;width:100%;height:100%"></canvas></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div><div style="font-weight:600;font-size:96px;letter-spacing:-.03em;color:#17140F;font-variant-numeric:tabular-nums">34</div><div style="font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:.12em;color:#857C70">PROVAS ASSINADAS</div></div>
+      <div><div style="font-weight:600;font-size:96px;letter-spacing:-.03em;color:#17140F;font-variant-numeric:tabular-nums">08</div><div style="font-family:'IBM Plex Mono',monospace;font-size:18px;letter-spacing:.12em;color:#857C70">OBRAS PUBLICADAS</div></div>
+    </div>
+  </section>
+
+  <!-- 05 ARQUITETURA -->
+  <section data-label="Arquitetura" data-speaker-notes="Casa de marca, não casa de marcas. Feel + ofício. Works é o digital, Makers é o físico." style="position:relative;width:100%;height:100%;background:#F7F2E9;padding:120px 130px;display:flex;flex-direction:column;justify-content:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.24em;text-transform:uppercase;color:#857C70;margin-bottom:36px">04 · arquitetura de marca</div>
+    <h2 style="font-weight:600;font-size:82px;line-height:1.0;letter-spacing:-.03em;color:#17140F;max-width:22ch">Uma marca-mãe. Braços que herdam a confiança.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:64px">
+      <div style="border:1px solid #E3DCCE;border-radius:20px;background:#FBF9F3;padding:44px">
+        <div style="font-weight:600;font-size:46px;letter-spacing:-.02em;color:#17140F">Feel<span style="color:#857C70">Works</span></div>
+        <p style="font-size:22px;color:#4A443C;margin-top:18px">A infraestrutura de reputação. Digital, dado, precisão. Modo claro.</p>
+      </div>
+      <div style="border:1px solid rgba(240,166,59,.5);border-radius:20px;background:#FBF9F3;padding:44px">
+        <div style="font-weight:600;font-size:46px;letter-spacing:-.02em;color:#17140F">Feel<span style="color:#F0A63B">Makers</span></div>
+        <p style="font-size:22px;color:#4A443C;margin-top:18px">O palco físico nos shoppings. Cena, calor, pertencimento. Modo escuro.</p>
+      </div>
+      <div style="border:1px dashed #C9BFAC;border-radius:20px;background:transparent;padding:44px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-weight:600;font-size:46px;letter-spacing:-.02em;color:#857C70">Feel<span style="color:#C9BFAC">___</span></div>
+        <p style="font-size:22px;color:#857C70;margin-top:18px">O slot está pronto. Um braço novo é só um descritor novo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 VISÃO 2040 (fecho ink / palco) -->
+  <section data-label="Visão 2040" data-speaker-notes="Fechar no escuro, como palco. A pergunta: parecer inevitável em 2040. Segue a Feel." style="position:relative;width:100%;height:100%;background:#14110F;padding:120px 130px;display:flex;flex-direction:column;justify-content:center;overflow:hidden">
+    <canvas data-draw="fecho-topo" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55"></canvas>
+    <div style="position:relative">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:20px;letter-spacing:.28em;text-transform:uppercase;color:#FF5C3D;margin-bottom:44px">05 · a visão</div>
+      <h2 style="font-weight:600;font-size:104px;line-height:.98;letter-spacing:-.035em;color:#F2EDE3;max-width:18ch">A infraestrutura da economia criativa brasileira.</h2>
+      <p style="font-size:30px;line-height:1.5;color:#B9B0A2;max-width:40ch;margin-top:44px">Se alguém olhar qualquer ponto de contato e disser "isso só pode ser da Feel" — sem ver o logotipo — chegamos lá.</p>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;letter-spacing:.2em;color:#857C70;margin-top:64px">SEGUE A FEEL · SEGUE O FIO</div>
+    </div>
+  </section>
+
+</x-import>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#FBF9F3"/><rect x="18" y="30" width="46" height="9" rx="2" fill="#17140F"/><rect x="18" y="46" width="30" height="6" rx="2" fill="#857C70"/><path d="M18 66 q7 -16 14 0 q7 -16 14 0 q5 9 12 -3" fill="none" stroke="#FF5C3D" stroke-width="4" stroke-linecap="round"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._draw = () => this.drawAll();
+    this._raf = requestAnimationFrame(this._draw);
+    this._t = setInterval(this._draw, 400); // catch slide changes / late layout
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(this._draw, 150); };
+    window.addEventListener('resize', this._onResize);
+    setTimeout(() => { clearInterval(this._t); this._t = setInterval(this._draw, 1200); }, 4000);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearInterval(this._t); clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  setup(c) {
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 1.5;
+    if (c.width !== Math.round(r.width * dpr)) { c.width = r.width * dpr; c.height = r.height * dpr; }
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, r.width, r.height);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-draw]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      const kind = c.getAttribute('data-draw');
+      if (kind === 'capa-topo') this.drawTopo(s.ctx, s.w, s.h, false);
+      else if (kind === 'fecho-topo') this.drawTopo(s.ctx, s.w, s.h, true);
+      else if (kind === 'deck-fio') this.drawFio(s.ctx, s.w, s.h);
+    });
+  }
+
+  drawTopo(ctx, w, h, dark) {
+    const lines = 7;
+    for (let k = 0; k < lines; k++) {
+      const accent = k === 3;
+      ctx.strokeStyle = accent ? (dark ? '#FF5C3D' : '#FF5C3D')
+        : (dark ? 'rgba(242,237,227,.12)' : 'rgba(133,124,112,.16)');
+      ctx.lineWidth = accent ? 3 : 1.4;
+      const baseY = h * (0.1 + (0.8 * k) / (lines - 1));
+      ctx.beginPath();
+      for (let x = -10; x <= w + 10; x += 8) {
+        const y = baseY + Math.sin(x / 220 + k * 1.6) * 26 + Math.sin(x / 90 + k * 3) * 11;
+        if (x <= -10) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  }
+
+  drawFio(ctx, w, h) {
+    const b = 1.5;
+    const pts = this.cycloidPts(-3, 2 * Math.PI + 3, b, 200);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = 4;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = 6 + nx * (w - 12);
+      const py = h * 0.5 + (y / b) * h * 0.34 - nx * h * 0.16;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+    [0.12, 0.5, 0.88].forEach((f) => {
+      const idx = Math.floor(f * pts.length);
+      const [x, y] = pts[idx];
+      const nx = (x - minX) / (maxX - minX);
+      const px = 6 + nx * (w - 12);
+      const py = h * 0.5 + (y / b) * h * 0.34 - nx * h * 0.16;
+      ctx.fillStyle = '#FF5C3D';
+      ctx.beginPath(); ctx.arc(px, py, 6, 0, Math.PI * 2); ctx.fill();
+    });
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

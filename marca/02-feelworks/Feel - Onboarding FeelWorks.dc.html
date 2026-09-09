@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#F2EDE3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:12px">
+    <div style="font-weight:700;font-size:15px;letter-spacing:-.02em">Feel<span style="color:#857C70">Works</span></div>
+    <div style="flex:1"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">ONBOARDING · A DESENHAR</div>
+  </div>
+</div>
+
+<div style="max-width:920px;margin:0 auto;padding:64px 24px 96px">
+  <div style="display:flex;gap:8px;justify-content:center;margin-bottom:56px">
+    <span style="width:36px;height:3px;border-radius:2px;background:#FF5C3D"></span>
+    <span style="width:36px;height:3px;border-radius:2px;background:#E3DCCE"></span>
+    <span style="width:36px;height:3px;border-radius:2px;background:#E3DCCE"></span>
+  </div>
+
+  <!-- PASSO 1 · PROFISSÃO -->
+  <section data-screen-label="Passo 1 · seleção de profissão" style="text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Passo 1 de 3</div>
+    <h1 style="font-weight:600;font-size:36px;letter-spacing:-.02em;margin-top:14px">O que você faz?</h1>
+    <p style="font-size:15px;color:#4A443C;margin-top:10px;max-width:52ch;margin-left:auto;margin-right:auto">Escolha a profissão mais próxima — seu perfil já vem pré-montado com o kit certo.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px">
+      <div style="border:1.5px solid #FF5C3D;border-radius:16px;background:#FBF9F3;padding:24px;cursor:pointer"><div style="font-weight:600;font-size:16px">Creator</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;margin-top:4px">4 cards default</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:24px;cursor:pointer"><div style="font-weight:600;font-size:16px">Fotógrafo(a)</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;margin-top:4px">5 cards default</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:24px;cursor:pointer"><div style="font-weight:600;font-size:16px">Videomaker</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;margin-top:4px">5 cards default</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:24px;cursor:pointer"><div style="font-weight:600;font-size:16px">Assessor(a)</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;margin-top:4px">Pipeline + casting</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:16px;background:#FBF9F3;padding:24px;cursor:pointer"><div style="font-weight:600;font-size:16px">Diretor(a) de arte</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;margin-top:4px">4 cards default</div></div>
+      <div style="border:1px dashed #C9BFAC;border-radius:16px;background:transparent;padding:24px;cursor:pointer"><div style="font-weight:600;font-size:16px;color:#857C70">Outra…</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;margin-top:4px">kit em branco</div></div>
+    </div>
+  </section>
+
+  <!-- PASSO 2 · PREVIEW DO KIT -->
+  <section data-screen-label="Passo 2 · preview do kit" style="margin-top:96px;border-top:1px solid #E3DCCE;padding-top:64px;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Passo 2 de 3 · exemplo</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:14px">Seu kit de Creator já vem assim.</h2>
+    <p style="font-size:15px;color:#4A443C;margin-top:10px;max-width:52ch;margin-left:auto;margin-right:auto">Você pode reorganizar, remover ou adicionar cards depois — isto é só o ponto de partida.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px;text-align:left">
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#FF5C3D">CANAIS</div><div style="font-weight:600;font-size:14px;margin-top:6px">Instagram, TikTok</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#FF5C3D">MÉTRICAS</div><div style="font-weight:600;font-size:14px;margin-top:6px">Alcance verificado</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#FF5C3D">TRABALHOS</div><div style="font-weight:600;font-size:14px;margin-top:6px">Trajetória / provas</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px"><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#FF5C3D">CONTATO</div><div style="font-weight:600;font-size:14px;margin-top:6px">Disponibilidade</div></div>
+    </div>
+  </section>
+
+  <!-- PASSO 3 · CONECTAR CANAIS -->
+  <section data-screen-label="Passo 3 · conectar canais (OAuth)" style="margin-top:96px;border-top:1px solid #E3DCCE;padding-top:64px;text-align:center">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Passo 3 de 3</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:14px">Conecte seus canais.</h2>
+    <p style="font-size:15px;color:#4A443C;margin-top:10px;max-width:54ch;margin-left:auto;margin-right:auto">Sem isso o perfil fica "em rascunho". Os números só valem quando vêm verificados na fonte.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:32px;max-width:420px;margin-left:auto;margin-right:auto;text-align:left">
+      <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #E3DCCE;border-radius:12px;background:#FBF9F3;padding:14px 18px"><span style="font-weight:600;font-size:14.5px">Instagram</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FF5C3D;border:1px solid #FF5C3D;border-radius:99px;padding:5px 12px">CONECTAR</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #E3DCCE;border-radius:12px;background:#FBF9F3;padding:14px 18px"><span style="font-weight:600;font-size:14.5px">TikTok</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#FF5C3D;border:1px solid #FF5C3D;border-radius:99px;padding:5px 12px">CONECTAR</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #E3DCCE;border-radius:12px;background:#FBF9F3;padding:14px 18px"><span style="font-weight:600;font-size:14.5px">YouTube</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;border:1px solid #E3DCCE;border-radius:99px;padding:5px 12px">OPCIONAL</span></div>
+    </div>
+    <div style="margin-top:36px;display:inline-block;background:#17140F;color:#FBF9F3;font-weight:600;font-size:14px;padding:13px 28px;border-radius:99px">Concluir e ver meu perfil</div>
+  </section>
+
+  <div style="margin-top:80px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">FEELWORKS · ONBOARDING · SEGUE A FEEL</div>
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#F2EDE3"/><circle cx="30" cy="50" r="12" fill="#FF5C3D"/><circle cx="70" cy="50" r="12" fill="none" stroke="#17140F" stroke-width="2" stroke-dasharray="3 2"/></svg>
+</template>
+</x-dc>
+</body>
+</html>

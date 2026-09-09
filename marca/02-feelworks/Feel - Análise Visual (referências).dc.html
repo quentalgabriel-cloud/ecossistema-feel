@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300..700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#FBF9F3;color:#17140F;font-family:Archivo,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F;text-decoration:underline}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="max-width:1200px;margin:0 auto;padding:72px 40px 120px">
+
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#857C70">FeelWorks · Análise visual · referências vs. sistema v2</div>
+  <h1 style="font-weight:600;font-size:clamp(40px,6.2vw,68px);line-height:.98;letter-spacing:-.035em;margin:22px 0 0;max-width:16ch;text-wrap:balance">Falta luz.<br>Não falta cor.</h1>
+  <p style="font-size:18px;line-height:1.6;color:#4A443C;max-width:64ch;margin-top:24px;text-wrap:pretty">O incômodo com as telas que fizemos até aqui não vem dos tokens — a paleta, a tipografia e a gramática estão certas. Vem de uma ausência: <strong>o sistema v2 não tem modelo de luz.</strong> Tudo vive no mesmo plano, separado por fio de 1px, sobre um fundo chapado. Isso funciona em documento e em deck. Em produto, lê como formulário.</p>
+  <p style="font-size:18px;line-height:1.6;color:#4A443C;max-width:64ch;margin-top:18px;text-wrap:pretty">As referências que você trouxe resolvem exatamente isso — e trazem junto um punhado de vícios que quebrariam a Feel. Este documento separa uma coisa da outra e propõe o delta mínimo: <strong>v2.1 — camada de ambiente.</strong></p>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">DIAGNÓSTICO</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">O QUE ENTRA</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">O QUE NÃO ENTRA</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">DELTA DE SISTEMA</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">PROVA</span>
+  </div>
+
+  <!-- 01 DIAGNÓSTICO -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">01 · Diagnóstico</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:24ch">Cinco causas do incômodo — nenhuma é de cor.</h2>
+    <div style="display:flex;flex-direction:column;margin-top:30px;border-top:1px solid #E3DCCE">
+      <div style="display:grid;grid-template-columns:44px 1fr 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5C3D">01</div>
+        <div><div style="font-weight:600;font-size:17px">Tudo na elevação zero.</div><p style="font-size:14.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">Card, painel, barra e fundo estão todos no mesmo plano. A separação é uma linha, não uma distância. O olho não tem para onde subir.</p></div>
+        <div style="font-size:14.5px;line-height:1.55;color:#857C70">Consequência: hierarquia só por tamanho de fonte — e a tela vira lista de retângulos.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:44px 1fr 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5C3D">02</div>
+        <div><div style="font-weight:600;font-size:17px">Fundo chapado, sem ar atrás.</div><p style="font-size:14.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">Paper puro em 100% da área. Não existe "sala" — a interface não está em lugar nenhum, então também não tem presença.</p></div>
+        <div style="font-size:14.5px;line-height:1.55;color:#857C70">Consequência: o "silêncio" vira vazio administrativo em vez de calma.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:44px 1fr 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5C3D">03</div>
+        <div><div style="font-weight:600;font-size:17px">Mono caps em excesso.</div><p style="font-size:14.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">O Plex Mono virou o rótulo de tudo: seção, card, metadado, chip. Em documento dá lastro; em produto dá laboratório.</p></div>
+        <div style="font-size:14.5px;line-height:1.55;color:#857C70">Regra nova: mono só em <em>número, unidade, timestamp e estado</em>. Título de card volta pro Archivo.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:44px 1fr 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5C3D">04</div>
+        <div><div style="font-weight:600;font-size:17px">Ausência de gente e de matéria.</div><p style="font-size:14.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">A Feel fala de relação, mas o produto não mostra rosto, nem obra, nem foto. Só texto sobre fundo bege.</p></div>
+        <div style="font-size:14.5px;line-height:1.55;color:#857C70">Consequência: a tela contradiz a tese. Reputação é rastro visível — precisa de imagem.</div>
+      </div>
+      <div style="display:grid;grid-template-columns:44px 1fr 1fr;gap:24px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FF5C3D">05</div>
+        <div><div style="font-weight:600;font-size:17px">A regra do anel virou regra do cinza.</div><p style="font-size:14.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">Um coral por composição é certo para uma peça. Uma tela de produto tem 6 módulos simultâneos — e ficou tudo mudo.</p></div>
+        <div style="font-size:14.5px;line-height:1.55;color:#857C70">Ajuste: o anel passa a valer <em>por módulo visível</em>, não por viewport. Máx. 3 corais numa tela densa.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 REFERÊNCIAS -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">02 · O material</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:26ch">Oito telas. Uma mesma decisão de fundo.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4A443C;max-width:66ch;margin-top:14px">O que se repete nas oito não é a paleta — é a <strong>construção óptica</strong>: um ambiente fora de foco atrás, placas claras flutuando à frente, sombra quente no lugar da borda, navegação descolada da borda da tela.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px">
+      <img src="../uploads/FeelWorks-01.png" alt="Referência 01" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+      <img src="../uploads/FeelWorks-02.png" alt="Referência 02" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+      <img src="../uploads/FeelWorks-03.png" alt="Referência 03" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+      <img src="../uploads/FeelWorks-04.png" alt="Referência 04" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+      <img src="../uploads/FeelWorks-05.png" alt="Referência 05" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+      <img src="../uploads/FeelWorks-06.png" alt="Referência 06" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+      <img src="../uploads/FeelWorks-07.png" alt="Referência 07" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+      <img src="../uploads/FeelWorks-08.png" alt="Referência 08" style="width:100%;display:block;border-radius:12px;border:1px solid #E3DCCE">
+    </div>
+  </section>
+
+  <!-- 03 O QUE ENTRA -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">03 · O que entra</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:24ch">Sete mecanismos aproveitáveis.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4A443C;max-width:66ch;margin-top:14px">Cada um descrito como mecanismo (o que faz), não como estilo (com o que se parece) — é assim que ele entra no sistema sem virar cópia.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px">
+
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">M1 · AMBIENTE</div>
+        <div style="font-weight:600;font-size:19px;margin-top:10px">A interface está numa sala.</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:8px 0 0">Fotografia desfocada (blur 60–80px) sob um véu de paper a 60–70%. Não é papel de parede decorativo: é a fonte de luz que justifica todas as sombras da tela.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D;margin-top:14px">ENTRA — com fotografia documental Feel, nunca cerâmica de banco de imagem.</div>
+      </div>
+
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">M2 · PLACA</div>
+        <div style="font-weight:600;font-size:19px;margin-top:10px">O app flutua, não encosta.</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:8px 0 0">Todo o conteúdo vive numa placa arredondada com margem para o ambiente. A moldura de ar é o que faz a densidade interna parecer calma.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D;margin-top:14px">ENTRA — margem 5:8:5 aplicada à placa; corte assimétrico mantido.</div>
+      </div>
+
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">M3 · SOMBRA QUENTE</div>
+        <div style="font-weight:600;font-size:19px;margin-top:10px">Separar por distância, não por linha.</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:8px 0 0">Sombras de duas camadas em ink translúcido (nunca preto). É a diferença entre "premium" e "planilha" — e sai de graça no teste P&amp;B.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D;margin-top:14px">ENTRA — e substitui a borda: borda só onde não há sombra.</div>
+      </div>
+
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">M4 · FEEL BAR</div>
+        <div style="font-weight:600;font-size:19px;margin-top:10px">Navegação como objeto, não como header.</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:8px 0 0">Pílula flutuante, centrada, contextual — muda conforme o lugar. Deixa o topo da tela livre para o conteúdo humano ("Bom dia, Gabriel").</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D;margin-top:14px">ENTRA — é o componente mais forte das referências.</div>
+      </div>
+
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">M5 · MOMENTO HUMANO</div>
+        <div style="font-weight:600;font-size:19px;margin-top:10px">Uma frase grande, editorial, por tela.</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:8px 0 0">O cumprimento em escala de manchete faz o produto começar como conversa. Depois dele, tudo é UI de 14–15px. O contraste de escala é o que dá o ar de revista.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D;margin-top:14px">ENTRA — em Archivo 300/400 grande (ver decisão D2, sem fonte nova).</div>
+      </div>
+
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">M6 · TILE DE ÍCONE</div>
+        <div style="font-weight:600;font-size:19px;margin-top:10px">Cada linha de dado tem um objeto à esquerda.</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:8px 0 0">Quadradinho 32–36px com o ícone dentro. É o que dá ritmo às listas densas e permite ler a tela por varredura, sem cor forte.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D;margin-top:14px">ENTRA — ícone sempre em traço ink; a cor mora no fundo do tile (ver K2).</div>
+      </div>
+
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:26px;grid-column:span 2">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">M7 · MATÉRIA DENTRO DO PRODUTO</div>
+        <div style="font-weight:600;font-size:19px;margin-top:10px">A obra aparece na interface.</div>
+        <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:8px 0 0">Capas de projeto, thumbnails de conteúdo, rosto de quem trabalha. Nas referências isso ocupa uns 25% da área e é o que impede a tela de virar dashboard financeiro. Para a Feel é ainda mais importante: <strong>o produto é sobre lastro — lastro se vê.</strong></p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D;margin-top:14px">ENTRA — com o tratamento fotográfico do sistema (−8% saturação, sombra quente, grão 2%).</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 04 O QUE NÃO ENTRA -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">04 · O que não entra</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:26ch">Seis coisas que, copiadas, matam a Feel.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4A443C;max-width:66ch;margin-top:14px">Todas passam no teste do "é bonito?" e nenhuma passa no Teste da Feel. Para cada uma, o substituto.</p>
+    <div style="display:flex;flex-direction:column;margin-top:28px;border-top:1px solid #E3DCCE">
+
+      <div style="display:grid;grid-template-columns:40px 1.1fr 1fr 1fr;gap:22px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#857C70">K1</div>
+        <div><div style="font-weight:600;font-size:16.5px">Vidro em tudo</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:5px 0 0">Nas referências, 100% das superfícies são translúcidas. O vidro deixa de significar alguma coisa.</p></div>
+        <div style="font-size:14px;line-height:1.55;color:#857C70">Quebra a dosagem de 2% e o significado "ainda não revelado".</div>
+        <div style="font-size:14px;line-height:1.55;color:#4A443C"><strong>Substituto:</strong> separar <em>translucidez de ambiente</em> (placa a 88%, blur 20 — física, silenciosa) de <em>vidro de descoberta</em> (blur 12 + borda de luz — semântico, raro). Dois nomes, duas regras.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:40px 1.1fr 1fr 1fr;gap:22px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#857C70">K2</div>
+        <div><div style="font-weight:600;font-size:16.5px">Pastel multicolor (roxo, azul, verde, laranja)</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:5px 0 0">É a assinatura visual de toda ferramenta de IA de 2025. Copiada, a Feel some no meio delas.</p></div>
+        <div style="font-size:14px;line-height:1.55;color:#857C70">Reprova nos testes 2, 4 e 5 (sem cor / P&amp;B / paleta copiada).</div>
+        <div style="font-size:14px;line-height:1.55;color:#4A443C"><strong>Substituto:</strong> a necessidade é real (distinguir tipos). Resolver com <em>tint neutro</em> no fundo do tile — 3 níveis derivados de bone/tint/coral 8% — e o ícone sempre em ink. A informação fica no glifo, não na cor.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:40px 1.1fr 1fr 1fr;gap:22px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#857C70">K3</div>
+        <div><div style="font-weight:600;font-size:16.5px">Avatares 3D de agente</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:5px 0 0">Bonecos renderizados com nome de função. Envelhecem em 12 meses e infantilizam o produto.</p></div>
+        <div style="font-size:14px;line-height:1.55;color:#857C70">Contradiz "fotografia documental" e o registro de instituição.</div>
+        <div style="font-size:14px;line-height:1.55;color:#4A443C"><strong>Substituto:</strong> agente = ícone de traço derivado do gesto + estado. Rosto na interface é só de <em>gente real</em>. Personalidade vem do texto do agente, não da carinha.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:40px 1.1fr 1fr 1fr;gap:22px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#857C70">K4</div>
+        <div><div style="font-weight:600;font-size:16.5px">Blob de gradiente coral e FAB coral</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:5px 0 0">Na ref. 04 há gradiente decorativo + botão flutuante coral + selo coral na mesma tela.</p></div>
+        <div style="font-size:14px;line-height:1.55;color:#857C70">Três anéis na mesma mão. Coral vira enfeite, não ação.</div>
+        <div style="font-size:14px;line-height:1.55;color:#4A443C"><strong>Substituto:</strong> um coral por módulo, e só onde há decisão a tomar. Nada de gradiente colorido em superfície nenhuma.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:40px 1.1fr 1fr 1fr;gap:22px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#857C70">K5</div>
+        <div><div style="font-weight:600;font-size:16.5px">Emoji no cumprimento (☀️, 🎉)</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:5px 0 0">Aparece em 5 das 8 telas, sempre no momento mais visível da interface.</p></div>
+        <div style="font-size:14px;line-height:1.55;color:#857C70">Emoji não está no sistema e destrói o registro builder.</div>
+        <div style="font-size:14px;line-height:1.55;color:#4A443C"><strong>Substituto:</strong> o fio-assinatura curto ao lado do cumprimento, ou nada. O calor vem da frase, não do ícone amarelo.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:40px 1.1fr 1fr 1fr;gap:22px;padding:22px 0;border-bottom:1px solid #E3DCCE;align-items:start">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#857C70">K6</div>
+        <div><div style="font-weight:600;font-size:16.5px">Wallpaper de cerâmica / marca "F" quadrada</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:5px 0 0">As fotos são wabi-sabi de banco de imagem e o logo das refs não é o nosso wordmark.</p></div>
+        <div style="font-size:14px;line-height:1.55;color:#857C70">É o visual "estúdio genérico", e a anatomia do logo não se mexe.</div>
+        <div style="font-size:14px;line-height:1.55;color:#4A443C"><strong>Substituto:</strong> ambiente vindo do acervo Feel (espaço, bastidor, encontro) e o wordmark feel em monocromático.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 DELTA -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">05 · Delta de sistema — v2.1</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:26ch">Uma camada nova. Nenhum token antigo removido.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4A443C;max-width:66ch;margin-top:14px">Cores, fontes, raios e gramática do fio permanecem. O que entra é o <strong>modelo de luz</strong> — e três ajustes de regra que o produto exige e o documento não exigia.</p>
+
+    <div style="background:#F7F2E9;border-radius:20px;padding:30px 32px;margin-top:28px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;color:#857C70">NOVOS TOKENS</div>
+      <div style="display:flex;flex-direction:column;margin-top:16px">
+        <div style="display:grid;grid-template-columns:170px 1fr 1.1fr;gap:20px;padding:14px 0;border-bottom:1px solid #E3DCCE;align-items:baseline">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#17140F">ambient</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A443C">foto · blur 72px · véu paper 66%</div>
+          <div style="font-size:14px;color:#4A443C">Fundo da aplicação. Uma imagem por espaço de trabalho.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:170px 1fr 1.1fr;gap:20px;padding:14px 0;border-bottom:1px solid #E3DCCE;align-items:baseline">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#17140F">plate</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A443C">rgba(253,251,246,.86) · blur 20px</div>
+          <div style="font-size:14px;color:#4A443C">Superfície-base do app e dos painéis grandes.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:170px 1fr 1.1fr;gap:20px;padding:14px 0;border-bottom:1px solid #E3DCCE;align-items:baseline">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#17140F">surfaceRaised</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A443C">#FFFDF8</div>
+          <div style="font-size:14px;color:#4A443C">Card sobre a placa. Opaco — o card não é vidro.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:170px 1fr 1.1fr;gap:20px;padding:14px 0;border-bottom:1px solid #E3DCCE;align-items:baseline">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#17140F">elev.1</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A443C">0 1px 2px rgba(23,20,15,.04), 0 8px 22px −8px rgba(23,20,15,.10)</div>
+          <div style="font-size:14px;color:#4A443C">Card em repouso.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:170px 1fr 1.1fr;gap:20px;padding:14px 0;border-bottom:1px solid #E3DCCE;align-items:baseline">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#17140F">elev.2</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A443C">0 2px 6px rgba(23,20,15,.05), 0 22px 48px −16px rgba(23,20,15,.16)</div>
+          <div style="font-size:14px;color:#4A443C">Feel Bar, menu, painel flutuante, hover.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:170px 1fr 1.1fr;gap:20px;padding:14px 0;border-bottom:1px solid #E3DCCE;align-items:baseline">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#17140F">tile.tint</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A443C">#F2EDE3 · #F7F2E9 · rgba(255,92,61,.08)</div>
+          <div style="font-size:14px;color:#4A443C">Três fundos de tile. Glifo sempre ink 78%.</div>
+        </div>
+        <div style="display:grid;grid-template-columns:170px 1fr 1.1fr;gap:20px;padding:14px 0;align-items:baseline">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#17140F">radius.plate</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4A443C">28px · card 20px · tile 10px</div>
+          <div style="font-size:14px;color:#4A443C">Raios sobem um degrau no produto (não nos documentos).</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px">
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF5C3D">AJUSTE DE REGRA · 1</div>
+        <div style="font-weight:600;font-size:17px;margin-top:10px">Anel por módulo.</div>
+        <p style="font-size:14px;line-height:1.55;color:#4A443C;margin:6px 0 0">Em produto, um coral por módulo visível — máx. 3 por tela. Em peça de marca, continua sendo um só.</p>
+      </div>
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF5C3D">AJUSTE DE REGRA · 2</div>
+        <div style="font-weight:600;font-size:17px;margin-top:10px">Borda só sem sombra.</div>
+        <p style="font-size:14px;line-height:1.55;color:#4A443C;margin:6px 0 0">Elemento elevado não leva hairline. A linha volta em tabelas, divisores e documentos impressos.</p>
+      </div>
+      <div style="background:#FFFDF8;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF5C3D">AJUSTE DE REGRA · 3</div>
+        <div style="font-weight:600;font-size:17px;margin-top:10px">Mono só para dado.</div>
+        <p style="font-size:14px;line-height:1.55;color:#4A443C;margin:6px 0 0">Número, hora, unidade, estado. Título de card e rótulo de seção voltam para Archivo 500.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 PROVA -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">06 · Prova</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:26ch">O mesmo módulo, três tratamentos.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4A443C;max-width:66ch;margin-top:14px">Mesmo conteúdo, mesma tipografia, mesma paleta. Só muda o modelo de luz e a política de cor.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;align-items:start">
+
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">A · SISTEMA V2 HOJE</div>
+        <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:14px;padding:20px;margin-top:10px;min-height:268px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Atividades recentes</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-top:14px">
+            <div style="display:grid;grid-template-columns:46px 1fr;gap:10px;border-bottom:1px solid #E3DCCE;padding-bottom:10px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#857C70">09:15</div><div style="font-size:13.5px;color:#17140F">Marina assinou a prova <span style="color:#857C70">— campanha Linho &amp; Cia</span></div></div>
+            <div style="display:grid;grid-template-columns:46px 1fr;gap:10px;border-bottom:1px solid #E3DCCE;padding-bottom:10px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#857C70">09:12</div><div style="font-size:13.5px;color:#17140F">Helena abriu seu perfil <span style="color:#857C70">— 2ª vez esta semana</span></div></div>
+            <div style="display:grid;grid-template-columns:46px 1fr;gap:10px;border-bottom:1px solid #E3DCCE;padding-bottom:10px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#857C70">09:08</div><div style="font-size:13.5px;color:#17140F">Novo ticket <span style="color:#857C70">— Bica Bar, permuta</span></div></div>
+            <div style="display:grid;grid-template-columns:46px 1fr;gap:10px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#857C70">08:58</div><div style="font-size:13.5px;color:#17140F">Lastro atualizado <span style="color:#857C70">— 34 provas</span></div></div>
+          </div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.55;color:#857C70;margin-top:12px">Correto e ilegível de longe. Sem ponto de entrada: o olho começa em qualquer lugar. Parece extrato.</p>
+      </div>
+
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#857C70">B · REFERÊNCIA CRUA</div>
+        <div style="background:linear-gradient(160deg,#EDE7DD,#E6DED2);border-radius:14px;padding:14px;margin-top:10px;min-height:268px">
+          <div style="background:rgba(255,255,255,.55);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);border-radius:14px;padding:18px;box-shadow:0 18px 40px -18px rgba(23,20,15,.25)">
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="font-weight:600;font-size:14px">Atividades recentes</div><div style="font-size:11.5px;color:#857C70">Ver todas</div></div>
+            <div style="display:flex;flex-direction:column;gap:11px;margin-top:14px">
+              <div style="display:flex;gap:10px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:#EDE7F8;display:flex;align-items:center;justify-content:center;font-size:13px">✦</div><div style="font-size:12.5px;line-height:1.35">Marina assinou a prova<br><span style="color:#857C70">Linho &amp; Cia</span></div></div>
+              <div style="display:flex;gap:10px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:#E4F0E6;display:flex;align-items:center;justify-content:center;font-size:13px">↗</div><div style="font-size:12.5px;line-height:1.35">Helena abriu seu perfil<br><span style="color:#857C70">2ª vez esta semana</span></div></div>
+              <div style="display:flex;gap:10px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:#FBE9DC;display:flex;align-items:center;justify-content:center;font-size:13px">$</div><div style="font-size:12.5px;line-height:1.35">Novo ticket<br><span style="color:#857C70">Bica Bar, permuta</span></div></div>
+              <div style="display:flex;gap:10px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:#E2EAF6;display:flex;align-items:center;justify-content:center;font-size:13px">◷</div><div style="font-size:12.5px;line-height:1.35">Lastro atualizado<br><span style="color:#857C70">34 provas</span></div></div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.55;color:#857C70;margin-top:12px">Lê rápido e é agradável — mas os quatro pastéis e o vidro genérico poderiam ser de qualquer produto de IA. Reprova em "se copiarem a paleta".</p>
+      </div>
+
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FF5C3D">C · FEEL AMBIENT (PROPOSTA)</div>
+        <div style="border-radius:14px;padding:14px;margin-top:10px;min-height:268px;background:radial-gradient(120% 90% at 18% 8%,#FFFCF6 0%,#F4EEE3 46%,#E9E1D3 100%)">
+          <div style="background:#FFFDF8;border-radius:16px;padding:18px;box-shadow:0 1px 2px rgba(23,20,15,.04), 0 18px 40px -18px rgba(23,20,15,.18)">
+            <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-weight:600;font-size:14.5px;letter-spacing:-.01em">Atividades recentes</div><div style="font-size:12px;color:#857C70">Ver todas</div></div>
+            <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px">
+              <div style="display:flex;gap:11px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:rgba(255,92,61,.09);display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.7" stroke-linecap="round"><path d="M4 17c6 0 8-10 14-10"></path><path d="M15 5.5 18.5 7 17 10.5"></path></svg></div><div style="font-size:12.8px;line-height:1.35">Marina assinou a prova<br><span style="color:#857C70">Linho &amp; Cia · <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">09:15</span></span></div></div>
+              <div style="display:flex;gap:11px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:#F2EDE3;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"></circle><path d="M2.5 12S6 6 12 6s9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path></svg></div><div style="font-size:12.8px;line-height:1.35">Helena abriu seu perfil<br><span style="color:#857C70">2ª vez esta semana · <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">09:12</span></span></div></div>
+              <div style="display:flex;gap:11px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:#F7F2E9;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.7" stroke-linecap="round"><path d="M4 8.5h16v9H4z"></path><path d="M4 12h16"></path></svg></div><div style="font-size:12.8px;line-height:1.35">Novo ticket<br><span style="color:#857C70">Bica Bar, permuta · <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">09:08</span></span></div></div>
+              <div style="display:flex;gap:11px;align-items:center"><div style="width:30px;height:30px;border-radius:9px;background:#F2EDE3;display:flex;align-items:center;justify-content:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#17140F" stroke-width="1.7" stroke-linecap="round"><path d="M5 18V9M12 18V5M19 18v-6"></path></svg></div><div style="font-size:12.8px;line-height:1.35">Lastro atualizado<br><span style="color:#857C70"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px">34</span> provas · <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">08:58</span></span></div></div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.55;color:#4A443C;margin-top:12px">Mesma legibilidade do B, com um único acento coral, ícones de traço próprio e tiles neutros. Em P&amp;B continua funcionando — o B não continua.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 07 FRAGMENTO -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">07 · Fragmento aplicado</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:26ch">Como uma tela FeelWorks fica com a camada de ambiente.</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4A443C;max-width:66ch;margin-top:14px">Recorte do topo da Home: ambiente, placa, Feel Bar, momento humano e três módulos. O campo de luz abaixo é <em>placeholder</em> — em produção é fotografia documental do acervo Feel, desfocada a 72px.</p>
+
+    <div style="margin-top:26px;border-radius:24px;padding:22px;background:radial-gradient(90% 120% at 12% -10%,#FFFDF7 0%,#F3EDE2 42%,#E4DACA 78%,#D8CDBB 100%);box-shadow:inset 0 0 0 1px rgba(23,20,15,.05)">
+      <div style="background:rgba(253,251,246,.86);backdrop-filter:blur(20px);border-radius:20px;padding:26px 26px 30px;box-shadow:0 2px 6px rgba(23,20,15,.05), 0 22px 48px -16px rgba(23,20,15,.16)">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+          <div style="font-weight:600;font-size:17px;letter-spacing:-.02em">feel<span style="color:#857C70;font-weight:400">works</span></div>
+          <div style="display:flex;align-items:center;gap:4px;background:#FFFDF8;border-radius:99px;padding:5px;box-shadow:0 1px 2px rgba(23,20,15,.04), 0 10px 26px -12px rgba(23,20,15,.20)">
+            <div style="font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:99px;background:#17140F;color:#F2EDE3">Hoje</div>
+            <div style="font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:99px;color:#4A443C">Perfil</div>
+            <div style="font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:99px;color:#4A443C">Provas</div>
+            <div style="font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:99px;color:#4A443C">Oportunidades</div>
+            <div style="font-size:13.5px;font-weight:500;padding:8px 16px;border-radius:99px;color:#4A443C">Lastro</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:34px;height:34px;border-radius:99px;background:#F2EDE3;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4A443C" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg></div>
+            <div style="width:34px;height:34px;border-radius:99px;background:#17140F;color:#F2EDE3;display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:500">MD</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:5fr 8fr;gap:30px;margin-top:34px;align-items:start">
+          <div>
+            <div style="font-weight:300;font-size:38px;line-height:1.06;letter-spacing:-.03em">Bom dia,<br>Marina.</div>
+            <svg width="120" height="18" viewBox="0 0 120 18" fill="none" style="display:block;margin-top:12px"><path d="M0 12c14 0 16-9 26-9s10 12 22 12 14-13 26-13 12 10 24 10 18-6 22-6" stroke="#FF5C3D" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            <p style="font-size:14.5px;line-height:1.6;color:#4A443C;margin:16px 0 0;max-width:30ch">Três coisas pedem você hoje. O resto o perfil resolve sozinho.</p>
+            <div style="display:flex;gap:26px;margin-top:22px">
+              <div><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-variant-numeric:tabular-nums">34</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#857C70;margin-top:4px">PROVAS</div></div>
+              <div><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-variant-numeric:tabular-nums">12</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#857C70;margin-top:4px">MARCAS</div></div>
+              <div><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-variant-numeric:tabular-nums">4</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#857C70;margin-top:4px">EM ABERTO</div></div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+            <div style="grid-column:span 2;background:#FFFDF8;border-radius:18px;padding:20px 22px;box-shadow:0 1px 2px rgba(23,20,15,.04), 0 16px 36px -18px rgba(23,20,15,.18);display:flex;gap:18px;align-items:center">
+              <div style="width:76px;height:76px;border-radius:14px;background:linear-gradient(150deg,#E9E1D3,#D9CEBC);flex:none"></div>
+              <div style="flex:1">
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#857C70">AGUARDANDO VOCÊ</div>
+                <div style="font-weight:600;font-size:17px;margin-top:6px;letter-spacing:-.015em">Helena quer fechar o ensaio de inverno.</div>
+                <p style="font-size:13.5px;color:#4A443C;margin:5px 0 0">Proposta enviada há <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">2 dias</span> · Linho &amp; Cia</p>
+              </div>
+              <div style="background:#FF5C3D;color:#FBF9F3;font-size:13.5px;font-weight:500;padding:11px 18px;border-radius:12px;flex:none">Responder</div>
+            </div>
+
+            <div style="background:#FFFDF8;border-radius:18px;padding:20px;box-shadow:0 1px 2px rgba(23,20,15,.04), 0 16px 36px -18px rgba(23,20,15,.18)">
+              <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-weight:600;font-size:14.5px">Seu lastro</div><div style="font-size:12px;color:#857C70">Ver linha</div></div>
+              <svg viewBox="0 0 260 60" style="width:100%;height:56px;margin-top:14px" fill="none"><path d="M2 46c26 0 30-30 56-30s28 26 54 26 30-32 56-32 32 22 56 22" stroke="#C9BFAC" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="1 5"></path><path d="M2 46c26 0 30-30 56-30s28 26 54 26 30-32 56-32" stroke="#17140F" stroke-width="1.8" stroke-linecap="round"></path><circle cx="168" cy="10" r="3.4" fill="#FF5C3D"></circle></svg>
+              <p style="font-size:13px;color:#4A443C;margin:10px 0 0">Em processo — a linha não fecha.</p>
+            </div>
+
+            <div style="background:#FFFDF8;border-radius:18px;padding:20px;box-shadow:0 1px 2px rgba(23,20,15,.04), 0 16px 36px -18px rgba(23,20,15,.18)">
+              <div style="display:flex;justify-content:space-between;align-items:baseline"><div style="font-weight:600;font-size:14.5px">Descoberta</div><div style="font-size:12px;color:#857C70">3 novas</div></div>
+              <div style="margin-top:14px;border-radius:12px;padding:14px;background:rgba(242,237,227,.55);backdrop-filter:blur(12px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)">
+                <div style="font-size:13.5px;font-weight:500;color:#17140F">Uma marca de food procura ensaio</div>
+                <p style="font-size:12.5px;color:#857C70;margin:4px 0 0">Revela quando você aceitar receber.</p>
+              </div>
+              <p style="font-size:12.5px;color:#857C70;margin:10px 0 0">O vidro aqui é estado, não estilo: existe e ainda não foi revelado.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px">
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#857C70">AMBIENTE</div><p style="font-size:13.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">A luz vem do canto superior esquerdo e todas as sombras obedecem.</p></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#857C70">CORAL</div><p style="font-size:13.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">Três: o fio, o botão da única decisão, o nó do lastro. Nada mais.</p></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#857C70">MONO</div><p style="font-size:13.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">Só onde há número, prazo ou estado. Títulos em Archivo.</p></div>
+      <div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:#857C70">VIDRO</div><p style="font-size:13.5px;line-height:1.55;color:#4A443C;margin:6px 0 0">Um bloco, semântico: a oportunidade que ainda não foi revelada.</p></div>
+    </div>
+  </section>
+
+  <!-- 08 DECISÕES -->
+  <section style="margin-top:88px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">08 · Antes do protótipo</div>
+    <h2 style="font-weight:600;font-size:34px;letter-spacing:-.025em;margin:12px 0 0;max-width:24ch">Quatro decisões que travam o caminho.</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px">
+      <div style="background:#F7F2E9;border-radius:18px;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">D1 · AMBIENTE</div><div style="font-weight:600;font-size:17px;margin-top:8px">Fundo fotográfico ou campo de luz?</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:6px 0 0">Foto desfocada (mais presença, exige acervo) ou luz gerada em CSS (mais sóbrio, escala sem foto). Dá para começar com luz e trocar depois.</p></div>
+      <div style="background:#F7F2E9;border-radius:18px;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">D2 · MOMENTO HUMANO</div><div style="font-weight:600;font-size:17px;margin-top:8px">Archivo leve ou uma serifada editorial?</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:6px 0 0">As referências usam serifada no cumprimento. Dá para chegar perto com Archivo 300 grande — ou abrir a exceção de uma segunda display só para esse momento.</p></div>
+      <div style="background:#F7F2E9;border-radius:18px;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">D3 · AGENTES</div><div style="font-weight:600;font-size:17px;margin-top:8px">O FeelWorks tem agentes de IA?</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:6px 0 0">As referências são de um produto com time de agentes. A estratégia atual é perfil + prova + oportunidade. Precisa saber se o protótipo incorpora essa camada ou não.</p></div>
+      <div style="background:#F7F2E9;border-radius:18px;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#FF5C3D">D4 · MODO ESCURO</div><div style="font-weight:600;font-size:17px;margin-top:8px">Ink entra no produto?</div><p style="font-size:14px;line-height:1.55;color:#4A443C;margin:6px 0 0">Hoje ink é só palco. A ref. 07 mostra a mesma tela em escuro e funciona muito bem. Se entrar, vira modo de produto — e o palco perde exclusividade.</p></div>
+    </div>
+  </section>
+
+  <section style="margin-top:80px;border-top:1px solid #E3DCCE;padding-top:36px">
+    <p style="font-size:16px;line-height:1.7;color:#4A443C;max-width:74ch"><strong>Síntese:</strong> pegar das referências a física (ambiente, placa, sombra, barra flutuante, matéria) e recusar o vocabulário (vidro genérico, pastel de IA, avatar 3D, emoji). O que a Feel ganha não é uma cara nova — é <em>luz</em>. O resto do sistema fica onde está.</p>
+    <p style="font-size:15px;color:#4A443C;margin-top:18px">A camada está aplicada em 12 telas conectadas em <a href="./Feel - Protótipo FeelWorks (Ambient).dc.html">Feel - Protótipo FeelWorks (Ambient)</a>.</p>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70;margin-top:32px">FEELWORKS · ANÁLISE VISUAL · V2.1 PROPOSTA · SEGUE A FEEL</div>
+  </section>
+
+</div>
+
+</x-dc>
+</body>
+</html>

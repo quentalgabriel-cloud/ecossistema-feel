@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:#14110F;color:#F2EDE3;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#F0A63B;text-decoration:none}
+  a:hover{color:#F7C070}
+  ::selection{background:#F0A63B;color:#14110F}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(20,17,15,.9);backdrop-filter:blur(10px);border-bottom:1px solid #322B24">
+  <div style="max-width:1160px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:14px">
+    <div style="font-weight:700;font-size:16px;letter-spacing:-.02em">Feel<span style="color:#F0A63B">Makers</span></div>
+    <div style="flex:1"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#857C70;text-transform:uppercase">aplicação · palco</div>
+  </div>
+</div>
+
+<!-- ============ KEY VISUAL ============ -->
+<section data-screen-label="Key visual do evento" style="position:relative;overflow:hidden">
+  <canvas data-draw="topografia" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></canvas>
+  <canvas data-draw="grao" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:{{ graoOpacity }};mix-blend-mode:overlay"></canvas>
+  <div style="position:relative;max-width:1160px;margin:0 auto;padding:96px 28px 80px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:#F0A63B;margin-bottom:26px">FeelMakers · Recife · 14–15 nov 2026</div>
+    <h1 style="font-weight:600;font-size:clamp(40px,8vw,104px);line-height:.94;letter-spacing:-.04em;max-width:14ch">Onde as trajetórias se <em style="font-style:normal;color:#F0A63B">encontram.</em></h1>
+    <p style="color:#B9B0A2;font-size:17px;max-width:52ch;margin-top:26px">Dois dias de palco, oficina e obra ao vivo no coração do shopping. A economia criativa de Pernambuco em pessoa — não em feed. Segue a Feel.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:34px;align-items:center">
+      <button style="font-family:'Archivo';font-weight:500;font-size:15px;color:#14110F;background:#F0A63B;border:none;border-radius:12px;padding:14px 26px;cursor:pointer">Garantir credencial</button>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#857C70">RIOMAR RECIFE · PISO L3 · ENTRADA GRATUITA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMAÇÃO ============ -->
+<section data-screen-label="Programação" style="border-top:1px solid #322B24;background:#1A1712">
+  <div style="max-width:1160px;margin:0 auto;padding:72px 28px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#F0A63B;margin-bottom:14px">Programação · o fio que costura os dois dias</div>
+    <h2 style="font-weight:600;font-size:clamp(24px,3.4vw,38px);line-height:1.06;letter-spacing:-.03em;max-width:22ch">Um fio único atravessa cada sessão.</h2>
+    <div style="position:relative;margin-top:40px">
+      <canvas data-draw="programa-fio" style="position:absolute;left:0;top:0;width:56px;height:100%;pointer-events:none"></canvas>
+      <div style="display:flex;flex-direction:column;gap:2px;padding-left:80px">
+        <sc-for list="{{ sessoes }}" as="s" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:100px 1fr auto;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid #322B24">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.04em;color:#F0A63B;font-variant-numeric:tabular-nums">{{ s.hora }}</div>
+            <div>
+              <div style="font-weight:600;font-size:19px;letter-spacing:-.01em">{{ s.titulo }}</div>
+              <div style="font-size:13.5px;color:#B9B0A2;margin-top:4px">{{ s.desc }}</div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70;text-transform:uppercase;white-space:nowrap">{{ s.tag }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CREDENCIAL + FOTO ============ -->
+<section data-screen-label="Credencial e registro" style="border-top:1px solid #322B24">
+  <div style="max-width:1160px;margin:0 auto;padding:72px 28px">
+    <div style="display:grid;grid-template-columns:5fr 8fr;gap:36px;align-items:start">
+      <!-- credencial -->
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#857C70;margin-bottom:18px">Credencial</div>
+        <div style="border:1px solid #322B24;border-radius:20px;background:#1D1915;padding:24px;position:relative;overflow:hidden">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div style="font-weight:700;font-size:15px;letter-spacing:-.01em">Feel<span style="color:#F0A63B">Makers</span></div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.16em;color:#857C70">2026</div>
+          </div>
+          <div style="margin-top:60px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.14em;color:#857C70">PARTICIPANTE</div>
+            <div style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:4px">Marina Duarte</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#B9B0A2;margin-top:4px">FOTÓGRAFA · @marinaduarte</div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:28px">
+            <canvas data-draw="credencial-fio" style="width:120px;height:44px"></canvas>
+            <canvas data-draw="qr" style="width:56px;height:56px;border-radius:8px"></canvas>
+          </div>
+        </div>
+        <p style="font-size:12.5px;color:#857C70;margin-top:14px">O fio da credencial é individual — o gesto muda de pessoa para pessoa, mas o pulso é o mesmo.</p>
+      </div>
+      <!-- registro documental -->
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#857C70;margin-bottom:18px">Registro · documental, em relação</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="height:220px;grid-column:1/-1"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="fm-palco" shape="rounded" radius="16" placeholder="Palco cheio — plateia e obra ao vivo" hint-size="100%,220px" style="width:100%;height:220px"></x-import></div>
+          <div style="height:180px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="fm-oficina" shape="rounded" radius="16" placeholder="Oficina — mãos, material, troca" hint-size="100%,180px" style="width:100%;height:180px"></x-import></div>
+          <div style="height:180px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="fm-encontro" shape="rounded" radius="16" placeholder="Encontro nos corredores — escuta real" hint-size="100%,180px" style="width:100%;height:180px"></x-import></div>
+        </div>
+        <p style="font-size:12.5px;color:#857C70;margin-top:14px">Luz disponível, −8% de saturação, grão fino. Registrar a construção, nunca a performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PALCO / LED ============ -->
+<section data-screen-label="Lockup de palco" style="border-top:1px solid #322B24;background:#1A1712">
+  <div style="max-width:1160px;margin:0 auto;padding:72px 28px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#857C70;margin-bottom:22px">Palco &amp; sinalização · LED e vinil</div>
+    <div style="border:1px solid #322B24;border-radius:20px;background:#14110F;position:relative;overflow:hidden;aspect-ratio:16/6;display:flex;align-items:center;justify-content:center">
+      <canvas data-draw="palco-topo" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.6"></canvas>
+      <div style="position:relative;text-align:center;padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1.1vw,12px);letter-spacing:.34em;color:#F0A63B;text-transform:uppercase">Segue a Feel</div>
+        <div style="font-weight:600;font-size:clamp(30px,6vw,72px);line-height:.98;letter-spacing:-.035em;margin-top:12px">Feel<span style="color:#F0A63B">Makers</span></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:clamp(9px,1.2vw,13px);letter-spacing:.16em;color:#B9B0A2;margin-top:14px;font-variant-numeric:tabular-nums">14–15 NOV · RIOMAR RECIFE · L3</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px">
+      <div style="border-left:2px solid #F0A63B;padding:4px 0 4px 16px;font-size:13.5px;color:#B9B0A2">Âmbar é a ênfase do físico — <b style="color:#F2EDE3">nunca com coral na mesma peça</b>.</div>
+      <div style="border-left:2px solid #F0A63B;padding:4px 0 4px 16px;font-size:13.5px;color:#B9B0A2">A topografia só existe aqui: capa, palco, abertura. É o único lugar onde muitos fios convivem.</div>
+      <div style="border-left:2px solid #F0A63B;padding:4px 0 4px 16px;font-size:13.5px;color:#B9B0A2">O ink escuro é modo de cena — o produto e os documentos seguem no claro.</div>
+    </div>
+    <div style="margin-top:44px;border-top:1px solid #322B24;padding-top:22px;display:flex;align-items:center;gap:12px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">FEELMAKERS · PALCO · SEGUE A FEEL</span>
+    </div>
+  </div>
+</section>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#14110F"/><path d="M12 60 q10 -22 20 0 q10 -22 20 0 q10 -22 20 0 q6 12 16 -4" fill="none" stroke="#F0A63B" stroke-width="5" stroke-linecap="round"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;energia&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Íntimo&quot;, &quot;Padrão&quot;, &quot;Palco cheio&quot;], &quot;default&quot;: &quot;Padrão&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Energia do palco&quot; },
+  &quot;superficie&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Ink&quot;, &quot;Grafite&quot;], &quot;default&quot;: &quot;Ink&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Superfície&quot; },
+  &quot;grao&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Sem grão&quot;, &quot;Padrão&quot;, &quot;Forte&quot;], &quot;default&quot;: &quot;Padrão&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Grão fotográfico&quot; }
+}">
+const SESSOES = [
+  { hora: '10:00', titulo: 'Abertura — a economia criativa em pessoa', desc: 'O que muda quando reputação vira rastro contável.', tag: 'Palco principal' },
+  { hora: '11:30', titulo: 'Oficina — precificar sem se apagar', desc: 'Ticket, permuta e cachê na prática, com assessoria ao vivo.', tag: 'Sala de obra' },
+  { hora: '14:00', titulo: 'Obra ao vivo — ensaio editorial', desc: 'Uma prova sendo assinada diante da plateia.', tag: 'Palco principal' },
+  { hora: '16:30', titulo: 'Encontros — trajetórias que se cruzam', desc: 'Curadoria de duplas por afinidade de fio, não por seguidores.', tag: 'Corredor L3' },
+  { hora: '18:00', titulo: 'Encerramento — o fio continua', desc: 'Nada se fecha: a rede segue depois que as luzes apagam.', tag: 'Palco principal' }
+];
+
+class Component extends DCLogic {
+  componentDidMount() {
+    this.applySurface();
+    this._raf = requestAnimationFrame(() => this.drawAll());
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(() => this.drawAll(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentDidUpdate() { this.applySurface(); this.drawAll(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  grafite() { return (this.props.superficie || 'Ink') === 'Grafite'; }
+  energia() { return this.props.energia || 'Padrão'; }
+  amber() { return '#F0A63B'; }
+  topoLines() { const e = this.energia(); return e === 'Íntimo' ? 4 : e === 'Palco cheio' ? 12 : 7; }
+  topoAlpha() { const e = this.energia(); return e === 'Íntimo' ? 0.14 : e === 'Palco cheio' ? 0.34 : 0.24; }
+
+  applySurface() {
+    const map = this.grafite() ? [
+      ['#14110F', '#15151A'], ['#1A1712', '#1B1B21'], ['#1D1915', '#1F1F26'], ['#322B24', '#343440']
+    ] : [];
+    this._orig = this._orig || new Map();
+    document.querySelectorAll('[style]').forEach((el) => {
+      if (!this._orig.has(el)) this._orig.set(el, el.getAttribute('style') || '');
+      let s = this._orig.get(el);
+      if (map.length) {
+        map.forEach(([from], i) => { s = s.split(from).join('\u0000' + i + '\u0000'); });
+        map.forEach(([, to], i) => { s = s.split('\u0000' + i + '\u0000').join(to); });
+      }
+      el.setAttribute('style', s);
+    });
+    let tag = document.getElementById('fm-surface');
+    if (!tag) { tag = document.createElement('style'); tag.id = 'fm-surface'; document.head.appendChild(tag); }
+    tag.textContent = `body{background:${this.grafite() ? '#15151A' : '#14110F'}!important}`;
+  }
+
+  setup(c) {
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 2;
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-draw]').forEach((c) => {
+      const kind = c.getAttribute('data-draw');
+      const s = this.setup(c); if (!s) return;
+      const { ctx, w, h } = s; ctx.clearRect(0, 0, w, h);
+      if (kind === 'topografia' || kind === 'palco-topo') this.drawTopografia(ctx, w, h, kind === 'palco-topo');
+      else if (kind === 'grao') this.drawGrao(ctx, w, h);
+      else if (kind === 'programa-fio') this.drawProgramaFio(ctx, w, h);
+      else if (kind === 'credencial-fio') this.drawCredencialFio(ctx, w, h);
+      else if (kind === 'qr') this.drawQR(ctx, w, h);
+    });
+  }
+
+  drawTopografia(ctx, w, h, dense) {
+    const lines = this.topoLines() + (dense ? 2 : 0);
+    const alpha = this.topoAlpha();
+    for (let k = 0; k < lines; k++) {
+      const amberLine = k === Math.floor(lines / 2);
+      ctx.strokeStyle = amberLine ? this.amber() : `rgba(240,166,59,${alpha * 0.5})`;
+      ctx.lineWidth = amberLine ? 2.4 : 1.2;
+      const baseY = h * (0.08 + (0.84 * k) / (lines - 1));
+      ctx.beginPath();
+      for (let x = -10; x <= w + 10; x += 6) {
+        const y = baseY + Math.sin(x / 120 + k * 1.6) * 16 + Math.sin(x / 47 + k * 3.0) * 7;
+        if (x <= -10) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  }
+
+  drawGrao(ctx, w, h) {
+    const img = ctx.createImageData(w, h);
+    const d = img.data;
+    for (let i = 0; i < d.length; i += 4) {
+      const v = 120 + Math.random() * 135;
+      d[i] = d[i+1] = d[i+2] = v; d[i+3] = 255;
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+
+  drawProgramaFio(ctx, w, h) {
+    const b = 1.4;
+    const pts = this.cycloidPts(-4, 6 * Math.PI + 4, b, 400);
+    const ys = pts.map(p => p[0]);
+    const minY = Math.min(...ys), maxY = Math.max(...ys);
+    ctx.strokeStyle = this.amber(); ctx.lineWidth = 2.4;
+    ctx.beginPath();
+    pts.forEach(([t, c], i) => {
+      const ny = (t - minY) / (maxY - minY);
+      const py = 10 + ny * (h - 20);
+      const px = w * 0.5 + (c / b) * w * 0.32;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+    // nodes aligned to 5 sessions
+    [0.08, 0.29, 0.5, 0.71, 0.92].forEach((f) => {
+      const idx = Math.floor(f * pts.length);
+      const [t, c] = pts[idx];
+      const ny = (t - minY) / (maxY - minY);
+      const py = 10 + ny * (h - 20);
+      const px = w * 0.5 + (c / b) * w * 0.32;
+      ctx.fillStyle = '#14110F'; ctx.strokeStyle = this.amber(); ctx.lineWidth = 2.4;
+      ctx.beginPath(); ctx.arc(px, py, 5, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+    });
+  }
+
+  drawCredencialFio(ctx, w, h) {
+    const b = 1.6;
+    const pts = this.cycloidPts(-2, 2 * Math.PI + 2, b, 120);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    ctx.strokeStyle = this.amber(); ctx.lineWidth = 2.6;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = 4 + nx * (w - 8);
+      const py = h * 0.5 + (y / b) * h * 0.34;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+  }
+
+  drawQR(ctx, w, h) {
+    // decorative QR-like grid (not a real code)
+    const n = 7, cell = w / n;
+    ctx.fillStyle = '#F2EDE3';
+    const seed = [
+      [1,1,1,0,1,1,1],[1,0,1,0,0,0,1],[1,0,1,1,1,0,1],[0,0,0,1,0,1,0],
+      [1,1,0,0,1,0,1],[0,0,1,1,0,0,1],[1,1,1,0,1,1,0]
+    ];
+    for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+      if (seed[y][x]) ctx.fillRect(x * cell + 1, y * cell + 1, cell - 2, cell - 2);
+    }
+  }
+
+  renderVals() {
+    const e = this.energia();
+    return {
+      sessoes: SESSOES,
+      graoOpacity: this.props.grao === 'Forte' ? 0.16 : this.props.grao === 'Sem grão' ? 0 : 0.08
+    };
+  }
+}
+</script>
+</body>
+</html>

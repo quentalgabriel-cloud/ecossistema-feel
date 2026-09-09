@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(npm run tokens*)",
+      "Bash(npm run test*)",
+      "Bash(npx tsc --noEmit)",
+      "Read"
+    ],
+    "ask": [
+      "Bash(git commit*)",
+      "Bash(git push*)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -Eq 'docs[\\\\/]+decisoes[\\\\/]+log\\.md|marca[\\\\/]+00-tese|DESIGN\\.md|SISTEMA-DE-MARCA\\.md|EVOLUTION\\.md|CLAUDE\\.md' && printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"Arquivo constitucional. D-05: o agente nao se auto-aprova. Alterar exige decisao registrada em docs/decisoes/log.md com os quatro campos (o que, por que, o que impede, o que reabre).\"}}' || true",
+            "statusMessage": "Checando arquivo constitucional",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git commit*)",
+            "command": "printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"D-05: commit exige aprovacao explicita. O agente nao se auto-aprova.\"}}'",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "if": "Bash(git push*)",
+            "command": "printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"D-05: push exige aprovacao explicita. Push e acao externa e nao se desfaz sozinha.\"}}'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -Eq 'web[\\\\/]+src[\\\\/]+(data|components|tokens)|\\.dc\\.html|docs[\\\\/]+02-boards' && printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"Peca visual alterada. Antes de considerar travada, rode O Teste (5 perguntas): sem logo / sem cor / sem efeitos / em P&B / paleta copiada. Verifique tambem: UM unico elemento coral, nenhum matiz fora do DESIGN.md, nenhuma categoria codificada por cor (D-09), 5:8:5 com corte assimetrico, o fio entra e sai do quadro (nao fecha), motion e draw-in por stroke-dashoffset (D-11), numeros tabulares, nenhum dado inventado. Referencia: .claude/skills/feel-diagram/SKILL.md e docs/01-linguagem/LINGUAGEM.md\"}}' || true",
+            "statusMessage": "Lembrando de O Teste",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

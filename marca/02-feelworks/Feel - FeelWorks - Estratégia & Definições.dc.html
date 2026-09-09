@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:#F2EDE3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="max-width:920px;margin:0 auto;padding:64px 24px 96px">
+
+  <!-- CAPA -->
+  <header style="border-bottom:1px solid #E3DCCE;padding-bottom:40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#857C70">FeelWorks · Estratégia &amp; Definições · workspace único</div>
+    <h1 style="font-weight:600;font-size:clamp(38px,6vw,68px);line-height:.98;letter-spacing:-.03em;margin-top:22px;text-wrap:balance">O perfil como<br><span style="background:#FF5C3D;color:#FBF9F3;padding:0 .12em">mediakit vivo</span>.</h1>
+    <p style="font-size:18px;color:#4A443C;max-width:62ch;margin-top:24px">O documento único de produto do FeelWorks: o que estamos construindo, para quem, com quais cards, como se edita, que decisões travam a arquitetura e em que ordem construir. Raciocínio e definições — as telas vivem no <a href="Feel - FeelWorks — Wireframe.dc.html">wireframe</a>.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:26px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">O QUE CONSTRUIR</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">PÚBLICO × PESSOAL</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">CATÁLOGO DE CARDS</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">UX DA EDIÇÃO</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">DECISÕES</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:6px 12px;color:#4A443C">ROADMAP</span>
+    </div>
+  </header>
+
+  <!-- 00 · O QUE ESTAMOS CONSTRUINDO -->
+  <section style="margin-top:64px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">00 · O que estamos construindo</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:24ch">Três camadas. A terceira é o produto.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:66ch;margin-top:16px">O FeelWorks se separa em três camadas — e a Feel vive na de cima, não na infraestrutura.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:26px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16px">Camada 1 — Infraestrutura</div><p style="font-size:14px;color:#4A443C;margin-top:6px">E-mail, OAuth, APIs de plataforma. Não se reinventa — usa-se Google / Meta. Não é trabalho da Feel.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16px">Camada 2 — Orquestração de dados</div><p style="font-size:14px;color:#4A443C;margin-top:6px">Puxa da fonte, agrupa por marca, carimba com origem e hora, aplica IA. O motor invisível.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16px">Camada 3 — Experiência de produto</div><p style="font-size:14px;color:#4A443C;margin-top:6px">O que o usuário vê: perfil, pipeline, oportunidades. É aqui que a Feel se materializa.</p></div>
+    </div>
+    <div style="background:#F2EDE3;border-left:2px solid #FF5C3D;padding:16px 20px;margin-top:20px"><p style="font-size:15px;color:#4A443C;max-width:72ch"><strong>A tese:</strong> o perfil Feel não é um LinkedIn bonito — é um <strong>contrato vivo</strong>. Dados na fonte, dupla assinatura, ciclo comercial embutido. Nenhuma plataforma de creator mostra a operação; a Feel mostra.</p></div>
+  </section>
+
+  <!-- 00b · ESCOPO DO V1 -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">00 · A decisão de escopo</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:26ch">Perfil primeiro. Hub de comunicação depois.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:66ch;margin-top:16px">Duas estratégias em tensão, começando em pontos opostos. Escolher o v1 evita construir as duas ao mesmo tempo.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF5C3D">PERFIL · REPOSITÓRIO DE REPUTAÇÃO</div><p style="font-size:14.5px;color:#4A443C;margin-top:10px">Creator prova quem é. Dor: <em>"não consigo mostrar quem sou"</em>. E-mail é marginal.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px"><div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">HUB · ORQUESTRADOR DE COMUNICAÇÃO</div><p style="font-size:14.5px;color:#4A443C;margin-top:10px">Organiza a demanda que chega. Dor: <em>"perco propostas no caos do inbox"</em>. Perfil é marginal.</p></div>
+    </div>
+    <div style="background:#F2EDE3;border-left:2px solid #17140F;padding:16px 20px;margin-top:20px"><p style="font-size:15px;color:#4A443C;max-width:72ch"><strong>Recomendação — híbrida faseada:</strong> v1 perfil robusto, v2 hub de e-mail leve (agrupa por marca, sem IA), v3 IA + automação. Cada camada estável antes da próxima. Sequência completa na <strong>seção 09 · Roadmap</strong>.</p></div>
+  </section>
+
+  <!-- 01 · PÚBLICO vs PESSOAL -->
+  <section style="margin-top:64px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">01 · A divisão que organiza tudo</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:22ch">Perfil público e área pessoal são dois produtos no mesmo lugar.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:64ch;margin-top:16px">Sua pergunta é a chave do sistema. O mesmo motor de cards serve dois modos com objetivos opostos: um <strong>prova para fora</strong>, o outro <strong>trabalha para dentro</strong>. Decidir a que lado cada card pertence resolve metade das dúvidas de UX antes delas aparecerem.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF5C3D">PERFIL PÚBLICO</div>
+        <div style="font-weight:600;font-size:20px;margin-top:10px">A vitrine que prova</div>
+        <p style="font-size:14.5px;color:#4A443C;margin-top:10px">O que marca, assessor e agência veem. Um mediakit vivo: atualizado na fonte, verificável, bonito. Cada card aqui responde <em>"por que confiar e contratar"</em>.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.04em;color:#857C70;margin-top:16px;line-height:1.9">MÉTRICAS MULTICANAL<br>HIGHLIGHTS · GALERIA<br>PROVAS ASSINADAS · LASTRO<br>DISPONIBILIDADE<br>SELO DE VERIFICAÇÃO</div>
+      </div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:26px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">ÁREA PESSOAL</div>
+        <div style="font-weight:600;font-size:20px;margin-top:10px">A cozinha que opera</div>
+        <p style="font-size:14.5px;color:#4A443C;margin-top:10px">Só o usuário vê. Onde ele conecta canais, lê os números crus, gerencia agenda, conversas e propostas. Cada card aqui responde <em>"como eu toco o meu trabalho"</em>.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.04em;color:#857C70;margin-top:16px;line-height:1.9">CONEXÃO DE CANAIS<br>ANALYTICS BRUTO<br>INBOX · DMs · PROPOSTAS<br>AGENDA (GOOGLE CALENDAR)<br>RASCUNHOS E PERMISSÕES</div>
+      </div>
+    </div>
+    <div style="background:#F2EDE3;border-left:2px solid #17140F;padding:14px 18px;margin-top:20px">
+      <p style="font-size:14.5px;color:#4A443C;max-width:70ch"><strong>Regra de decisão:</strong> um card é público quando <em>ajuda alguém a decidir contratar</em>; é pessoal quando <em>ajuda o usuário a decidir ou operar</em>. O mesmo dado pode viver dos dois lados com granularidade diferente — os números crus na cozinha, o recorte curado na vitrine.</p>
+    </div>
+  </section>
+
+  <!-- 02 · PRINCÍPIO -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">02 · O princípio inegociável</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:24ch">O número vem da fonte, nunca da digitação.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:66ch;margin-top:16px">O mediakit de mercado é um PDF: estático, envelhecido no dia seguinte, com números auto-declarados que ninguém confere. É onde a manipulação mora. A Feel revela, não cria — então <strong>a métrica que aparece no perfil é puxada do canal via conexão autorizada</strong>, carimbada com a origem e a hora. O creator não digita alcance; ele conecta o Instagram e o alcance aparece, verificado.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:17px">Puxado na fonte</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">OAuth com cada plataforma. O que aparece é o que a API devolve — não o que se escreveu num campo.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:17px">Carimbado</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Cada bloco mostra "verificado na fonte · atualizado há Xh". Dado velho perde o selo automaticamente.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:17px">Dupla assinatura</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Prova de trabalho e depoimento só valem quando a marca co-assina. Reputação contável, não alegada.</p></div>
+    </div>
+  </section>
+
+  <!-- 03 · MEDIAKIT VIVO (interativo) -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">03 · O mediakit vivo, em detalhe</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:26ch">Multicanal: separado quando importa, somado quando faz sentido.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:66ch;margin-top:16px">O creator é multicanal, e cada canal conta uma história diferente. Às vezes a marca quer ver o TikTok isolado; às vezes quer o alcance total da pessoa. O card faz os dois — com um alerta honesto de que alcance somado não é audiência única. Abaixo, um exemplo funcional do card (dados ilustrativos).</p>
+
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:28px;margin-top:26px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Alcance & audiência</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;color:#857C70;margin-top:6px">✓ VERIFICADO NA FONTE · ATUALIZADO HÁ 2H</div>
+        </div>
+        <div style="display:flex;gap:2px;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:99px;padding:3px">
+          <button onClick="{{ verPorCanal }}" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;border:none;border-radius:99px;padding:8px 14px;cursor:pointer;background:{{ bgCanal }};color:{{ fgCanal }}">POR CANAL</button>
+          <button onClick="{{ verConsolidado }}" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;border:none;border-radius:99px;padding:8px 14px;cursor:pointer;background:{{ bgConsol }};color:{{ fgConsol }}">CONSOLIDADO</button>
+        </div>
+      </div>
+
+      <div style="{{ gridMetricas }};gap:14px;margin-top:22px">
+        <sc-for list="{{ blocos }}" as="b" hint-placeholder-count="3">
+          <div style="background:#F2EDE3;border:1px solid #E3DCCE;border-radius:14px;padding:20px">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#857C70">{{ b.canal }}</div>
+            <div style="display:flex;align-items:baseline;gap:8px;margin-top:12px">
+              <div style="font-weight:600;font-size:34px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:{{ b.destaqueCor }}">{{ b.alcance }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:#857C70">ALCANCE/MÊS</div>
+            </div>
+            <div style="display:flex;gap:20px;margin-top:14px">
+              <div><div style="font-weight:600;font-size:16px;font-variant-numeric:tabular-nums">{{ b.seguidores }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.08em;color:#857C70;margin-top:2px">AUDIÊNCIA</div></div>
+              <div><div style="font-weight:600;font-size:16px;font-variant-numeric:tabular-nums">{{ b.engaj }}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.08em;color:#857C70;margin-top:2px">ENGAJAMENTO</div></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;color:#857C70;margin-top:16px">{{ nota }}</div>
+    </div>
+    <p style="font-size:14.5px;color:#4A443C;max-width:66ch;margin-top:18px">O passo seguinte é a <strong>análise cruzada</strong>: qual canal converte melhor para trabalho de marca, onde a audiência se sobrepõe, qual formato rende mais. Isso vive na área pessoal (a cozinha) e vira, curado, um selo no perfil público — ex.: "converte melhor em vídeo curto".</p>
+  </section>
+
+  <!-- 04 · CATÁLOGO DE CARDS -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">04 · O catálogo de cards</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:24ch">Cinco famílias. Cada dor, um card.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:66ch;margin-top:16px">Os cards se agrupam por função, não por profissão — assim o mesmo bloco serve fotógrafo e videomaker, mudando só o conteúdo. A profissão define <em>quais</em> vêm ligados por padrão (seção 06), não a existência deles.</p>
+
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:26px">
+
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="font-weight:600;font-size:19px">Prova & Confiança</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">A base — todo perfil nasce com estes</div>
+        </div>
+        <p style="font-size:14px;color:#4A443C;margin-top:6px">Dor: "como eu mostro que sou confiável sem parecer autopromoção?"</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Identidade + disponibilidade</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Lastro / trajetória (o fio)</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Provas assinadas</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Selo de verificação</span>
+        </div>
+      </div>
+
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="font-weight:600;font-size:19px">Mediakit vivo</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">Números da fonte</div>
+        </div>
+        <p style="font-size:14px;color:#4A443C;margin-top:6px">Dor: "meu mediakit vive desatualizado e ninguém acredita nos meus números."</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Alcance & audiência multicanal</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Público (demografia)</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Análise cruzada de canais</span>
+        </div>
+      </div>
+
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="font-weight:600;font-size:19px">Obra</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">O que ele faz, mostrado bem</div>
+        </div>
+        <p style="font-size:14px;color:#4A443C;margin-top:6px">Dor: "quero mostrar meus melhores trabalhos de um jeito organizado e bonito, não um dump de links."</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Galeria de highlights</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Reel / vídeo embutido</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Cases com marca</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Formatos que entrega</span>
+        </div>
+      </div>
+
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="font-weight:600;font-size:19px">Relacionamento</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">Fechar a conversa</div>
+        </div>
+        <p style="font-size:14px;color:#4A443C;margin-top:6px">Dor: "não sei cobrar, a negociação é penosa e o contato se perde em mil canais."</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Faixa de investimento</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Disponibilidade / agenda</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Depoimentos co-assinados</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Marcas recorrentes</span>
+        </div>
+      </div>
+
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="font-weight:600;font-size:19px">Ferramentas pessoais</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#857C70">Só na cozinha</div>
+        </div>
+        <p style="font-size:14px;color:#4A443C;margin-top:6px">Dor: "opero em dez abas — analytics aqui, agenda ali, DM em outro app."</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Inbox / DM</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Conexão de canais</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Analytics bruto</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.04em;border:1px solid #E3DCCE;border-radius:99px;padding:7px 12px;color:#4A443C">Sincronizar Google Calendar</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 · UX DA EDIÇÃO -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">05 · A decisão de UX — como editar</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:28ch">Editar no lugar. Adicionar por galeria. Reordenar arrastando.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:66ch;margin-top:16px">Você gostou das duas primeiras opções — botão "Editar" e arrastar de uma galeria. Minha recomendação combina o melhor das duas e descarta o atrito de cada uma, ancorada em viés cognitivo:</p>
+
+    <div style="display:flex;flex-direction:column;gap:2px;margin-top:24px;border-top:1px solid #E3DCCE">
+      <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #E3DCCE">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#FF5C3D">EFEITO DEFAULT</div>
+        <div><div style="font-weight:600;font-size:15.5px">Nunca uma tela em branco.</div><p style="font-size:14px;color:#4A443C;margin-top:4px">A maioria mantém o que já vem pronto. Por isso o peso do trabalho é escolher <em>bons defaults por profissão</em> — o perfil já nasce montado e útil. Editar é ajuste, não construção.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #E3DCCE">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#857C70">PARADOXO DA ESCOLHA</div>
+        <div><div style="font-weight:600;font-size:15.5px">A galeria abre por categoria, poucos por vez.</div><p style="font-size:14px;color:#4A443C;margin-top:4px">Arrastar de uma barra com 40 cards paralisa. O "+ Adicionar" abre as cinco famílias, recomendados primeiro. Menos opções visíveis = decisão mais rápida (Hick).</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #E3DCCE">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#857C70">LEI DE FITTS</div>
+        <div><div style="font-weight:600;font-size:15.5px">Tocar para adicionar &gt; arrastar para adicionar.</div><p style="font-size:14px;color:#4A443C;margin-top:4px">Drag-and-drop de precisão falha no celular e cansa no desktop. Toque num card da galeria e ele entra no fim do perfil. O arrasto fica só para <em>reordenar</em> o que já está lá — gesto de baixo risco.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #E3DCCE">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#857C70">DIVULGAÇÃO PROGRESSIVA</div>
+        <div><div style="font-weight:600;font-size:15.5px">O perfil fica limpo; "Editar" revela os controles.</div><p style="font-size:14px;color:#4A443C;margin-top:4px">Fora do modo de edição não há X, alça ou botão — só o perfil. "Editar" liga as alças de arraste e os "remover". Reconhecer &gt; lembrar: mexe onde vê.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid #E3DCCE">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:#857C70">EFEITO DOTAÇÃO + ZEIGARNIK</div>
+        <div><div style="font-weight:600;font-size:15.5px">Barra de completude que puxa para terminar.</div><p style="font-size:14px;color:#4A443C;margin-top:4px">"Perfil 60% revelado" — tarefas incompletas incomodam, e o que já preenchemos passamos a valorizar (não removemos). Amarra direto na <strong>verificação</strong>: completar libera o selo.</p></div>
+      </div>
+    </div>
+
+    <!-- DEMO INTERATIVO -->
+    <div style="margin-top:28px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#857C70">Demonstração — o modo de edição</div>
+        <button onClick="{{ toggleEdit }}" style="font-family:'Archivo';font-weight:500;font-size:13.5px;color:{{ editBtnFg }};background:{{ editBtnBg }};border:1px solid {{ editBtnBorder }};border-radius:11px;padding:10px 18px;cursor:pointer">{{ editBtnLabel }}</button>
+      </div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:18px">
+        <div style="height:6px;background:#F2EDE3;border-radius:99px;overflow:hidden"><div style="height:100%;width:60%;background:#FF5C3D;border-radius:99px"></div></div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;color:#857C70;margin-top:8px">PERFIL 60% REVELADO · COMPLETE PARA VERIFICAR</div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+          <sc-for list="{{ cardsDemo }}" as="c" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:12px;padding:14px 16px">
+              <div style="{{ handleDisplay }};font-family:'IBM Plex Mono',monospace;color:#857C70;font-size:14px;cursor:grab">⠿</div>
+              <div>
+                <div style="font-weight:600;font-size:15px">{{ c.nome }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:#857C70;margin-top:3px">{{ c.familia }}</div>
+              </div>
+              <div style="{{ removeDisplay }};width:26px;height:26px;border-radius:99px;border:1px solid #17140F;display:flex;align-items:center;justify-content:center;font-size:12px;cursor:pointer">✕</div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ editMode }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;border:1.5px dashed #C9BFAC;border-radius:12px;padding:16px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#857C70;cursor:pointer">＋ ADICIONAR CARD · ABRE A GALERIA</div>
+          </sc-if>
+        </div>
+      </div>
+      <p style="font-size:13px;color:#857C70;margin-top:10px">Toque em "{{ editBtnLabel }}" para ver alças de arraste, remover e o card de adicionar aparecerem/sumirem.</p>
+    </div>
+  </section>
+
+  <!-- 06 · ONBOARDING / KIT POR PROFISSÃO -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">06 · O kit inicial por profissão</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:26ch">A profissão escolhe os defaults. O usuário ajusta.</h2>
+    <p style="font-size:16px;color:#4A443C;max-width:66ch;margin-top:16px">No onboarding, uma pergunta ("o que você faz?") monta um perfil pré-configurado. É o efeito default trabalhando a favor: o creator chega numa vitrine coerente e só refina. Quatro kits de partida:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px">
+        <div style="font-weight:600;font-size:18px">Fotógrafo(a)</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Obra é o coração. Galeria em destaque, gêneros, diárias.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#857C70;margin-top:12px;line-height:1.9">GALERIA · LASTRO · FAIXA DE DIÁRIA · DISPONIBILIDADE</div>
+      </div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px">
+        <div style="font-weight:600;font-size:18px">Videomaker</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Reel primeiro. Formatos entregues e tempo de entrega.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#857C70;margin-top:12px;line-height:1.9">REEL · FORMATOS · PRAZO · CASES COM MARCA</div>
+      </div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px">
+        <div style="font-weight:600;font-size:18px">Creator de conteúdo</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Mediakit no topo. Métricas multicanal, público, deliverables.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#857C70;margin-top:12px;line-height:1.9">MEDIAKIT · PÚBLICO · DELIVERABLES · CASES</div>
+      </div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px">
+        <div style="font-weight:600;font-size:18px">Assessor(a) / agente</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Representa gente. Roster, campanhas, cobertura de imprensa.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:#857C70;margin-top:12px;line-height:1.9">ROSTER · CAMPANHAS · IMPRENSA · CONTATO</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 · OUTRAS DORES -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">07 · Dores que eu mapeio a mais</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:24ch">Estendendo sua linha de raciocínio.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16.5px">Precificação opaca</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Creator não sabe cobrar; a marca não sabe o orçamento. Uma faixa transparente ancora a conversa e mata a negociação penosa.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16.5px">Um link só</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">O perfil Feel substitui linktree + PDF de mediakit + planilha de cachês. Uma URL viva no lugar de três artefatos que envelhecem.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16.5px">Prova social espalhada</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Depoimentos perdidos em prints. No perfil, o cliente co-assina — vira prova verificável, não screenshot.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16.5px">Descoberta / matchmaking</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">O perfil não é só vitrine: alimenta o motor de oportunidades. Quanto mais completo e verificado, melhor o match sugerido.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16.5px">Continuidade de relação</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Trabalho recorrente com a mesma marca é o ativo mais forte e o menos mostrado. Um card de "marcas recorrentes" torna a retenção visível.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:16.5px">Direitos de uso</div><p style="font-size:13.5px;color:#4A443C;margin-top:8px">Creator sofre com uso indevido de imagem. Registrar a licença por prova protege e profissionaliza a entrega.</p></div>
+    </div>
+  </section>
+
+  <!-- 08 · DECISÕES CRÍTICAS -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">08 · Decisões críticas</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:24ch">Sem responder estas, o código fica frágil.</h2>
+    <div style="display:flex;flex-direction:column;gap:2px;margin-top:26px;border-top:1px solid #E3DCCE">
+      <div style="padding:22px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:16.5px">01 · Arquitetura de dados — centralizada ou híbrida?</div><p style="font-size:14px;color:#4A443C;margin-top:6px;max-width:74ch">O creator controla os dados (OAuth permanece dele) e a Feel orquestra — puxa, cacheia, carimba. <strong style="color:#17140F">Recomendação: híbrida (B)</strong> — portabilidade para o creator, valor verificado para a marca. Alinha com "revela, não cria".</p></div>
+      <div style="padding:22px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:16.5px">02 · Modelo de prova — quem gera, assina e vê?</div><p style="font-size:14px;color:#4A443C;margin-top:6px;max-width:74ch">Prova privada por padrão; creator + marca optam por publicar (ganha peso no score, aparece na vitrine); assessor vê todas. <strong style="color:#17140F">Recomendação: visibilidade seletiva (B)</strong> — adoção &gt; transparência total.</p></div>
+      <div style="padding:22px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:16.5px">03 · Permissões — quem acessa o quê?</div><p style="font-size:14px;color:#4A443C;margin-top:6px;max-width:74ch">Modelo granular por <em>roles</em>: o creator concede papéis ao assessor (gestor de contatos, leitor de analytics, assinador) e revoga na desvinculação. A marca vê só o resumo carimbado. <strong style="color:#17140F">Impacto:</strong> painel de consentimento visível no perfil.</p></div>
+      <div style="padding:22px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:16.5px">04 · Onboarding — quantas profissões no lançamento?</div><p style="font-size:14px;color:#4A443C;margin-top:6px;max-width:74ch">Lançar com 5–6 profissões bem mapeadas (creator, fotógrafo, videomaker, assessor, diretor de arte, influenciador), cada uma com 4–5 cards default + espaço para customizar. Reduz o caos e viabiliza métricas de completude por profissão.</p></div>
+      <div style="padding:22px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:16.5px">05 · Monetização — onde entra a receita?</div><p style="font-size:14px;color:#4A443C;margin-top:6px;max-width:74ch">Multi-camada: <strong>curto</strong> — creator pay (R$ 9–19/mês por verificação + sync); <strong>médio</strong> — assessor pay (R$ 99–299/mês por pipeline + automação); <strong>longo</strong> — marketplace fee (3–5% da transação via Feel).</p></div>
+    </div>
+  </section>
+
+  <!-- 09 · ROADMAP -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">09 · Roadmap</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:24ch">Três fases. Cada leva estável e testável.</h2>
+    <div style="display:flex;flex-direction:column;gap:26px;margin-top:28px">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#FF5C3D;font-weight:700">FASE A · PERFIL (2–3 MESES)</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-top:12px;border-top:1px solid #E3DCCE">
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 01 · Perfil robusto — Creator + Assessor</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">Dados tipados, estados visuais (draft/verificado/em refação), edição real (add/remover/reordenar), pipeline do assessor com ações que salvam.</p></div>
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 02 · Conexão de dados — OAuth + carimbo</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">Conectar Instagram → Feel puxa alcance/audiência/engajamento com selo "verificado em TIMESTAMP". Sync a cada 24h. Elimina auto-declaração.</p></div>
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 03 · Onboarding guiado — por profissão</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">"O que você faz?" → preview do kit → completude 30% → editar. Cada profissão com primeiro passo próprio (creator: conectar IG; assessor: primeira creator no casting).</p></div>
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 04 · Dupla assinatura — prova verificada</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">Assessor registra prova; creator e marca confirmam; badge vai de "pendente" a "assinada" com timestamp. Discordância volta para "em revisão".</p></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#FF5C3D;font-weight:700">FASE B · COMUNICAÇÃO (+3–4 MESES)</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-top:12px;border-top:1px solid #E3DCCE">
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 05 · Hub de e-mail leve</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">Conectar Gmail → Feel agrupa por marca no painel. Sem IA, sem automação — só visibilidade. A comunicação vira camada 2.</p></div>
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 06 · Perfil automático</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">Deal fechado no hub → prova criada automaticamente → perfil (trajetória, stats) se atualiza. O perfil vira consequência da operação, não digitação.</p></div>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#FF5C3D;font-weight:700">FASE C · ESCALA (FUTURO)</div>
+        <div style="display:flex;flex-direction:column;gap:2px;margin-top:12px;border-top:1px solid #E3DCCE">
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 07 · IA + automação</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">Resumo de e-mail, sugestão de próximas ações, execução de etapa (e-assinar, disparar invoice, memo de correção).</p></div>
+          <div style="padding:16px 0;border-bottom:1px solid #E3DCCE"><div style="font-weight:600;font-size:15.5px">Leva 08+ · Marketplace de prova + monetização</div><p style="font-size:13.5px;color:#4A443C;margin-top:4px;max-width:74ch">Perfil com completude 80% + 10 provas verificadas fica visitável; marca propõe trabalho; Feel intermedeia (3–5%). Reputação vira ativo negociável.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · IMPLEMENTAÇÃO -->
+  <section style="margin-top:72px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">10 · Implementação</div>
+    <h2 style="font-weight:600;font-size:32px;letter-spacing:-.02em;margin-top:12px;max-width:26ch">Entidades, camadas e APIs.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px">
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px"><div style="font-weight:600;font-size:16px">Entidades principais</div><p style="font-size:14px;color:#4A443C;margin-top:8px;line-height:1.6">User (creator | assessor | marca), Profile (público), Card (widget), Deal (pipeline), Proof (dupla assinatura), Credential (OAuth + metadata). User→N Credentials; Profile→N Cards; Deal→N Proofs.</p></div>
+      <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:18px;padding:24px"><div style="font-weight:600;font-size:16px">Camadas de interface</div><p style="font-size:14px;color:#4A443C;margin-top:8px;line-height:1.6">Perfil creator: submenu "dados conectados" (OAuth ativos, última sync). Perfil assessor: painel de permissões + modal "criar prova". Modal de deal: estado "qual etapa precisa de ação minha?".</p></div>
+    </div>
+    <div style="background:#F2EDE3;border:1px solid #E3DCCE;border-radius:14px;padding:20px;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#17140F;line-height:2">POST /profile/:id/cards · DELETE /profile/:id/cards/:cardId · PATCH …/order<br>POST /deals/:id/move-stage · POST /proofs · PATCH /proofs/:id/sign · GET /profile/:id/public</div>
+  </section>
+
+  <!-- FECHO + FIO -->
+  <section style="margin-top:72px;border-top:1px solid #E3DCCE;padding-top:40px">
+    <p style="font-size:15px;color:#4A443C;max-width:72ch;line-height:1.7"><strong>Síntese:</strong> o perfil não é um PDF — é vivo, verificável, contínuo. Marina revela a vitrine; Helena revela a operação. As telas estão no <a href="Feel - FeelWorks — Wireframe.dc.html">wireframe</a>; a linguagem visual, no <a href="../01-marca/Feel - Sistema de Marca.dc.html">Sistema de Marca</a>.</p>
+    <canvas data-draw="fio-fecho" style="width:100%;height:80px;display:block;margin-top:40px"></canvas>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70;margin-top:8px">FEELWORKS · ESTRATÉGIA &amp; DEFINIÇÕES · SEGUE A FEEL</div>
+  </section>
+
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#F2EDE3"/><rect x="20" y="26" width="60" height="10" rx="3" fill="#17140F"/><rect x="20" y="42" width="44" height="6" rx="3" fill="#FF5C3D"/><rect x="20" y="56" width="26" height="18" rx="4" fill="#FBF9F3" stroke="#E3DCCE"/><rect x="52" y="56" width="26" height="18" rx="4" fill="#FBF9F3" stroke="#E3DCCE"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CANAIS = [
+  { canal: 'INSTAGRAM', alcance: '128k', seguidores: '41k', engaj: '4,2%' },
+  { canal: 'TIKTOK', alcance: '302k', seguidores: '58k', engaj: '7,1%' },
+  { canal: 'YOUTUBE', alcance: '44k', seguidores: '12k', engaj: '3,0%' }
+];
+const CONSOLIDADO = { canal: 'TODOS OS CANAIS', alcance: '474k', seguidores: '111k', engaj: '5,6%' };
+const CARDS_DEMO = [
+  { nome: 'Alcance & audiência', familia: 'MEDIAKIT VIVO' },
+  { nome: 'Galeria de highlights', familia: 'OBRA' },
+  { nome: 'Provas assinadas', familia: 'PROVA & CONFIANÇA' },
+  { nome: 'Disponibilidade', familia: 'RELACIONAMENTO' }
+];
+
+class Component extends DCLogic {
+  state = { metrics: 'consolidado', editMode: false };
+
+  componentDidMount() {
+    this._raf = requestAnimationFrame(() => this.drawAll());
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(() => this.drawAll(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentDidUpdate() { this.drawAll(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  setup(c) {
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 2;
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-draw="fio-fecho"]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      this.drawFio(s.ctx, s.w, s.h);
+    });
+  }
+
+  drawFio(ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    const b = 1.4;
+    const pts = this.cycloidPts(-6, 4 * Math.PI + 6, b, 320);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const frac = 0.82;
+    const n = Math.floor(pts.length * frac);
+    const px = (x) => 16 + ((x - minX) / (maxX - minX)) * (w - 32);
+    const py = (y) => h * 0.5 + (y / b) * h * 0.34;
+    ctx.strokeStyle = 'rgba(133,124,112,.28)'; ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => { i === 0 ? ctx.moveTo(px(x), py(y)) : ctx.lineTo(px(x), py(y)); });
+    ctx.stroke();
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = 3;
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) { const [x, y] = pts[i]; i === 0 ? ctx.moveTo(px(x), py(y)) : ctx.lineTo(px(x), py(y)); }
+    ctx.stroke();
+    [0.1, 0.38, 0.64, 0.86].forEach((f) => {
+      const [x, y] = pts[Math.floor(f * pts.length)];
+      ctx.fillStyle = f > frac ? '#C9BFAC' : '#FF5C3D';
+      ctx.beginPath(); ctx.arc(px(x), py(y), 4.5, 0, Math.PI * 2); ctx.fill();
+    });
+  }
+
+  renderVals() {
+    const porCanal = this.state.metrics === 'canal';
+    const blocos = porCanal
+      ? CANAIS.map((c, i) => ({ ...c, destaqueCor: i === 1 ? '#FF5C3D' : '#17140F' }))
+      : [{ ...CONSOLIDADO, destaqueCor: '#FF5C3D' }];
+    const on = { bg: '#17140F', fg: '#FBF9F3' };
+    const off = { bg: 'transparent', fg: '#857C70' };
+    const em = this.state.editMode;
+    return {
+      blocos,
+      gridMetricas: porCanal ? 'display:grid;grid-template-columns:repeat(3,1fr)' : 'display:grid;grid-template-columns:1fr',
+      nota: porCanal ? 'CADA CANAL NA SUA FONTE · TOQUE PARA VER O CONSOLIDADO' : 'ALCANCE SOMADO ENTRE CANAIS — NÃO É AUDIÊNCIA ÚNICA',
+      bgCanal: porCanal ? on.bg : off.bg, fgCanal: porCanal ? on.fg : off.fg,
+      bgConsol: !porCanal ? on.bg : off.bg, fgConsol: !porCanal ? on.fg : off.fg,
+      verPorCanal: () => this.setState({ metrics: 'canal' }),
+      verConsolidado: () => this.setState({ metrics: 'consolidado' }),
+      cardsDemo: CARDS_DEMO,
+      editMode: em,
+      toggleEdit: () => this.setState({ editMode: !em }),
+      editBtnLabel: em ? 'Concluir edição' : 'Editar perfil',
+      editBtnBg: em ? '#FF5C3D' : 'transparent',
+      editBtnFg: em ? '#FBF9F3' : '#17140F',
+      editBtnBorder: em ? '#FF5C3D' : '#17140F',
+      handleDisplay: em ? 'display:block' : 'display:none',
+      removeDisplay: em ? 'display:flex' : 'display:none'
+    };
+  }
+}
+</script>
+</body>
+</html>

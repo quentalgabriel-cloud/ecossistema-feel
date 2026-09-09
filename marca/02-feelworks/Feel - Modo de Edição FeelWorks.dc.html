@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#F2EDE3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:12px">
+    <div style="font-weight:700;font-size:15px;letter-spacing:-.02em">Feel<span style="color:#857C70">Works</span></div>
+    <div style="flex:1"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#FF5C3D;border:1px solid #FF5C3D;border-radius:99px;padding:6px 14px">MODO DE EDIÇÃO</div>
+    <div style="background:#17140F;color:#FBF9F3;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;padding:9px 16px;border-radius:99px">Salvar</div>
+  </div>
+</div>
+
+<div style="max-width:1080px;margin:0 auto;padding:40px 24px 80px">
+
+  <section data-screen-label="Perfil em edição — cards reordenáveis" style="border:1px solid #E3DCCE;border-radius:22px;background:#FBF9F3;padding:32px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Seus cards · arraste para reordenar</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:16px">
+      <div style="display:flex;align-items:center;gap:14px;border:1px solid #E3DCCE;border-radius:14px;background:#F2EDE3;padding:16px 18px"><span style="color:#C9BFAC;font-size:16px">⠿</span><div style="flex:1"><div style="font-weight:600;font-size:15px">Canais conectados</div><div style="font-size:12.5px;color:#4A443C;margin-top:2px">Instagram · TikTok — verificado há 3h</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70">EDITAR</span></div>
+      <div style="display:flex;align-items:center;gap:14px;border:1px solid #E3DCCE;border-radius:14px;background:#F2EDE3;padding:16px 18px"><span style="color:#C9BFAC;font-size:16px">⠿</span><div style="flex:1"><div style="font-weight:600;font-size:15px">Trajetória</div><div style="font-size:12.5px;color:#4A443C;margin-top:2px">6 marcos · 2 provas assinadas</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70">EDITAR</span></div>
+      <div style="display:flex;align-items:center;gap:14px;border:1px solid #E3DCCE;border-radius:14px;background:#F2EDE3;padding:16px 18px"><span style="color:#C9BFAC;font-size:16px">⠿</span><div style="flex:1"><div style="font-weight:600;font-size:15px">Disponibilidade</div><div style="font-size:12.5px;color:#4A443C;margin-top:2px">Aberto para propostas</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70">EDITAR</span></div>
+      <div style="display:flex;align-items:center;gap:14px;border:1px dashed #C9BFAC;border-radius:14px;background:transparent;padding:16px 18px;color:#857C70"><span style="font-size:16px">✕</span><div style="flex:1"><div style="font-weight:600;font-size:15px">Depoimentos</div><div style="font-size:12.5px;margin-top:2px">Removido do perfil público</div></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px">RESTAURAR</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Galeria de cards — catálogo por família" style="margin-top:40px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Galeria de cards</div>
+    <h2 style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:10px">Adicione mais ao seu perfil.</h2>
+    <p style="font-size:14px;color:#4A443C;margin-top:8px;max-width:64ch">As cinco famílias do catálogo — os recomendados para sua profissão aparecem primeiro.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:24px">
+      <div style="border:1.5px solid #FF5C3D;border-radius:14px;background:#FBF9F3;padding:16px;text-align:center"><div style="font-weight:600;font-size:13.5px">Prova</div><div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:#FF5C3D;margin-top:4px">RECOMENDADO</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px;text-align:center"><div style="font-weight:600;font-size:13.5px">Métrica</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px;text-align:center"><div style="font-weight:600;font-size:13.5px">Mídia</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px;text-align:center"><div style="font-weight:600;font-size:13.5px">Contato</div></div>
+      <div style="border:1px solid #E3DCCE;border-radius:14px;background:#FBF9F3;padding:16px;text-align:center"><div style="font-weight:600;font-size:13.5px">Texto livre</div></div>
+    </div>
+  </section>
+
+  <div style="margin-top:56px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">FEELWORKS · MODO DE EDIÇÃO · SEGUE A FEEL</div>
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#F2EDE3"/><rect x="20" y="24" width="60" height="14" rx="4" fill="#FBF9F3" stroke="#FF5C3D" stroke-width="1.5"/><rect x="20" y="44" width="60" height="14" rx="4" fill="#FBF9F3" stroke="#17140F" stroke-width="1"/><rect x="20" y="64" width="60" height="14" rx="4" fill="#FBF9F3" stroke="#17140F" stroke-width="1"/></svg>
+</template>
+</x-dc>
+</body>
+</html>

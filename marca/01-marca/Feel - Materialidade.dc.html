@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:#FBF9F3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1160px;margin:0 auto;padding:0 28px;height:64px;display:flex;align-items:center;gap:14px">
+    <div style="min-width:0">
+      <div style="font-weight:700;font-size:15px;letter-spacing:-.02em;line-height:1.1">Materialidade</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.2em;color:#857C70;text-transform:uppercase;margin-top:2px">a marca como ambiente</div>
+    </div>
+    <div style="flex:1"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70">{{ aplicacaoLabel }} · {{ acabamentoLabel }}</div>
+  </div>
+</div>
+
+<section data-screen-label="Intro materialidade" style="max-width:1160px;margin:0 auto;padding:72px 28px 32px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#FF5C3D;margin-bottom:20px">materialidade</div>
+  <h1 style="font-weight:600;font-size:clamp(30px,4.6vw,54px);line-height:1.03;letter-spacing:-.035em;max-width:16ch">A Feel é um <em style="font-style:normal;color:#FF5C3D">ambiente</em>, não uma interface.</h1>
+  <p style="color:#4A443C;font-size:16px;max-width:62ch;margin-top:20px">O teste final da identidade não é a tela — é o toque. Aqui a marca encontra papel não revestido, tecido cru, metal escovado, acrílico e a sinalização do shopping. O fio não é impresso por cima: ele é <b>relevo seco, serigrafia ou gravação</b> — presença física, nunca adesivo brilhante de SaaS.</p>
+</section>
+
+<!-- GRID DE MATERIAIS -->
+<section data-screen-label="Materiais" style="max-width:1160px;margin:0 auto;padding:8px 28px 24px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+
+    <!-- Cartão / papel -->
+    <div style="border:1px solid #E3DCCE;border-radius:18px;overflow:hidden;background:#FBF9F3">
+      <div style="aspect-ratio:16/10;position:relative;background:#F2EDE3">
+        <canvas data-mat="papel" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+      </div>
+      <div style="padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Papel não revestido · 300g</div>
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em;margin-top:6px">Cartão de trajetória</div>
+        <p style="font-size:13px;color:#4A443C;margin-top:8px">Relevo seco do fio, sem tinta. Se passa o dedo, sente. Reputação que se toca.</p>
+      </div>
+    </div>
+
+    <!-- Papel timbrado -->
+    <div style="border:1px solid #E3DCCE;border-radius:18px;overflow:hidden;background:#FBF9F3">
+      <div style="aspect-ratio:16/10;position:relative;background:#FBF9F3">
+        <canvas data-mat="timbrado" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+      </div>
+      <div style="padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Papel algodão · A4</div>
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em;margin-top:6px">Documento institucional</div>
+        <p style="font-size:13px;color:#4A443C;margin-top:8px">O fio entra pela margem e sai do quadro — o documento também está em processo.</p>
+      </div>
+    </div>
+
+    <!-- Tecido -->
+    <div style="border:1px solid #E3DCCE;border-radius:18px;overflow:hidden;background:#FBF9F3">
+      <div style="aspect-ratio:16/10;position:relative;background:#6B6459">
+        <canvas data-mat="tecido" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+      </div>
+      <div style="padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Algodão cru · serigrafia</div>
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em;margin-top:6px">Tote &amp; etiqueta tecida</div>
+        <p style="font-size:13px;color:#4A443C;margin-top:8px">Serigrafia fosca, um tom acima do tecido. O merchandising do evento vira objeto de trajetória.</p>
+      </div>
+    </div>
+
+    <!-- Metal -->
+    <div style="border:1px solid #E3DCCE;border-radius:18px;overflow:hidden;background:#FBF9F3">
+      <div style="aspect-ratio:16/10;position:relative;background:#9E9A92">
+        <canvas data-mat="metal" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+      </div>
+      <div style="padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Latão escovado · gravação</div>
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em;margin-top:6px">Placa &amp; pin de credencial</div>
+        <p style="font-size:13px;color:#4A443C;margin-top:8px">Gravação incisa, sem cor. A luz é que revela o fio — descoberta, não brilho.</p>
+      </div>
+    </div>
+
+    <!-- Acrílico / vidro -->
+    <div style="border:1px solid #E3DCCE;border-radius:18px;overflow:hidden;background:#FBF9F3">
+      <div style="aspect-ratio:16/10;position:relative;background:#E3E7E4">
+        <canvas data-mat="acrilico" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+      </div>
+      <div style="padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Acrílico fosco · vidro jateado</div>
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em;margin-top:6px">Painel de descoberta</div>
+        <p style="font-size:13px;color:#4A443C;margin-top:8px">O glass do produto vira material real: existe atrás do vidro, ainda não revelado.</p>
+      </div>
+    </div>
+
+    <!-- Sinalização / piso -->
+    <div style="border:1px solid #E3DCCE;border-radius:18px;overflow:hidden;background:#14110F">
+      <div style="aspect-ratio:16/10;position:relative;background:#14110F">
+        <canvas data-mat="sinalizacao" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+      </div>
+      <div style="padding:20px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;color:#857C70;text-transform:uppercase">Vinil de piso · FeelMakers</div>
+        <div style="font-weight:600;font-size:18px;letter-spacing:-.01em;margin-top:6px;color:#F2EDE3">Sinalização do shopping</div>
+        <p style="font-size:13px;color:#B9B0A2;margin-top:8px">O fio guia o corredor até o palco. No físico, ele literalmente conduz o passo — âmbar sobre ink.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOTOGRAFIA DE APLICAÇÃO REAL -->
+<section data-screen-label="Registro real" style="max-width:1160px;margin:0 auto;padding:32px 28px 80px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70;margin-bottom:18px">Registro real · documental, nunca mockup brilhante</div>
+  <div style="display:grid;grid-template-columns:8fr 5fr;gap:16px">
+    <div style="height:340px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="mat-ambiente" shape="rounded" radius="18" placeholder="Peça impressa sobre mesa de trabalho — luz de janela" hint-size="100%,340px" style="width:100%;height:340px"></x-import></div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="flex:1;min-height:160px"><x-import component-from-global-scope="image-slot" from="./image-slot.js" id="mat-detalhe" shape="rounded" radius="18" placeholder="Detalhe do relevo seco em close" hint-size="100%,160px" style="width:100%;height:100%"></x-import></div>
+      <div style="border:1px solid #E3DCCE;border-radius:18px;background:#F7F2E9;padding:22px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">O teste do toque</div>
+        <p style="font-size:13.5px;color:#4A443C;margin-top:8px">Se a peça só funciona na tela, não é Feel. A marca precisa sobreviver ao papel áspero, à luz rasante do metal e ao passo no corredor.</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:36px;display:flex;align-items:center;gap:12px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">MATERIALIDADE · SEGUE A FEEL</span>
+  </div>
+</section>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#F2EDE3"/><rect x="22" y="28" width="56" height="44" rx="4" fill="#FBF9F3" stroke="#C9BFAC" stroke-width="2"/><path d="M30 52 q7 -14 14 0 q7 -14 14 0 q4 8 10 -2" fill="none" stroke="#857C70" stroke-width="3" stroke-linecap="round"/></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;aplicacao&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Relevo seco&quot;, &quot;Serigrafia&quot;, &quot;Gravação&quot;], &quot;default&quot;: &quot;Relevo seco&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Aplicação do fio&quot; },
+  &quot;acabamento&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Fosco&quot;, &quot;Natural&quot;], &quot;default&quot;: &quot;Fosco&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Acabamento&quot; }
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this._raf = requestAnimationFrame(() => this.drawAll());
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(() => this.drawAll(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentDidUpdate() { this.drawAll(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  aplicacao() { return this.props.aplicacao || 'Relevo seco'; }
+  fosco() { return (this.props.acabamento || 'Fosco') === 'Fosco'; }
+
+  setup(c) {
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 2;
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  fioPath(w, h, b, t0, t1) {
+    const pts = this.cycloidPts(t0, t1, b, 200);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    return pts.map(([x, y]) => {
+      const nx = (x - minX) / (maxX - minX);
+      return [nx, y / b];
+    });
+  }
+
+  // draw the fio applied to a material with the chosen technique
+  applyFio(ctx, w, h, opts) {
+    const { yBase = 0.55, amp = 0.28, pad = 0.1, ink, material } = opts;
+    const norm = this.fioPath(w, h, 1.5, -2.4, 2 * Math.PI + 2.4);
+    const px = (nx) => pad * w + nx * (1 - 2 * pad) * w;
+    const py = (ny) => h * yBase + ny * h * amp;
+    const app = this.aplicacao();
+    const stroke = (color, lw, dx = 0, dy = 0) => {
+      ctx.strokeStyle = color; ctx.lineWidth = lw;
+      ctx.beginPath();
+      norm.forEach(([nx, ny], i) => { const X = px(nx) + dx, Y = py(ny) + dy; if (i === 0) ctx.moveTo(X, Y); else ctx.lineTo(X, Y); });
+      ctx.stroke();
+    };
+    if (app === 'Relevo seco') {
+      // emboss: dark shadow below, light highlight above, same-tone body
+      stroke('rgba(0,0,0,.16)', 3.4, 0, 1.4);
+      stroke('rgba(255,255,255,.5)', 3.4, 0, -1.2);
+      stroke(material.tone, 3, 0, 0);
+    } else if (app === 'Serigrafia') {
+      stroke(ink, 3.2, 0, 0);
+    } else if (app === 'Gravação') {
+      // incised: dark line + subtle inner highlight
+      stroke('rgba(0,0,0,.4)', 3.2, 0, .6);
+      stroke('rgba(255,255,255,.35)', 1.4, 0, -.6);
+    }
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-mat]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      const { ctx, w, h } = s; ctx.clearRect(0, 0, w, h);
+      const name = c.getAttribute('data-mat');
+      this.drawMaterial(name, ctx, w, h);
+      // acabamento Natural: add a soft raking gloss (fosco = matte, no gloss)
+      if (!this.fosco() && name !== 'sinalizacao') {
+        const g = ctx.createLinearGradient(0, 0, w, h);
+        g.addColorStop(0, 'rgba(255,255,255,0)');
+        g.addColorStop(0.45, 'rgba(255,255,255,.28)');
+        g.addColorStop(0.55, 'rgba(255,255,255,.06)');
+        g.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+      }
+    });
+  }
+
+  drawMaterial(name, ctx, w, h) {
+    if (name === 'papel') {
+      this.paperTexture(ctx, w, h, '#F2EDE3');
+      this.wordmark(ctx, w * 0.12, h * 0.24, 26, '#17140F', 'ink');
+      ctx.fillStyle = '#857C70'; ctx.font = '9px IBM Plex Mono, monospace';
+      ctx.fillText('MARINA DUARTE · FOTÓGRAFA', w * 0.12, h * 0.38);
+      this.applyFio(ctx, w, h, { yBase: 0.68, amp: 0.2, pad: 0.1, ink: '#FF5C3D', material: { tone: '#E4DBC9' } });
+    } else if (name === 'timbrado') {
+      this.paperTexture(ctx, w, h, '#FBF9F3');
+      this.wordmark(ctx, w * 0.1, h * 0.2, 20, '#17140F', 'ink');
+      ctx.strokeStyle = 'rgba(133,124,112,.25)'; ctx.lineWidth = 1;
+      for (let i = 0; i < 4; i++) { ctx.beginPath(); ctx.moveTo(w*0.1, h*(0.42+i*0.11)); ctx.lineTo(w*0.62, h*(0.42+i*0.11)); ctx.stroke(); }
+      // fio entering from margin, exiting frame
+      this.applyFioEdge(ctx, w, h, '#FF5C3D', { tone: '#EFE7D6' });
+    } else if (name === 'tecido') {
+      this.fabricTexture(ctx, w, h, '#6B6459');
+      this.applyFio(ctx, w, h, { yBase: 0.5, amp: 0.24, pad: 0.14, ink: '#D9CFC0', material: { tone: '#7C7568' } });
+      this.wordmark(ctx, w * 0.5 - 34, h * 0.8, 22, '#E8E1D4', 'serig', true);
+    } else if (name === 'metal') {
+      this.metalTexture(ctx, w, h);
+      this.applyFio(ctx, w, h, { yBase: 0.5, amp: 0.26, pad: 0.14, ink: '#6E6A62', material: { tone: '#8E8A82' } });
+    } else if (name === 'acrilico') {
+      this.acrylicTexture(ctx, w, h);
+    } else if (name === 'sinalizacao') {
+      // dark floor with amber fio guiding
+      const norm = this.fioPath(w, h, 1.4, -6, 4 * Math.PI + 6);
+      ctx.strokeStyle = 'rgba(240,166,59,.9)'; ctx.lineWidth = 5;
+      ctx.beginPath();
+      norm.forEach(([nx, ny], i) => { const X = 0.06*w + nx*0.88*w, Y = h*0.5 + ny*h*0.3; if (i===0) ctx.moveTo(X,Y); else ctx.lineTo(X,Y); });
+      ctx.stroke();
+      ctx.fillStyle = '#F0A63B'; ctx.font = '600 13px Archivo, sans-serif';
+      ctx.fillText('→ PALCO', w * 0.06, h * 0.2);
+    }
+  }
+
+  paperTexture(ctx, w, h, base) {
+    ctx.fillStyle = base; ctx.fillRect(0, 0, w, h);
+    // faint speckle
+    ctx.fillStyle = 'rgba(133,124,112,.05)';
+    for (let i = 0; i < w * h / 900; i++) ctx.fillRect(Math.random()*w, Math.random()*h, 1, 1);
+    // soft top light
+    const g = ctx.createLinearGradient(0, 0, 0, h);
+    g.addColorStop(0, 'rgba(255,255,255,.25)'); g.addColorStop(1, 'rgba(0,0,0,.03)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  }
+  fabricTexture(ctx, w, h, base) {
+    ctx.fillStyle = base; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(0,0,0,.06)'; ctx.lineWidth = 1;
+    for (let x = 0; x < w; x += 3) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+    ctx.strokeStyle = 'rgba(255,255,255,.05)';
+    for (let y = 0; y < h; y += 3) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+  }
+  metalTexture(ctx, w, h) {
+    const g = ctx.createLinearGradient(0, 0, w, 0);
+    ['#8f8b83','#a8a49c','#94908886','#b0aca4','#8a867e','#a4a098','#9a968e'].forEach((c,i,a)=>g.addColorStop(i/(a.length-1), c.length>7?'#a09c94':c));
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = 'rgba(255,255,255,.12)'; ctx.lineWidth = 1;
+    for (let y = 0; y < h; y += 2) { ctx.beginPath(); ctx.moveTo(0, y + (Math.random()-.5)); ctx.lineTo(w, y); ctx.stroke(); }
+    ctx.fillStyle = 'rgba(0,0,0,.06)'; ctx.fillRect(0, 0, w, h);
+  }
+  acrylicTexture(ctx, w, h) {
+    ctx.fillStyle = '#E3E7E4'; ctx.fillRect(0, 0, w, h);
+    const g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, 'rgba(255,255,255,.5)'); g.addColorStop(.5, 'rgba(255,255,255,.1)'); g.addColorStop(1, 'rgba(200,210,205,.3)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+    // frosted fio (barely there) — discovery
+    const norm = this.fioPath(w, h, 1.5, -2.4, 2*Math.PI+2.4);
+    ctx.strokeStyle = 'rgba(255,255,255,.85)'; ctx.lineWidth = 5;
+    ctx.beginPath();
+    norm.forEach(([nx,ny],i)=>{ const X=0.12*w+nx*0.76*w, Y=h*0.55+ny*h*0.22; if(i===0)ctx.moveTo(X,Y); else ctx.lineTo(X,Y); });
+    ctx.stroke();
+    ctx.fillStyle = 'rgba(23,20,15,.35)'; ctx.font = '9px IBM Plex Mono, monospace';
+    ctx.fillText('EM DESCOBERTA', w*0.12, h*0.85);
+  }
+  applyFioEdge(ctx, w, h, ink, material) {
+    // fio entering from left margin and exiting right edge (never closed)
+    const norm = this.fioPath(w, h, 1.5, -1, 2*Math.PI+4);
+    ctx.strokeStyle = this.aplicacao() === 'Serigrafia' ? ink : material.tone;
+    ctx.lineWidth = 2.6;
+    ctx.beginPath();
+    norm.forEach(([nx,ny],i)=>{ const X = -0.05*w + nx*1.15*w, Y = h*0.72 + ny*h*0.16; if(i===0)ctx.moveTo(X,Y); else ctx.lineTo(X,Y); });
+    ctx.stroke();
+  }
+  wordmark(ctx, x, y, size, color, mode, center) {
+    ctx.fillStyle = color; ctx.font = `600 ${size}px Archivo, sans-serif`;
+    if (center) ctx.textAlign = 'left';
+    ctx.fillText('feel', x, y);
+  }
+
+  renderVals() {
+    return {
+      aplicacaoLabel: this.aplicacao().toUpperCase(),
+      acabamentoLabel: this.fosco() ? 'FOSCO' : 'NATURAL'
+    };
+  }
+}
+</script>
+</body>
+</html>

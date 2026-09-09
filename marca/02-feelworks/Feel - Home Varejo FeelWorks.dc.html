@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#E4DACA;font-family:Archivo,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<div style="min-height:100vh;padding:20px;background:radial-gradient(90% 120% at 12% -10%,#FFFDF7 0%,#F3EDE2 42%,#E4DACA 78%,#D8CDBB 100%)">
+
+  <div style="max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:2px 6px 40px">
+    <div style="display:flex;align-items:baseline;gap:5px">
+      <div role="img" aria-label="Feel" style="width:42px;height:17px;transform:translateY(2px);background:url(../assets/feel-wordmark-steel.png) left center/contain no-repeat"></div>
+      <span style="font-size:17px;letter-spacing:-.02em;color:#857C70">works</span>
+    </div>
+    <nav style="display:flex;gap:2px;margin-left:8px;background:rgba(253,251,246,.7);backdrop-filter:blur(14px);border-radius:99px;padding:4px;box-shadow:0 1px 3px rgba(23,20,15,.05),0 10px 24px -12px rgba(23,20,15,.18)">
+      <sc-for list="{{ navItens }}" as="it" hint-placeholder-count="4">
+        <div style="{{ it.style }}">{{ it.label }}</div>
+      </sc-for>
+    </nav>
+    <div style="flex:1"></div>
+    <div style="width:36px;height:36px;border-radius:99px;flex:none;background:#EDE6D9;box-shadow:inset 0 0 0 1px rgba(23,20,15,.08);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#857C70">CR</div>
+  </div>
+
+  <div style="max-width:1240px;margin:0 auto">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <div>
+        <div style="font-weight:300;font-size:34px;line-height:1.08;letter-spacing:-.03em;color:#17140F">Quem você pode contratar, com prova.</div>
+        <p style="font-size:14.5px;color:#4A443C;margin-top:8px;max-width:52ch">Cada perfil abaixo tem trabalhos co-assinados por outros negócios — não portfolio auto-declarado.</p>
+      </div>
+      <div style="display:flex;gap:6px;background:rgba(253,251,246,.6);backdrop-filter:blur(12px);border-radius:99px;padding:4px">
+        <sc-for list="{{ categorias }}" as="c" hint-placeholder-count="4">
+          <div style="{{ c.style }}" onClick="{{ c.onClick }}">{{ c.label }}</div>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;background:rgba(253,251,246,.6);backdrop-filter:blur(14px);border-radius:18px;padding:16px 22px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;box-shadow:0 1px 3px rgba(23,20,15,.04)">
+      <sc-for list="{{ densidade }}" as="d" hint-placeholder-count="3">
+        <div style="display:flex;align-items:baseline;gap:9px">
+          <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:18px;letter-spacing:-.01em;color:#17140F;font-variant-numeric:tabular-nums">{{ d.valor }}</div>
+          <div style="font-size:13px;color:#4A443C">{{ d.texto }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+      <sc-for list="{{ profissionais }}" as="p" hint-placeholder-count="3">
+        <div style="background:rgba(253,251,246,.86);backdrop-filter:blur(18px);border-radius:22px;padding:24px;box-shadow:0 2px 6px rgba(23,20,15,.05),0 20px 44px -18px rgba(23,20,15,.16)">
+          <div style="display:flex;align-items:center;gap:14px">
+            <image-slot id="{{ p.slotId }}" shape="circle" placeholder="Foto" style="width:96px;height:96px;flex:none;box-shadow:inset 0 0 0 1px rgba(23,20,15,.06)"></image-slot>
+            <div style="min-width:0">
+              <div style="font-weight:500;font-size:17px;letter-spacing:-.01em;color:#17140F">{{ p.nome }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#857C70;margin-top:3px">{{ p.categoria }}</div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;align-items:baseline;gap:8px">
+            <div style="font-weight:400;font-size:26px;letter-spacing:-.02em;color:#17140F;font-variant-numeric:tabular-nums">{{ p.nProvas }}</div>
+            <div style="font-size:12.5px;color:#857C70">provas co-assinadas</div>
+          </div>
+
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid #E3DCCE;display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ p.provas }}" as="pr" hint-placeholder-count="2">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;color:#C9BFAC">{{ pr.data }}</div>
+                <div style="font-size:12.5px;line-height:1.4;color:#4A443C;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ pr.texto }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="margin-top:16px;padding-right:14px;display:flex;align-items:center;justify-content:space-between;gap:10px">
+            <div style="font-size:12.5px;color:#4A443C;min-width:0">{{ p.repete }}</div>
+            <div style="{{ p.ctaStyle }}">Ver lastro</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="margin-top:30px;background:rgba(242,237,227,.55);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.8);border-radius:20px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Ainda não encontrou</div>
+        <div style="font-weight:400;font-size:18px;letter-spacing:-.01em;color:#17140F;margin-top:6px">Descreva o que precisa. A Feel indica quem já entregou isso, com prova.</div>
+      </div>
+      <div style="background:#FF5C3D;color:#FBF9F3;font-size:14px;font-weight:500;padding:12px 22px;border-radius:12px;cursor:pointer;white-space:nowrap" style-hover="background:#D9431F">Publicar briefing</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1320,&quot;height&quot;:900}}">
+const PROFISSIONAIS = [
+  { nome: 'Marina Dias', categoria: 'Fotografia', slotId: 'foto-marina', nProvas: 12, repete: '3 negócios contrataram de novo',
+    provas: [
+      { data: '09 JUL', texto: 'Reabertura da flagship — Studio Norte' },
+      { data: '27 ABR', texto: 'Série documental — Café Roda' }
+    ] },
+  { nome: 'Diego Farias', categoria: 'Social Media', slotId: 'foto-diego', nProvas: 8, repete: '2 negócios contrataram de novo',
+    provas: [
+      { data: '02 JUL', texto: 'Campanha de lançamento — Ateliê Bruna Sales' },
+      { data: '14 MAI', texto: 'Gestão mensal — Loja Matriz' }
+    ] },
+  { nome: 'Iara Prado', categoria: 'Design gráfico', slotId: 'foto-iara', nProvas: 5, repete: '1 negócio contratou de novo',
+    provas: [
+      { data: '30 JUN', texto: 'Identidade de embalagem — Café Roda' },
+      { data: '11 MAR', texto: 'Cardápio e sinalização — Studio Norte' }
+    ] }
+];
+
+class Component extends DCLogic {
+  state = { cat: 'Todos' };
+
+  renderVals() {
+    const navItem = (label, active) => ({ label, style: 'font-size:13.5px;font-weight:500;letter-spacing:-.005em;padding:9px 16px;border-radius:99px;white-space:nowrap;' + (active ? 'background:#17140F;color:#FBF9F3' : 'color:#4A443C') });
+    const cur = this.state.cat;
+    const catChip = (label) => ({
+      label,
+      style: 'font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:8px 13px;border-radius:99px;cursor:pointer;white-space:nowrap;' + (cur === label ? 'background:#17140F;color:#FBF9F3' : 'color:#857C70'),
+      onClick: () => this.setState({ cat: label })
+    });
+
+    return {
+      navItens: [navItem('Home', true), navItem('Descoberta', false), navItem('Projetos', false), navItem('Provas', false)],
+      categorias: ['Todos', 'Fotografia', 'Social Media', 'Design'].map(catChip),
+      densidade: [
+        { valor: '18', texto: 'profissionais ativos nesta praça' },
+        { valor: '46', texto: 'provas assinadas nos últimos 90 dias' },
+        { valor: '31%', texto: 'crescimento da rede no trimestre' }
+      ],
+      profissionais: PROFISSIONAIS.map(p => ({
+        ...p,
+        ctaStyle: 'font-size:13px;font-weight:500;color:#17140F;cursor:pointer;white-space:nowrap;flex:none;padding-right:2px'
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

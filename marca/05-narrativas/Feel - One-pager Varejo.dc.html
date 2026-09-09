@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  *{box-sizing:border-box}
+  body{font-family:'Archivo',system-ui,sans-serif;color:#17140F}
+  a{color:#FF5C3D}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" margin="0.85in" hint-size="100%,1100px">
+
+<div style="display:flex;align-items:center;gap:10px">
+  <img src="../assets/feel-mark.png" alt="Feel" style="width:22px;height:auto">
+  <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;color:#857C70;text-transform:uppercase">Varejo local · one-pager</span>
+</div>
+
+<h1 style="font-weight:600;font-size:34px;letter-spacing:-.02em;line-height:1.1;margin-top:22px;max-width:22ch">Contrate quem tem prova, não quem tem lábia.</h1>
+<p style="font-size:15.5px;color:#4A443C;margin-top:14px;max-width:64ch;line-height:1.55">Cada real investido em comunicação hoje é uma aposta: mediakit em PDF, print de depoimento, indicação de terceiro. A Feel reduz esse risco — você vê reputação verificada, não alegada.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;break-inside:avoid">
+  <div style="border:1px solid #E3DCCE;border-radius:12px;padding:18px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;text-transform:uppercase">O problema hoje</div>
+    <p style="font-size:14px;color:#4A443C;margin-top:8px;line-height:1.5">Sem indicação, contratar criativo é apostar às cegas. Auto-declaração não prova nada.</p>
+  </div>
+  <div style="border:1px solid #E3DCCE;border-radius:12px;padding:18px">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#857C70;text-transform:uppercase">A solução Feel</div>
+    <p style="font-size:14px;color:#4A443C;margin-top:8px;line-height:1.5">Dados na fonte (Instagram/TikTok verificado) + prova co-assinada por quem já contratou.</p>
+  </div>
+</div>
+
+<div style="margin-top:32px;break-inside:avoid">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#FF5C3D;text-transform:uppercase">Três provas</div>
+  <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;border-top:1px solid #E3DCCE">
+    <div style="padding:12px 0;border-bottom:1px solid #E3DCCE"><b>Selo "verificado na fonte"</b> — sem números inflados de print.</div>
+    <div style="padding:12px 0;border-bottom:1px solid #E3DCCE"><b>Dupla assinatura</b> — quem já contratou confirma o trabalho, não só declara.</div>
+    <div style="padding:12px 0;border-bottom:1px solid #E3DCCE"><b>Histórico acumulado</b> — reputação que cresce a cada trabalho, visível de uma vez.</div>
+  </div>
+</div>
+
+<div style="margin-top:32px;border:1px solid #17140F;border-radius:14px;padding:22px;break-inside:avoid">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Como começar</div>
+  <p style="font-size:15px;color:#4A443C;margin-top:8px;line-height:1.5">Visite o espaço FeelMakers ou acesse o perfil de um profissional indicado. Sem custo para consultar — a Feel entra quando você fecha o trabalho.</p>
+  <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;color:#FF5C3D;margin-top:16px">segueafeel.com · [CONTATO LOCAL]</p>
+</div>
+
+</x-import>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#FBF9F3"/><rect x="24" y="12" width="52" height="76" fill="#FFF" stroke="#17140F" stroke-width="2"/><line x1="32" y1="30" x2="68" y2="30" stroke="#FF5C3D" stroke-width="2"/><line x1="32" y1="42" x2="68" y2="42" stroke="#E3DCCE" stroke-width="2"/><line x1="32" y1="52" x2="68" y2="52" stroke="#E3DCCE" stroke-width="2"/></svg>
+</template>
+</x-dc>
+</body>
+</html>

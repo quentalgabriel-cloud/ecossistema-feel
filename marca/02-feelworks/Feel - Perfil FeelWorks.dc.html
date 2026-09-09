@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:#F2EDE3;color:#17140F;font-family:'Archivo',system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:#FF5C3D;text-decoration:none}
+  a:hover{color:#D9431F}
+  ::selection{background:#FF5C3D;color:#FBF9F3}
+</style>
+</helmet>
+
+<!-- app chrome -->
+<div style="position:sticky;top:0;z-index:60;background:rgba(251,249,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid #E3DCCE">
+  <div style="max-width:1080px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:12px">
+    <div style="font-weight:700;font-size:15px;letter-spacing:-.02em">Feel<span style="color:#857C70">Works</span></div>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:2px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em">
+      <span style="padding:8px 12px;color:#17140F;border-bottom:2px solid #FF5C3D">Perfil</span>
+      <a href="Feel - Área Pessoal FeelWorks.dc.html" style="padding:8px 12px;color:#857C70">Painel</a>
+      <a href="Feel - Assistente de Negociação FeelWorks.dc.html" style="padding:8px 12px;color:#857C70">Propostas</a>
+      <span style="padding:8px 12px;color:#857C70">Rede</span>
+    </div>
+    <div style="display:flex;gap:2px;background:#F2EDE3;border:1px solid #E3DCCE;border-radius:99px;padding:3px;margin-left:10px">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;border-radius:99px;padding:6px 12px;background:#FF5C3D;color:#FBF9F3;white-space:nowrap">RAYANNE</span>
+      <a href="Feel - Perfil Negócio FeelWorks.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.05em;border-radius:99px;padding:6px 12px;color:#4A443C;white-space:nowrap">TU VENS</a>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:1080px;margin:0 auto;padding:40px 24px 80px">
+
+  <!-- HEADER DO PERFIL -->
+  <section data-screen-label="Cabeçalho do perfil" style="display:grid;grid-template-columns:5fr 8fr;gap:32px;align-items:center;background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:32px">
+    <div style="position:relative;aspect-ratio:1;border-radius:18px;overflow:hidden">
+      <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="fw-avatar" shape="rounded" radius="18" placeholder="Retrato documental — luz natural" hint-size="100%,100%" style="width:100%;height:100%"></x-import>
+    </div>
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#857C70;text-transform:uppercase">Fotógrafa · Recife-PE</div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #FF5C3D;border-radius:99px;padding:4px 10px;color:#FF5C3D">DISPONÍVEL</span>
+      </div>
+      <h1 style="font-weight:600;font-size:clamp(34px,4.4vw,52px);line-height:1.0;letter-spacing:-.03em;margin-top:12px">Kathleen Fonseca</h1>
+      <p style="font-size:16px;color:#4A443C;max-width:46ch;margin-top:14px">Registro documental de moda e gastronomia. Luz disponível, processo antes de resultado. Cada trabalho vira uma prova assinada.</p>
+      <div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
+        <button style="font-family:'Archivo';font-weight:500;font-size:14.5px;color:#FBF9F3;background:#FF5C3D;border:none;border-radius:11px;padding:12px 22px;cursor:pointer">Propor trabalho</button>
+        <button style="font-family:'Archivo';font-weight:500;font-size:14.5px;color:#17140F;background:transparent;border:1px solid #17140F;border-radius:11px;padding:11px 21px;cursor:pointer">Seguir o fio&nbsp;<br></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section data-screen-label="Lastro numérico" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px">
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">34</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">PROVAS ASSINADAS</div></div>
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">08</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">OBRAS PUBLICADAS</div></div>
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">100%</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">DUPLA ASSINATURA</div></div>
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:16px;padding:22px"><div style="font-weight:600;font-size:38px;letter-spacing:-.02em;font-variant-numeric:tabular-nums">3 anos</div><div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#857C70;margin-top:2px">DE RASTRO</div></div>
+  </section>
+
+  <!-- LASTRO / TIMELINE -->
+  <section data-screen-label="Trajetória" onClick="{{ abrirTraj }}" style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:32px;margin-top:16px;cursor:pointer;transition:border-color .15s" style-hover="border-color:#C9BFAC">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Trajetória · o fio que não fecha</div>
+        <h2 style="font-weight:600;font-size:26px;letter-spacing:-.02em;margin-top:8px">A reputação, contável.</h2>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#FF5C3D;white-space:nowrap">VER MALHA COMPLETA →</div>
+    </div>
+    <div style="position:relative;margin-top:24px">
+      <canvas data-draw="perfil-fio" style="width:100%;height:96px;display:block"></canvas>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:4px">
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#857C70">2023</div><div style="font-weight:500;font-size:14px;margin-top:2px">Primeira prova</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#857C70">2024</div><div style="font-weight:500;font-size:14px;margin-top:2px">Editorial publicado</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#857C70">2025</div><div style="font-weight:500;font-size:14px;margin-top:2px">Assessoria fixa</div></div>
+        <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#FF5C3D">HOJE</div><div style="font-weight:500;font-size:14px;margin-top:2px">34 provas · 8 obras</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MALHA COMPLETA (zoom) -->
+  <sc-if value="{{ trajOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ fecharTraj }}" style="position:fixed;inset:0;background:rgba(23,20,15,.55);backdrop-filter:blur(3px);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px">
+      <div onClick="{{ pararPropagacao }}" style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:36px;max-width:760px;width:100%;max-height:86vh;overflow-y:auto">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Malha · fio estrutural</div>
+            <h2 style="font-weight:600;font-size:28px;letter-spacing:-.02em;margin-top:8px">Cada nó, uma prova assinada.</h2>
+          </div>
+          <button onClick="{{ fecharTraj }}" aria-label="Fechar" style="font-family:'Archivo';font-weight:500;font-size:13px;color:#17140F;background:transparent;border:1px solid #17140F;border-radius:99px;width:34px;height:34px;cursor:pointer;flex-shrink:0">✕</button>
+        </div>
+
+        <div style="position:relative;margin-top:28px">
+          <canvas data-draw="perfil-fio-expandido" style="width:100%;height:120px;display:block"></canvas>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:4px">
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#857C70">2023</div><div style="font-weight:500;font-size:14px;margin-top:2px">Primeira prova</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#857C70">2024</div><div style="font-weight:500;font-size:14px;margin-top:2px">Editorial publicado</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#857C70">2025</div><div style="font-weight:500;font-size:14px;margin-top:2px">Assessoria fixa</div></div>
+            <div><div style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#FF5C3D">HOJE</div><div style="font-weight:500;font-size:14px;margin-top:2px">34 provas · 8 obras</div></div>
+          </div>
+        </div>
+
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70;margin-top:32px;padding-bottom:14px;border-bottom:1px solid #E3DCCE">Provas que formam a malha</div>
+        <div style="display:flex;flex-direction:column;gap:2px">
+          <sc-for list="{{ provas }}" as="p" hint-placeholder-count="4">
+            <div style="display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:14px 0;border-bottom:1px solid #E3DCCE">
+              <div style="width:40px;height:40px;border-radius:10px;background:#F2EDE3;display:flex;align-items:center;justify-content:center"><canvas data-icon="{{ p.icon }}" style="width:22px;height:22px"></canvas></div>
+              <div>
+                <div style="font-weight:600;font-size:15.5px;letter-spacing:-.01em">{{ p.titulo }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:#857C70;margin-top:3px">{{ p.cliente }}</div>
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:{{ p.statusColor }};text-transform:uppercase;white-space:nowrap">{{ p.status }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- PROVAS + OPORTUNIDADE -->
+  <section data-screen-label="Provas e oportunidade" style="display:grid;grid-template-columns:8fr 5fr;gap:16px;margin-top:16px;align-items:start">
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:28px">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70;margin-bottom:18px">Provas recentes</div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <sc-for list="{{ provas }}" as="p" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:{{ rowPad }} 0;border-bottom:1px solid #E3DCCE">
+            <div style="width:40px;height:40px;border-radius:10px;background:#F2EDE3;display:flex;align-items:center;justify-content:center"><canvas data-icon="{{ p.icon }}" style="width:22px;height:22px"></canvas></div>
+            <div>
+              <div style="font-weight:600;font-size:15.5px;letter-spacing:-.01em">{{ p.titulo }}</div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:#857C70;margin-top:3px">{{ p.cliente }}</div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:{{ p.statusColor }};text-transform:uppercase;white-space:nowrap">{{ p.status }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="background:#FBF9F3;border:1px solid #E3DCCE;border-radius:22px;padding:28px;position:relative;overflow:hidden">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#857C70">Oportunidade sugerida</div>
+      <div style="font-weight:600;font-size:19px;letter-spacing:-.01em;margin-top:10px">Ensaio editorial · revista regional</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #E3DCCE;border-radius:99px;padding:5px 11px;color:#4A443C">2 DIÁRIAS</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;border:1px solid #FF5C3D;border-radius:99px;padding:5px 11px;color:#FF5C3D">CACHÊ + CRÉDITO</span>
+      </div>
+      <div style="position:relative;margin-top:18px;border-radius:12px;overflow:hidden">
+        <div style="padding:15px;background:#F2EDE3;font-size:13px;color:#4A443C;line-height:1.55">Orçamento R$ 4.800 · assessoria direta · cronograma por entrega. Compatível com seu fio: moda + luz natural.</div>
+        <div data-estado="glass" style="position:absolute;inset:0;background:rgba(251,249,243,.4);backdrop-filter:blur(12px) saturate(1.1);border:1px solid rgba(255,255,255,.6);border-radius:12px;display:flex;align-items:center;justify-content:center">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.14em;color:#17140F;background:rgba(251,249,243,.8);border-radius:99px;padding:6px 13px">EM DESCOBERTA</span>
+        </div>
+      </div>
+      <button style="font-family:'Archivo';font-weight:500;font-size:14px;color:#17140F;background:transparent;border:1px solid #17140F;border-radius:11px;padding:11px 18px;cursor:pointer;margin-top:16px;width:100%">Revelar oportunidade</button>
+    </div>
+  </section>
+
+  <div style="margin-top:36px;display:flex;align-items:center;gap:12px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.2em;color:#857C70">FEELWORKS · PERFIL · SEGUE A FEEL</span>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail">
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#F2EDE3"></rect><circle cx="34" cy="38" r="15" fill="#E9E2D2" stroke="#17140F" stroke-width="2"></circle><rect x="18" y="60" width="64" height="7" rx="3" fill="#FBF9F3" stroke="#E3DCCE"></rect><rect x="18" y="72" width="40" height="7" rx="3" fill="#FF5C3D"></rect></svg>
+</template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;estadoPerfil&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Em construção&quot;, &quot;Completo&quot;], &quot;default&quot;: &quot;Em construção&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Estado do perfil&quot; },
+  &quot;densidade&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Confortável&quot;, &quot;Compacto&quot;], &quot;default&quot;: &quot;Confortável&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Densidade&quot; }
+}">
+const PROVAS = [
+  { icon: 'prova', titulo: 'Campanha UGC · marca de moda', cliente: 'ATELIÊ NORDESTE', status: 'Assinada', pb: false },
+  { icon: 'lastro', titulo: 'Ensaio gastronômico · 12 pratos', cliente: 'RESTAURANTE MADÁ', status: 'Assinada', pb: false },
+  { icon: 'rede', titulo: 'Cobertura de evento · 2 dias', cliente: 'FEELMAKERS RECIFE', status: 'Aguardando 2ª', pending: true },
+  { icon: 'ritmo', titulo: 'Editorial de rua · série autoral', cliente: 'REVISTA CONTORNO', status: 'Assinada', pb: false }
+];
+
+class Component extends DCLogic {
+  state = { trajOpen: false };
+
+  componentDidMount() {
+    this.applyState();
+    this._raf = requestAnimationFrame(() => this.drawAll());
+    this._onResize = () => { clearTimeout(this._rt); this._rt = setTimeout(() => this.drawAll(), 150); };
+    window.addEventListener('resize', this._onResize);
+  }
+  componentDidUpdate() { this.applyState(); this.drawAll(); }
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._rt);
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  completo() { return (this.props.estadoPerfil || 'Em construção') === 'Completo'; }
+  compacto() { return (this.props.densidade || 'Confortável') === 'Compacto'; }
+
+  applyState() {
+    document.querySelectorAll('[data-estado="glass"]').forEach(el => {
+      el.style.display = this.completo() ? 'none' : 'flex';
+    });
+  }
+
+  setup(c) {
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    if (!r.width || !r.height) return null;
+    const dpr = 2;
+    c.width = r.width * dpr; c.height = r.height * dpr;
+    const ctx = c.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    return { ctx, w: r.width, h: r.height };
+  }
+
+  cycloidPts(t0, t1, b, steps) {
+    const pts = [];
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + ((t1 - t0) * i) / steps;
+      pts.push([t - b * Math.sin(t), b * Math.cos(t)]);
+    }
+    return pts;
+  }
+
+  drawAll() {
+    document.querySelectorAll('canvas[data-draw]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      const kind = c.getAttribute('data-draw');
+      if (kind === 'perfil-fio') this.drawFio(s.ctx, s.w, s.h);
+      if (kind === 'perfil-fio-expandido') this.drawFio(s.ctx, s.w, s.h, [0.06, 0.24, 0.42, 0.6, 0.78, 0.94]);
+    });
+    document.querySelectorAll('canvas[data-icon]').forEach((c) => {
+      const s = this.setup(c); if (!s) return;
+      this.drawIcon(c.getAttribute('data-icon'), s.ctx, s.w, s.h);
+    });
+  }
+
+  drawFio(ctx, w, h, nodeFracs) {
+    const b = 1.4;
+    const pts = this.cycloidPts(-6, 4 * Math.PI + 6, b, 320);
+    const xs = pts.map(p => p[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+    const frac = this.completo() ? 1 : 0.82;
+    const n = Math.floor(pts.length * frac);
+    ctx.strokeStyle = 'rgba(133,124,112,.28)'; ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    pts.forEach(([x, y], i) => {
+      const nx = (x - minX) / (maxX - minX);
+      const px = 16 + nx * (w - 32);
+      const py = h * 0.5 + (y / b) * h * 0.32;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    });
+    ctx.stroke();
+    ctx.strokeStyle = '#FF5C3D'; ctx.lineWidth = 3;
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const [x, y] = pts[i];
+      const nx = (x - minX) / (maxX - minX);
+      const px = 16 + nx * (w - 32);
+      const py = h * 0.5 + (y / b) * h * 0.32;
+      if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+    (nodeFracs || [0.1, 0.38, 0.64, 0.86]).forEach((f) => {
+      const idx = Math.floor(f * pts.length);
+      const [x, y] = pts[idx];
+      const nx = (x - minX) / (maxX - minX);
+      const px = 16 + nx * (w - 32);
+      const py = h * 0.5 + (y / b) * h * 0.32;
+      ctx.fillStyle = f > frac ? '#C9BFAC' : '#FF5C3D';
+      ctx.beginPath(); ctx.arc(px, py, 4.5, 0, Math.PI * 2); ctx.fill();
+    });
+  }
+
+  drawIcon(name, ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#17140F'; ctx.lineWidth = 2.4;
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    const u = w / 24; ctx.beginPath();
+    if (name === 'prova') { ctx.moveTo(5*u,13*u); ctx.lineTo(10*u,18*u); ctx.lineTo(19*u,7*u); }
+    else if (name === 'lastro') { ctx.moveTo(5*u,8*u); ctx.lineTo(19*u,8*u); ctx.moveTo(5*u,13*u); ctx.lineTo(16*u,13*u); ctx.moveTo(5*u,18*u); ctx.lineTo(12*u,18*u); }
+    else if (name === 'rede') {
+      const pts = this.cycloidPts(-2, 4*Math.PI+2, 1.6, 160);
+      const xs = pts.map(q=>q[0]); const minX = Math.min(...xs), maxX = Math.max(...xs);
+      pts.forEach(([x,y],i)=>{ const px = 4*u+((x-minX)/(maxX-minX))*16*u; const py = 12*u+(y/1.6)*5*u; if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py); });
+    } else if (name === 'ritmo') {
+      ctx.moveTo(6*u,17*u); ctx.lineTo(6*u,12*u); ctx.moveTo(10.5*u,17*u); ctx.lineTo(10.5*u,7*u);
+      ctx.moveTo(15*u,17*u); ctx.lineTo(15*u,14*u); ctx.moveTo(19*u,17*u); ctx.lineTo(19*u,9*u);
+    }
+    ctx.stroke();
+  }
+
+  renderVals() {
+    const compact = this.compacto();
+    return {
+      provas: PROVAS.map(p => ({ ...p, statusColor: p.pending ? '#857C70' : '#17140F' })),
+      rowPad: compact ? '9px' : '14px',
+      trajOpen: this.state.trajOpen,
+      abrirTraj: () => this.setState({ trajOpen: true }),
+      fecharTraj: () => this.setState({ trajOpen: false }),
+      pararPropagacao: (e) => e.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+# ─── Binários pesados de contexto ────────────────────────────────
+# O material bruto de vídeo/instaladores não entra no git.
+# O que interessa ao agente é o TEXTO: contexto/transcricoes/ é versionado.
+contexto/binarios/
+contexto/video/
+*.mp4
+*.webm
+*.mov
+*.exe
+*.7z
+
+# ─── Node / Next.js ──────────────────────────────────────────────
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+.turbo/
+
+# ─── Ambiente e segredos ─────────────────────────────────────────
+.env
+.env.*
+!.env.example
+.vercel/
+
+# ─── Testes e artefatos gerados ──────────────────────────────────
+playwright-report/
+test-results/
+coverage/
+graphify-out/
+web/dist/
+
+# ─── Sistema ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# ─── Claude Code (local, não compartilhado) ──────────────────────
+.claude/settings.local.json
