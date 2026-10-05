@@ -418,3 +418,56 @@ Para tese de negócio e produto digital, `docs/FEEL-HANDOFF-MESTRE-2026-10-05.md
 arquivo. Para sistema de marca/visual, a hierarquia original (`DESIGN.md` →
 `SISTEMA-DE-MARCA.md`) continua intocada — o handoff não trata de tokens, cor ou
 tipografia.
+
+---
+
+## D-17 — Fase 1 implementada: `web/` scaffolded, tokens gerados de `DESIGN.md`
+
+**Data:** 2026-10-05 · **Status:** ✅ Decidida · **Áreas:** `web/`, build, tokens
+
+**Decisão.** `web/` existe: Next.js **15** (App Router, pinado — ver nota de versão
+abaixo), TypeScript strict, Tailwind v4, conforme a Stack deste `CLAUDE.md`.
+`web/scripts/generate-tokens.mjs` lê o frontmatter YAML de `DESIGN.md` e emite
+`web/src/tokens/tokens.css` (bloco `@theme` do Tailwind v4 + utilities compostas
+`.text-style-*` para os estilos de texto) e `web/src/tokens/tokens.ts` — ambos com
+cabeçalho `GERADO`, como `D-08` exige. `npm run build` roda `npm run tokens` antes de
+buildar. `npm run tokens:check` regenera e falha (`git diff --exit-code`) se o
+resultado divergir do commitado — é o gate que falta ligar numa CI (não feito nesta
+sessão, ver pendências).
+
+**Fontes.** `next/font/google` carrega Archivo e IBM Plex Mono em `app/layout.tsx`;
+`--font-archivo`/`--font-ibm-plex-mono` vêm de lá (não do gerador — ver comentário no
+próprio script), para não duplicar a escolha de family hasheada do Next em dois
+lugares.
+
+**Verificação feita nesta sessão:** `tsc --noEmit` limpo; `npm run build` (com
+`--turbopack`) completo sem erro; HTML e CSS compilados inspecionados via `curl` —
+confirma que `bg-coral`, `rounded-md`, `py-section`, `text-style-h1` (com family, peso
+e tracking corretos) saem do pipeline de tokens, não de valor hardcoded. **Não
+verificado visualmente em navegador** — nenhuma ferramenta de browser estava
+disponível nesta sessão; só build e markup/CSS compilados foram inspecionados.
+
+**Nota de versão — por quê Next.js 15, não 16.** `create-next-app@latest` instala
+Next.js 16.3.8 hoje. Este `CLAUDE.md` trava a Stack em "Next.js 15"; migrar para 16 é
+uma decisão própria, não um acidente de `@latest`, então o scaffold foi recriado com
+`create-next-app@15`. Isso deixou 2 vulnerabilidades conhecidas do `postcss` (XSS em
+stringify, leitura de `.map` via `sourceMappingURL`) sem correção automática — o fix
+automático força Next 16. Risco aceito por ora: são vulnerabilidades de tooling de
+build, não de runtime servido; reavaliar antes de produção real.
+
+**O que a página em `/` prova, e o que não é.** `web/src/app/page.tsx` é uma página de
+verificação de tokens (cor, tipografia, raio, espaço) — não é um board, não passou pela
+skill `feel-diagram` como peça de marca, porque não é uma peça de marca. Os boards reais
+são Fase 2, sob a skill.
+
+**O que impede.** Nenhum componente em `web/` hardcoda hex, px de tipografia ou family
+— sempre via os tokens gerados ou `next/font`. `D-08` já proibia isso; esta decisão só
+registra que agora há código real para a proibição valer sobre.
+
+**Pendências que não bloqueiam esta decisão (próxima sessão, se for o caso):**
+- CI (GitHub Actions) rodando `npm run tokens:check` a cada PR — hoje é manual.
+- Verificação visual real em navegador.
+- Decidir sobre as 2 vulnerabilidades do `postcss` antes de qualquer deploy público.
+
+**Critério de reabertura.** Mudança de versão do Next.js (de 15 para 16, por decisão
+explícita) ou substituição do gerador de tokens por outro mecanismo.

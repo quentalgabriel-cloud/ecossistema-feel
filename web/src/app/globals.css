@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "../tokens/tokens.css";
+
+/* Claro é o sistema (DESIGN.md § Modes). O modo escuro é o palco — ativado
+   por classe, não por prefers-color-scheme, porque é contexto de peça
+   (evento/FeelMakers), não preferência de SO. */
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}

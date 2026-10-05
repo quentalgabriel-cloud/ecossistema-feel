@@ -1,0 +1,107 @@
+/* GERADO por web/scripts/generate-tokens.mjs a partir de DESIGN.md — não edite à mão. D-08. */
+
+@theme {
+  --color-paper: #FBF9F3;
+  --color-tint: #F7F2E9;
+  --color-bone: #F2EDE3;
+  --color-steel: #857C70;
+  --color-ink: #17140F;
+  --color-inkSurface: #1D1915;
+  --color-inkLine: #322B24;
+  --color-inkText: #F2EDE3;
+  --color-inkMuted: #B9B0A2;
+  --color-line: #E3DCCE;
+  --color-lineDashed: #C9BFAC;
+  --color-textBody: #4A443C;
+  --color-coral: #FF5C3D;
+  --color-coralHover: #D9431F;
+  --color-amber: #F0A63B;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-pill: 99px;
+
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 28px;
+  --spacing-xl: 44px;
+  --spacing-section: 88px;
+
+  --text-h1: 62px;
+  --text-h1--line-height: 1;
+  --font-weight-h1: 600;
+  --tracking-h1: -0.035em;
+  --text-h2: 42px;
+  --text-h2--line-height: 1.05;
+  --font-weight-h2: 600;
+  --tracking-h2: -0.03em;
+  --text-body-lg: 17px;
+  --text-body-lg--line-height: 1.55;
+  --font-weight-body-lg: 400;
+  --text-body-md: 15px;
+  --text-body-md--line-height: 1.55;
+  --font-weight-body-md: 400;
+  --text-ui: 16px;
+  --text-ui--line-height: 1.2;
+  --font-weight-ui: 500;
+  --text-label-caps: 11px;
+  --text-label-caps--line-height: 1;
+  --font-weight-label-caps: 500;
+  --tracking-label-caps: 0.2em;
+  --text-data: 12px;
+  --text-data--line-height: 1;
+  --font-weight-data: 500;
+}
+
+@layer utilities {
+  .text-style-h1 {
+    font-family: var(--font-archivo);
+    font-size: var(--text-h1);
+    line-height: var(--text-h1--line-height);
+    font-weight: var(--font-weight-h1);
+    letter-spacing: var(--tracking-h1);
+  }
+  .text-style-h2 {
+    font-family: var(--font-archivo);
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+    font-weight: var(--font-weight-h2);
+    letter-spacing: var(--tracking-h2);
+  }
+  .text-style-body-lg {
+    font-family: var(--font-archivo);
+    font-size: var(--text-body-lg);
+    line-height: var(--text-body-lg--line-height);
+    font-weight: var(--font-weight-body-lg);
+  }
+  .text-style-body-md {
+    font-family: var(--font-archivo);
+    font-size: var(--text-body-md);
+    line-height: var(--text-body-md--line-height);
+    font-weight: var(--font-weight-body-md);
+  }
+  .text-style-ui {
+    font-family: var(--font-archivo);
+    font-size: var(--text-ui);
+    line-height: var(--text-ui--line-height);
+    font-weight: var(--font-weight-ui);
+  }
+  .text-style-label-caps {
+    font-family: var(--font-ibm-plex-mono);
+    font-size: var(--text-label-caps);
+    line-height: var(--text-label-caps--line-height);
+    font-weight: var(--font-weight-label-caps);
+    letter-spacing: var(--tracking-label-caps);
+    text-transform: uppercase;
+  }
+  .text-style-data {
+    font-family: var(--font-ibm-plex-mono);
+    font-size: var(--text-data);
+    line-height: var(--text-data--line-height);
+    font-weight: var(--font-weight-data);
+    font-variant-numeric: tabular-nums;
+  }
+}

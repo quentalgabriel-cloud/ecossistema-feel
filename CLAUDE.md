@@ -18,7 +18,7 @@ Toda sessão lê, nesta ordem, antes de escrever qualquer linha:
 2. **`DESIGN.md`** (raiz) — tokens, gramática, componentes. É o compilador, não o handoff.
 3. **`marca/SISTEMA-DE-MARCA.md`** — as leis travadas da v2.
 4. **Este arquivo** — arquitetura, quarentenas visuais (a tese de negócio vem do item 1).
-5. **`docs/decisoes/log.md`** — D-01…D-16. Não reabrir sem o critério.
+5. **`docs/decisoes/log.md`** — D-01…D-17. Não reabrir sem o critério.
 6. **`MEMORY.md`** — índice da Memória Viva.
 7. **`docs/sessoes/`** — o handoff de sessão mais recente.
 
@@ -165,7 +165,7 @@ Sessão termina com `/save`. Sessão começa com `/resume`.
 | Fase | Entrega | Estado |
 |---|---|---|
 | **0** | Fundação: repo, constituição, decisões, memória, governança | ✅ |
-| **1** | Linguagem: tokens gerados do `DESIGN.md`, skill `feel-diagram`, scaffold `web/` | ⏳ Node.js v24.19.0 confirmado instalado em 2026-10-05 — bloqueio antigo não existe mais; ainda não iniciada |
+| **1** | Linguagem: tokens gerados do `DESIGN.md`, skill `feel-diagram`, scaffold `web/` | ✅ 2026-10-05 (D-17) — não verificado em navegador, ver nota na decisão |
 | **2** | Os 5 boards em código + export 4K | ⏳ |
 | **3** | A experiência em scroll | ⏳ |
 | **4** | Acabamento, responsividade, deploy | ⏳ |
