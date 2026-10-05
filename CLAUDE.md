@@ -165,7 +165,7 @@ Sessão termina com `/save`. Sessão começa com `/resume`.
 | Fase | Entrega | Estado |
 |---|---|---|
 | **0** | Fundação: repo, constituição, decisões, memória, governança | ✅ |
-| **1** | Linguagem: tokens gerados do `DESIGN.md`, skill `feel-diagram`, scaffold `web/` | 🔒 requer Node.js |
+| **1** | Linguagem: tokens gerados do `DESIGN.md`, skill `feel-diagram`, scaffold `web/` | ⏳ Node.js v24.19.0 confirmado instalado em 2026-10-05 — bloqueio antigo não existe mais; ainda não iniciada |
 | **2** | Os 5 boards em código + export 4K | ⏳ |
 | **3** | A experiência em scroll | ⏳ |
 | **4** | Acabamento, responsividade, deploy | ⏳ |
