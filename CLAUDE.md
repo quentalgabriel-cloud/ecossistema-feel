@@ -13,20 +13,30 @@ Este repositório materializa a tese da Feel em duas superfícies que compartilh
 
 Toda sessão lê, nesta ordem, antes de escrever qualquer linha:
 
-1. **`DESIGN.md`** (raiz) — tokens, gramática, componentes. É o compilador, não o handoff.
-2. **`marca/SISTEMA-DE-MARCA.md`** — as leis travadas da v2.
-3. **Este arquivo** — tese, arquitetura, quarentenas.
-4. **`docs/decisoes/log.md`** — D-01…D-15. Não reabrir sem o critério.
-5. **`MEMORY.md`** — índice da Memória Viva.
-6. **`docs/sessoes/`** — o handoff mais recente.
+1. **`docs/FEEL-HANDOFF-MESTRE-2026-10-05.md`** — tese de negócio e produto digital
+   vigentes. Mais recente que a Tese Estratégica v1 abaixo — ver D-16.
+2. **`DESIGN.md`** (raiz) — tokens, gramática, componentes. É o compilador, não o handoff.
+3. **`marca/SISTEMA-DE-MARCA.md`** — as leis travadas da v2.
+4. **Este arquivo** — arquitetura, quarentenas visuais (a tese de negócio vem do item 1).
+5. **`docs/decisoes/log.md`** — D-01…D-16. Não reabrir sem o critério.
+6. **`MEMORY.md`** — índice da Memória Viva.
+7. **`docs/sessoes/`** — o handoff de sessão mais recente.
 
-**Hierarquia em caso de conflito:** `DESIGN.md` > `SISTEMA-DE-MARCA.md` > Tese
-Estratégica v1 > este arquivo > log de decisões > `docs/planejamento/` (histórico) >
-Inventário Intelectual (superado — D-13).
+**Hierarquia em caso de conflito:** para tese de negócio/produto digital,
+`docs/FEEL-HANDOFF-MESTRE-2026-10-05.md` > tudo abaixo (D-16). Para sistema de marca/
+visual, a ordem original continua: `DESIGN.md` > `SISTEMA-DE-MARCA.md` > Tese
+Estratégica v1 (histórica para negócio, ainda base para os boards — D-14) > este
+arquivo > log de decisões > `docs/planejamento/` (histórico) > Inventário Intelectual
+(superado — D-13).
 
 ---
 
-## A tese (Tese Estratégica v1 — D-14)
+## A tese (Tese Estratégica v1 — D-14) — **histórica para negócio, ver D-16**
+
+> Esta seção descreve a tese original (ago/2026). Para tese de negócio e produto
+> digital vigente, ler `docs/FEEL-HANDOFF-MESTRE-2026-10-05.md` — a definição de
+> "economia criativa" abaixo é classificada como LEGADO/SUPERADO lá. Esta seção
+> continua sendo a base da reconstrução dos 5 boards (D-14) até que isso mude.
 
 A Feel é **infraestrutura de reputação, confiança e coordenação** para a economia
 criativa. Não é plataforma de creator, não é agência, não é marketplace.

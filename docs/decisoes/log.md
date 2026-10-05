@@ -367,3 +367,54 @@ plano, e sobrevive inteiro. Só a tese e a superfície mudam.
 A pasta original em `Downloads` fica intocada como backup.
 
 **Critério de reabertura.** Nenhum.
+
+---
+
+## D-16 — Tese Estratégica v1 (D-14) parcialmente superada pelo Handoff Mestre 05/10
+
+**Data:** 2026-10-05 · **Status:** ✅ Decidida · **Áreas:** tese de negócio, escopo,
+produto digital — **não** sistema de marca/visual
+
+**Decisão.** `docs/FEEL-HANDOFF-MESTRE-2026-10-05.md` passa a ser a referência de tese
+de negócio e produto digital, substituindo nesse escopo a leitura de
+`marca/00-tese/Feel - Tese Estratégica.dc.html` como definição ativa. A Feel deixa de
+ser definida primariamente como "infraestrutura de reputação, confiança e coordenação
+para a economia criativa" (D-14) e passa a "infraestrutura de orquestração de mercado":
+demanda real → contexto/diagnóstico → requisitos → capacidades → composição → execução
+→ distribuição/transação quando necessária → evidência → aprendizado. B2B é o motor
+econômico inicial; creators são uma capacidade da rede, não o eixo do negócio.
+
+**Por quê.** Instrução explícita do fundador (Gabriel), 2026-10-05, apontando o handoff
+como "as atualizações mais recentes e confiáveis sobre a Feel". O próprio handoff lista
+em §45 sete fontes internas de 11/08 a 05/10 que o compõem — entre elas o
+`FEEL Business Model v0.1` (a "Documentação FeelCompany" de Downloads), já absorvido,
+não precisa ser reprocessado à parte.
+
+**O que NÃO muda.** Vocabulário builder (D-01), tokens e leis visuais de `DESIGN.md`
+(D-02.1), arquitetura de dois renderizadores (D-04), governança (D-05), memória no
+repo (D-06), entidades por forma não matiz (D-09), flywheel como espiral (D-10),
+motion (D-11), boards em português (D-12), e a decisão de reconstruir os 5 boards do
+zero (D-14) **continuam valendo como decisões de execução visual** — o próprio D-14 já
+previa que "a tese e a superfície mudam" sem derrubar a sequência argumentativa dos
+boards. O que muda é o conteúdo de negócio que os boards (ainda não construídos,
+Fase 1 bloqueada) vão expressar.
+
+**O que impede.** Nenhum material novo (board, copy, pitch, produto) pode descrever a
+Feel como "infraestrutura de reputação para a economia criativa", "marketplace de
+talentos" ou "rede social para criativos" como definição primária — classificado como
+LEGADO/SUPERADO pelo próprio handoff. `marca/00-tese/Feel - Tese Estratégica.dc.html`
+não é apagado; fica como histórico, do mesmo jeito que D-13 tratou o Inventário
+Intelectual.
+
+**Critério de reabertura.** Novo handoff mestre mais recente, ou instrução explícita
+do fundador em contrário.
+
+---
+
+## Hierarquia de fontes de verdade — atualizada
+
+Para tese de negócio e produto digital, `docs/FEEL-HANDOFF-MESTRE-2026-10-05.md` entra
+**acima** do item 3 original (`Feel - Tese Estratégica.dc.html`) na lista do topo deste
+arquivo. Para sistema de marca/visual, a hierarquia original (`DESIGN.md` →
+`SISTEMA-DE-MARCA.md`) continua intocada — o handoff não trata de tokens, cor ou
+tipografia.
