@@ -467,10 +467,15 @@ registra que agora há código real para a proibição valer sobre.
 
 **Resolvido ainda na mesma sessão, depois do commit inicial desta decisão:**
 - `.github/workflows/web-ci.yml`: roda `npm run tokens:check`, `tsc --noEmit` e
-  `npm run build` em todo push/PR que toque `DESIGN.md` ou `web/`. **Não configurado
-  como required status check** (branch protection) — isso é mudança de governança do
-  repositório, não decisão de arquitetura; fica para quando o Gabriel pedir.
+  `npm run build` em todo push/PR que toque `DESIGN.md` ou `web/`. Rodou de verdade no
+  GitHub (run `37293052660`, verde).
 - As 2 vulnerabilidades do `postcss` — ver nota de versão acima.
+- **Branch protection no `main`, exigindo o check `tokens-and-build`.** Bloqueado
+  inicialmente: required status checks em repo privado exige GitHub Pro. **O Gabriel
+  tornou o repositório público** por conta própria para destravar isso — decisão dele,
+  não inferida por mim. `enforce_admins: false` — quem tem acesso admin ainda pode
+  empurrar direto pro `main` sem o check (preserva o fluxo desta sessão, que empurrou
+  direto várias vezes); colaboradores sem admin, não.
 
 **Pendências que não bloqueiam esta decisão:**
 - Verificação visual real em navegador — segue não feita; nenhuma sessão até agora
