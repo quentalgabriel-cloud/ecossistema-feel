@@ -450,10 +450,11 @@ disponível nesta sessão; só build e markup/CSS compilados foram inspecionados
 **Nota de versão — por quê Next.js 15, não 16.** `create-next-app@latest` instala
 Next.js 16.3.8 hoje. Este `CLAUDE.md` trava a Stack em "Next.js 15"; migrar para 16 é
 uma decisão própria, não um acidente de `@latest`, então o scaffold foi recriado com
-`create-next-app@15`. Isso deixou 2 vulnerabilidades conhecidas do `postcss` (XSS em
-stringify, leitura de `.map` via `sourceMappingURL`) sem correção automática — o fix
-automático força Next 16. Risco aceito por ora: são vulnerabilidades de tooling de
-build, não de runtime servido; reavaliar antes de produção real.
+`create-next-app@15`. O `npm audit fix --force` sugerido teria forçado Next 16 — em vez
+disso, `web/package.json` ganhou `overrides.postcss: ^8.5.29`, forçando só a dependência
+interna vulnerável do Next (`postcss@8.4.31`) para a versão corrigida, sem tocar no
+Next. `npm audit`: 0 vulnerabilidades. Build e `tsc --noEmit` confirmados limpos depois
+do override.
 
 **O que a página em `/` prova, e o que não é.** `web/src/app/page.tsx` é uma página de
 verificação de tokens (cor, tipografia, raio, espaço) — não é um board, não passou pela
@@ -464,10 +465,16 @@ são Fase 2, sob a skill.
 — sempre via os tokens gerados ou `next/font`. `D-08` já proibia isso; esta decisão só
 registra que agora há código real para a proibição valer sobre.
 
-**Pendências que não bloqueiam esta decisão (próxima sessão, se for o caso):**
-- CI (GitHub Actions) rodando `npm run tokens:check` a cada PR — hoje é manual.
-- Verificação visual real em navegador.
-- Decidir sobre as 2 vulnerabilidades do `postcss` antes de qualquer deploy público.
+**Resolvido ainda na mesma sessão, depois do commit inicial desta decisão:**
+- `.github/workflows/web-ci.yml`: roda `npm run tokens:check`, `tsc --noEmit` e
+  `npm run build` em todo push/PR que toque `DESIGN.md` ou `web/`. **Não configurado
+  como required status check** (branch protection) — isso é mudança de governança do
+  repositório, não decisão de arquitetura; fica para quando o Gabriel pedir.
+- As 2 vulnerabilidades do `postcss` — ver nota de versão acima.
+
+**Pendências que não bloqueiam esta decisão:**
+- Verificação visual real em navegador — segue não feita; nenhuma sessão até agora
+  teve ferramenta de browser disponível.
 
 **Critério de reabertura.** Mudança de versão do Next.js (de 15 para 16, por decisão
 explícita) ou substituição do gerador de tokens por outro mecanismo.
