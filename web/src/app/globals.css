@@ -1,10 +1,118 @@
 @import "tailwindcss";
 @import "../tokens/tokens.css";
 
+/* shadcn/ui — o tema dos componentes aponta para os tokens de DESIGN.md.
+   Nenhum valor novo nasce aqui: cada variável é um alias de um token
+   gerado (D-08). Fonte de UI = Archivo; mono = IBM Plex Mono. */
+@theme inline {
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-ibm-plex-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --popover: var(--color-paper);
+  --popover-foreground: var(--color-ink);
+  /* Primário de controle = ink. O coral fica para o único elemento coral
+     da composição (regra do anel) — na demo, o símbolo na carta. */
+  --primary: var(--color-ink);
+  --primary-foreground: var(--color-paper);
+  --secondary: var(--color-bone);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-bone);
+  --muted-foreground: var(--color-steel);
+  --accent: var(--color-bone);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-coralHover);
+  --border: var(--color-line);
+  --input: var(--color-line);
+  --ring: var(--color-steel);
+}
+
+/* Variantes de estado usadas pelos componentes shadcn (radix). */
+@custom-variant data-open {
+  &:where([data-state="open"]),
+  &:where([data-open]:not([data-open="false"])) {
+    @slot;
+  }
+}
+@custom-variant data-closed {
+  &:where([data-state="closed"]),
+  &:where([data-closed]:not([data-closed="false"])) {
+    @slot;
+  }
+}
+@custom-variant data-disabled {
+  &:where([data-disabled="true"]),
+  &:where([data-disabled]:not([data-disabled="false"])) {
+    @slot;
+  }
+}
+@custom-variant data-horizontal {
+  &:where([data-orientation="horizontal"]) {
+    @slot;
+  }
+}
+@custom-variant data-vertical {
+  &:where([data-orientation="vertical"]) {
+    @slot;
+  }
+}
+
 /* Claro é o sistema (DESIGN.md § Modes). O modo escuro é o palco — ativado
    por classe, não por prefers-color-scheme, porque é contexto de peça
    (evento/FeelMakers), não preferência de SO. */
 body {
   background: var(--color-paper);
   color: var(--color-ink);
+  font-family: var(--font-archivo);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+}
+
+/* Diálogo: desliza, não aparece (D-11 — "deslizar" é verbo permitido;
+   proibido escalar a partir do nada). */
+@keyframes feel-deslizar-entrada {
+  from {
+    transform: translate(-50%, calc(-50% + 12px));
+    opacity: 0;
+  }
+}
+@keyframes feel-veu-entrada {
+  from {
+    opacity: 0;
+  }
+}
+.feel-dialogo[data-state="open"] {
+  animation: feel-deslizar-entrada 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.feel-veu[data-state="open"] {
+  animation: feel-veu-entrada 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .feel-dialogo[data-state="open"],
+  .feel-veu[data-state="open"] {
+    animation: none;
+  }
 }
