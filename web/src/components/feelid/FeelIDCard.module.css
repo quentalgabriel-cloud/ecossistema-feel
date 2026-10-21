@@ -1,0 +1,574 @@
+/* FeelID — chassi da carta.
+   Unidade: --mm = 1 mm da carta física (63 × 88). Toda medida é calc(N * --mm),
+   então a mesma composição serve à tela e, depois, à gráfica.
+   Cor só por token (var(--color-*)). Anima só transform e opacity. */
+
+.raiz {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.palco {
+  --mm: calc(100cqw / 63);
+  --rx: 0;
+  --ry: 0;
+  --lx: 0.3;
+  --ly: 0.22;
+  --luz: 0.55;
+  --curva: cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  aspect-ratio: 63 / 88;
+  perspective: calc(420 * var(--mm));
+  border-radius: calc(3.5 * var(--mm));
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+}
+
+.palco[data-interativa="true"] {
+  cursor: pointer;
+}
+
+.palco:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: calc(2 * var(--mm));
+}
+
+.inclinacao {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--rx) * 1deg)) rotateY(calc(var(--ry) * 1deg));
+  transition: transform 160ms var(--curva);
+}
+
+.palco[data-inclinacao="repouso"] .inclinacao {
+  transition-duration: 700ms;
+}
+
+.carta {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 760ms var(--curva);
+}
+
+.carta[data-virada="true"] {
+  transform: rotateY(180deg);
+}
+
+/* ——— Faces ——— */
+
+.face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: calc(3.5 * var(--mm));
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  box-shadow:
+    inset 0 0 0 1px var(--color-line),
+    0 calc(0.3 * var(--mm)) calc(0.6 * var(--mm))
+      color-mix(in oklab, var(--color-ink) 10%, transparent),
+    0 calc(7 * var(--mm)) calc(12 * var(--mm)) calc(-5 * var(--mm))
+      color-mix(in oklab, var(--color-ink) 30%, transparent);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.verso {
+  transform: rotateY(180deg);
+  background: var(--color-tint);
+}
+
+.mono {
+  font-family: var(--font-ibm-plex-mono);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.16em;
+  line-height: 1;
+}
+
+.cabecalho {
+  position: absolute;
+  top: calc(3.5 * var(--mm));
+  left: calc(3.5 * var(--mm));
+  right: calc(3.5 * var(--mm));
+  height: calc(3.5 * var(--mm));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(1.7 * var(--mm));
+}
+
+.mudo {
+  color: var(--color-steel);
+}
+
+/* ——— Moldura da imagem (geometria vem de VARIANTES, em mm) ——— */
+
+.moldura {
+  position: absolute;
+  left: calc(var(--m-x) * var(--mm));
+  top: calc(var(--m-y) * var(--mm));
+  width: calc(var(--m-l) * var(--mm));
+  height: calc(var(--m-a) * var(--mm));
+  border-radius: calc(var(--m-r1) * var(--mm)) calc(var(--m-r2) * var(--mm))
+    calc(var(--m-r3) * var(--mm)) calc(var(--m-r4) * var(--mm));
+  overflow: hidden;
+  background: var(--color-bone);
+}
+
+/* Fio de corte impresso: separa a imagem do papel mesmo com foto clara. */
+.moldura::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-ink) 10%, transparent);
+  pointer-events: none;
+}
+
+.foto {
+  position: absolute;
+  max-width: none;
+  user-select: none;
+  pointer-events: none;
+  /* Tratamento da marca: −8% de saturação (DESIGN.md § Photography). */
+  filter: saturate(0.92);
+}
+
+.vazia {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(2.2 * var(--mm));
+  background: var(--color-tint);
+  cursor: default;
+}
+
+.vazia::before {
+  content: "";
+  position: absolute;
+  inset: calc(1.4 * var(--mm));
+  border: 1px dashed var(--color-lineDashed);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.vazia[data-soltando="true"]::before {
+  border-color: var(--color-ink);
+  border-style: solid;
+}
+
+.vaziaFio {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.vaziaFio path {
+  stroke: var(--color-lineDashed);
+  stroke-width: 0.3;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 0;
+  animation: desenhar 1600ms var(--curva) 200ms both;
+}
+
+.vaziaRotulo {
+  position: relative;
+  font-size: calc(1.6 * var(--mm));
+  color: var(--color-steel);
+}
+
+.vaziaDica {
+  position: relative;
+  max-width: 80%;
+  text-align: center;
+  font-size: calc(2.1 * var(--mm));
+  line-height: 1.35;
+  color: var(--color-textBody);
+}
+
+.vaziaAcao {
+  position: relative;
+}
+
+/* ——— Identificação ——— */
+
+.chip {
+  position: absolute;
+  left: calc((var(--m-x) + 2) * var(--mm));
+  top: calc((var(--m-y) + var(--m-a)) * var(--mm));
+  transform: translateY(-50%);
+  height: calc(4.4 * var(--mm));
+  padding: 0 calc(1.8 * var(--mm)) 0 calc(1.4 * var(--mm));
+  display: inline-flex;
+  align-items: center;
+  gap: calc(1 * var(--mm));
+  border-radius: 99px;
+  background: var(--color-paper);
+  box-shadow: inset 0 0 0 1px var(--color-line);
+  font-size: calc(1.55 * var(--mm));
+  color: var(--color-ink);
+}
+
+.chip svg {
+  width: calc(2.8 * var(--mm));
+  height: calc(2.8 * var(--mm));
+}
+
+.simbolo {
+  position: absolute;
+  right: calc(3.5 * var(--mm));
+  top: calc((var(--m-y) + var(--m-a) + 3) * var(--mm));
+  width: calc(8 * var(--mm));
+  color: var(--color-coral);
+}
+
+.info {
+  position: absolute;
+  left: calc(3.5 * var(--mm));
+  right: calc(3.5 * var(--mm));
+  top: calc((var(--m-y) + var(--m-a) + 4.4) * var(--mm));
+  bottom: calc(3.5 * var(--mm));
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  margin: 0;
+  padding-right: calc(10 * var(--mm));
+  font-family: var(--font-archivo);
+  font-weight: 600;
+  font-size: calc(5.2 * var(--mm));
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.titulo[data-longo="true"] {
+  font-size: calc(4.2 * var(--mm));
+}
+
+.frase {
+  margin: calc(1.6 * var(--mm)) 0 0;
+  font-family: var(--font-archivo);
+  font-size: calc(2.45 * var(--mm));
+  line-height: 1.4;
+  color: var(--color-textBody);
+  text-wrap: pretty;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.rodape {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: calc(2 * var(--mm));
+  padding-top: calc(1.6 * var(--mm));
+  border-top: 1px solid var(--color-line);
+  font-size: calc(1.5 * var(--mm));
+  color: var(--color-steel);
+  white-space: nowrap;
+}
+
+/* ——— Verso ——— */
+
+.versoSimbolo {
+  position: absolute;
+  left: calc(3.5 * var(--mm));
+  top: calc(12 * var(--mm));
+  width: calc(27 * var(--mm));
+  color: var(--color-coral);
+}
+
+.versoTitulo {
+  position: absolute;
+  left: calc(3.5 * var(--mm));
+  right: calc(3.5 * var(--mm));
+  top: calc(28 * var(--mm));
+  margin: 0;
+  font-family: var(--font-archivo);
+  font-weight: 600;
+  font-size: calc(3.2 * var(--mm));
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lista {
+  position: absolute;
+  left: calc(3.5 * var(--mm));
+  right: calc(3.5 * var(--mm));
+  top: calc(34 * var(--mm));
+  margin: 0;
+  display: grid;
+  /* 5 : 13 — rótulo estreito, valor largo: corte assimétrico. */
+  grid-template-columns: 5fr 13fr;
+}
+
+.lista dt,
+.lista dd {
+  margin: 0;
+  padding: calc(1.5 * var(--mm)) 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.lista dt {
+  padding-top: calc(1.9 * var(--mm));
+  font-size: calc(1.4 * var(--mm));
+  color: var(--color-steel);
+}
+
+.lista dd {
+  font-family: var(--font-archivo);
+  font-size: calc(2.2 * var(--mm));
+  line-height: 1.3;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+
+.repertorio {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repertorio li {
+  display: inline;
+}
+
+.repertorio li + li::before {
+  content: " · ";
+  color: var(--color-steel);
+}
+
+.versoRodape {
+  position: absolute;
+  left: calc(3.5 * var(--mm));
+  right: calc(3.5 * var(--mm));
+  bottom: calc(3.5 * var(--mm));
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(1.5 * var(--mm));
+  color: var(--color-steel);
+  white-space: nowrap;
+}
+
+.fio {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.fio path {
+  stroke: var(--color-steel);
+  stroke-width: 0.24;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 0;
+}
+
+/* O fio se desenha cada vez que o verso é revelado (D-11). */
+.carta[data-virada="true"] .fio path {
+  animation: desenhar 1500ms var(--curva) 320ms both;
+}
+
+@keyframes desenhar {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ——— Acabamentos ———
+   Camadas sobre a face, sem eventos. A luz é posicionada por transform
+   (nunca por background-position) e dosada por opacity. */
+
+.camada {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Grão de papel — todos os acabamentos. feTurbulence sem cor (alfa). */
+.grao {
+  background-image: var(--grao);
+  background-size: calc(36 * var(--mm));
+  mix-blend-mode: multiply;
+  opacity: 0.07;
+}
+
+.palco[data-acabamento="fosco"] .grao {
+  opacity: 0.12;
+}
+
+/* Reflexo: um ponto de luz que segue o ponteiro e escurece de leve o
+   lado oposto — é o que faz o papel parecer envernizado. */
+.brilho {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in oklab, var(--color-paper) 62%, transparent) 0%,
+    color-mix(in oklab, var(--color-paper) 0%, transparent) 20%,
+    color-mix(in oklab, var(--color-ink) 0%, transparent) 30%,
+    color-mix(in oklab, var(--color-ink) 9%, transparent) 55%
+  );
+  transform: translate(calc((var(--lx) - 0.5) * 50%), calc((var(--ly) - 0.5) * 50%));
+  opacity: calc(var(--luz) * 0.85);
+  transition:
+    transform 160ms var(--curva),
+    opacity 400ms var(--curva);
+}
+
+/* Holográfico de marca: folha de segurança monocromática. A trama é a
+   malha de cicloides; as faixas são só neutros do sistema (sem arco-íris —
+   nenhum matiz fora de DESIGN.md). */
+.folha {
+  -webkit-mask-image: var(--malha);
+  mask-image: var(--malha);
+  -webkit-mask-size: calc(14 * var(--mm)) auto;
+  mask-size: calc(14 * var(--mm)) auto;
+  mix-blend-mode: hard-light;
+  opacity: calc(0.2 + var(--luz) * 0.4);
+  overflow: hidden;
+  transition: opacity 400ms var(--curva);
+}
+
+/* As faixas andam com a luz e só existem numa mancha ao redor dela:
+   a trama aparece onde a luz bate e some no resto da carta. */
+.folhaFaixas {
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 300%;
+  height: 200%;
+  -webkit-mask-image: radial-gradient(ellipse 15% 24% at 50% 50%, black 0%, transparent 100%);
+  mask-image: radial-gradient(ellipse 15% 24% at 50% 50%, black 0%, transparent 100%);
+  background: repeating-linear-gradient(
+    105deg,
+    var(--color-paper) 0%,
+    var(--color-bone) 2.5%,
+    var(--color-lineDashed) 4.5%,
+    var(--color-steel) 6%,
+    var(--color-lineDashed) 7.5%,
+    var(--color-tint) 9.5%,
+    var(--color-paper) 12%
+  );
+  transform: translate(calc((var(--lx) - 0.5) * 33.333%), calc((var(--ly) - 0.5) * 50%));
+  transition: transform 160ms var(--curva);
+}
+
+/* Varredura de luz que acompanha a inclinação — o "flash" da folha. */
+.folhaVarredura {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    color-mix(in oklab, var(--color-paper) 0%, transparent) 40%,
+    color-mix(in oklab, var(--color-paper) 70%, transparent) 50%,
+    color-mix(in oklab, var(--color-paper) 0%, transparent) 60%
+  );
+  transform: translate(calc((var(--lx) - 0.5) * 60%), calc((var(--ly) - 0.5) * 20%));
+  mix-blend-mode: soft-light;
+  opacity: calc(var(--luz) * 0.9);
+  transition:
+    transform 160ms var(--curva),
+    opacity 400ms var(--curva);
+}
+
+/* ——— Movimento reduzido: a carta é inteira sem animação ——— */
+
+@media (prefers-reduced-motion: reduce) {
+  .inclinacao,
+  .carta,
+  .brilho,
+  .folha,
+  .folhaFaixas,
+  .folhaVarredura {
+    transition: none;
+  }
+  .fio path,
+  .vaziaFio path,
+  .carta[data-virada="true"] .fio path {
+    animation: none;
+  }
+}
+
+/* ——— Impressão: frente e verso lado a lado, em 63 × 88 mm reais ——— */
+
+@media print {
+  .raiz {
+    container-type: normal;
+    width: auto;
+  }
+  .palco {
+    --mm: 1mm;
+    aspect-ratio: auto;
+    perspective: none;
+    break-inside: avoid;
+  }
+  .inclinacao,
+  .carta {
+    position: static;
+    transform: none !important;
+    display: flex;
+    gap: 8mm;
+  }
+  .face {
+    position: relative;
+    flex: none;
+    width: 63mm;
+    height: 88mm;
+    transform: none;
+    box-shadow: inset 0 0 0 0.2mm var(--color-line);
+  }
+  .brilho,
+  .folha,
+  .vaziaAcao {
+    display: none;
+  }
+}
