@@ -20,6 +20,7 @@ Regras em `memory/templates/nota.md`. Nunca apagar nota sem perguntar.
 - [Por que forma vence matiz](memory/permanent/forma-vence-matiz.md) — o problema das 7 entidades e por que a restrição de cor produziu um sistema melhor.
 - [O cruzamento a 32° é a co-assinatura](memory/permanent/cruzamento-32-graus.md) — a constante geométrica que já era semântica sem ter sido nomeada.
 - [A espiral, não o anel](memory/permanent/espiral-nao-anel.md) — como a Lei 1 resolveu o flywheel melhor que o briefing original.
+- [Holográfico é trama, não arco-íris](memory/permanent/holografico-sem-arco-iris.md) — o acabamento especial da carta FeelID sai da cicloide e dos neutros (aguarda decisão).
 
 ## Processo
 
@@ -30,6 +31,7 @@ Regras em `memory/templates/nota.md`. Nunca apagar nota sem perguntar.
 
 - [O erro da D-02](memory/permanent/erro-d02-inferir-lei-de-artefato.md) — inferir o sistema a partir de artefatos que violavam o sistema.
 - [Duas teses concorrentes](memory/permanent/duas-teses-concorrentes.md) — Inventário vs. Tese v1; como reconhecer o enquadramento antigo voltando.
+- [Tokens nomeados sequestram utilitários](memory/permanent/tokens-nomeados-sequestram-utilitarios.md) — em `web/`, `max-w-md` vale 16px; larguras sempre explícitas.
 
 ---
 
