@@ -105,3 +105,65 @@
     font-variant-numeric: tabular-nums;
   }
 }
+
+/* Modo adaptativo (D-18): claro é a referência; escuro usa as superfícies ink do DESIGN.md. */
+@theme inline {
+  --color-superficie: var(--tema-superficie);
+  --color-superficieAlt: var(--tema-superficieAlt);
+  --color-painel: var(--tema-painel);
+  --color-texto: var(--tema-texto);
+  --color-textoCorpo: var(--tema-textoCorpo);
+  --color-textoMudo: var(--tema-textoMudo);
+  --color-linha: var(--tema-linha);
+  --color-linhaTracejada: var(--tema-linhaTracejada);
+  --color-emProcesso: var(--tema-emProcesso);
+  --color-verificado: var(--tema-verificado);
+  --color-sobreVerificado: var(--tema-sobreVerificado);
+}
+
+[data-adaptativo] {
+  color-scheme: light;
+  --tema-superficie: var(--color-paper);
+  --tema-superficieAlt: var(--color-tint);
+  --tema-painel: var(--color-bone);
+  --tema-texto: var(--color-ink);
+  --tema-textoCorpo: var(--color-textBody);
+  --tema-textoMudo: var(--color-steel);
+  --tema-linha: var(--color-line);
+  --tema-linhaTracejada: var(--color-lineDashed);
+  --tema-emProcesso: var(--color-bone);
+  --tema-verificado: var(--color-ink);
+  --tema-sobreVerificado: var(--color-paper);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-adaptativo]:not([data-tema="claro"]) {
+    color-scheme: dark;
+    --tema-superficie: var(--color-ink);
+    --tema-superficieAlt: var(--color-inkSurface);
+    --tema-painel: var(--color-inkSurface);
+    --tema-texto: var(--color-inkText);
+    --tema-textoCorpo: var(--color-inkMuted);
+    --tema-textoMudo: var(--color-inkMuted);
+    --tema-linha: var(--color-inkLine);
+    --tema-linhaTracejada: var(--color-steel);
+    --tema-emProcesso: var(--color-inkLine);
+    --tema-verificado: var(--color-inkText);
+    --tema-sobreVerificado: var(--color-ink);
+  }
+}
+
+[data-adaptativo][data-tema="escuro"] {
+  color-scheme: dark;
+  --tema-superficie: var(--color-ink);
+  --tema-superficieAlt: var(--color-inkSurface);
+  --tema-painel: var(--color-inkSurface);
+  --tema-texto: var(--color-inkText);
+  --tema-textoCorpo: var(--color-inkMuted);
+  --tema-textoMudo: var(--color-inkMuted);
+  --tema-linha: var(--color-inkLine);
+  --tema-linhaTracejada: var(--color-steel);
+  --tema-emProcesso: var(--color-inkLine);
+  --tema-verificado: var(--color-inkText);
+  --tema-sobreVerificado: var(--color-ink);
+}
