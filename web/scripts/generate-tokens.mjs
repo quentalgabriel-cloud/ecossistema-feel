@@ -91,6 +91,67 @@ for (const [name, t] of Object.entries(tokens.typography)) {
 }
 lines.push("}", "");
 
+// Camada semântica do modo adaptativo (D-18). O DESIGN.md já traz as duas
+// famílias de superfície — paper/bone/line para o claro, ink* para o palco.
+// Aqui só se decide qual token do DESIGN.md cada papel usa em cada modo; nenhum
+// valor novo nasce. Vale dentro de [data-adaptativo]: o resto de web/ continua
+// no claro fixo (DESIGN.md § Modes), e o palco é o escuro forçado
+// ([data-tema="escuro"]).
+const SEMANTICA = {
+  //               claro          escuro
+  superficie: ["paper", "ink"],
+  superficieAlt: ["tint", "inkSurface"],
+  painel: ["bone", "inkSurface"],
+  texto: ["ink", "inkText"],
+  textoCorpo: ["textBody", "inkMuted"],
+  textoMudo: ["steel", "inkMuted"],
+  linha: ["line", "inkLine"],
+  linhaTracejada: ["lineDashed", "steel"],
+  // Preenchimento por estado de verificação (LINGUAGEM.md § 4): contorno →
+  // bone (em processo) → ink (verificado). No escuro a escala se inverte.
+  emProcesso: ["bone", "inkLine"],
+  verificado: ["ink", "inkText"],
+  sobreVerificado: ["paper", "ink"],
+};
+
+for (const [papel, pares] of Object.entries(SEMANTICA)) {
+  for (const nome of pares) {
+    if (!tokens.colors[nome]) {
+      throw new Error(`SEMANTICA.${papel}: token "${nome}" não existe em DESIGN.md`);
+    }
+  }
+}
+
+const decl = (modo) =>
+  Object.entries(SEMANTICA).map(
+    ([papel, pares]) => `  --tema-${papel}: var(--color-${pares[modo]});`,
+  );
+
+lines.push(
+  "/* Modo adaptativo (D-18): claro é a referência; escuro usa as superfícies ink do DESIGN.md. */",
+  "@theme inline {",
+  ...Object.keys(SEMANTICA).map((papel) => `  --color-${papel}: var(--tema-${papel});`),
+  "}",
+  "",
+  "[data-adaptativo] {",
+  "  color-scheme: light;",
+  ...decl(0),
+  "}",
+  "",
+  "@media (prefers-color-scheme: dark) {",
+  '  [data-adaptativo]:not([data-tema="claro"]) {',
+  "    color-scheme: dark;",
+  ...decl(1).map((l) => "  " + l),
+  "  }",
+  "}",
+  "",
+  '[data-adaptativo][data-tema="escuro"] {',
+  "  color-scheme: dark;",
+  ...decl(1),
+  "}",
+  "",
+);
+
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "tokens.css"), lines.join("\n"));
 

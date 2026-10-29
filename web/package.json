@@ -7,7 +7,8 @@
     "build": "npm run tokens && next build --turbopack",
     "start": "next start",
     "tokens": "node scripts/generate-tokens.mjs",
-    "tokens:check": "node scripts/generate-tokens.mjs && git diff --exit-code -- src/tokens"
+    "tokens:check": "node scripts/generate-tokens.mjs && git diff --exit-code -- src/tokens",
+    "test": "vitest run"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -25,6 +26,7 @@
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "vitest": "^4.1.12",
     "yaml": "^2.9.1"
   },
   "overrides": {

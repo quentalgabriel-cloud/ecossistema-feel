@@ -39,4 +39,7 @@ jobs:
       - name: typecheck
         run: npx tsc --noEmit
 
+      - name: testes (vitest)
+        run: npm test
+
       - run: npm run build

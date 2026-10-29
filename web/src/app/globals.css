@@ -44,6 +44,35 @@
   --border: var(--color-line);
   --input: var(--color-line);
   --ring: var(--color-steel);
+
+  /* Motion (DESIGN.md § Motion: tudo desenha, descansa e recomeça). Só
+     saída suave — ease-in puro é proibido em UI. */
+  --feel-curva-saida: cubic-bezier(0.22, 1, 0.36, 1);
+  --feel-dur-curta: 200ms;
+  --feel-dur-media: 320ms;
+  --feel-dur-longa: 640ms;
+}
+
+/* Superfícies de produto adaptativas (D-18): o tema shadcn segue a camada
+   semântica gerada em tokens.css, então claro/escuro troca sem valor novo. */
+[data-adaptativo] {
+  --background: var(--color-superficie);
+  --foreground: var(--color-texto);
+  --popover: var(--color-superficie);
+  --popover-foreground: var(--color-texto);
+  --primary: var(--color-texto);
+  --primary-foreground: var(--color-superficie);
+  --secondary: var(--color-painel);
+  --secondary-foreground: var(--color-texto);
+  --muted: var(--color-painel);
+  --muted-foreground: var(--color-textoMudo);
+  --accent: var(--color-painel);
+  --accent-foreground: var(--color-texto);
+  --border: var(--color-linha);
+  --input: var(--color-linha);
+  --ring: var(--color-textoMudo);
+  background: var(--color-superficie);
+  color: var(--color-texto);
 }
 
 /* Variantes de estado usadas pelos componentes shadcn (radix). */

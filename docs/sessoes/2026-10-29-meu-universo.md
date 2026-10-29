@@ -1,0 +1,76 @@
+# Sessão 2026-10-29 — Meu Universo: convite → FEEL ID → universo navegável
+
+## Contexto
+
+Três documentos descrevem a mesma jornada vista de ângulos diferentes:
+
+- **Handoff Mestre (05/10):** loop Necessidade → Composição → Trabalho → Evidência.
+- **Estratégia de Lançamento (16/10):** SENTIR → DESCOBRIR → ENTENDER → PARTICIPAR → VER
+  EVIDÊNCIAS, com convite, card vivo e FEEL ID.
+- **Handoff "Feel — Meu Universo" (26/10):** canvas de bolhas, zoom semântico, estados
+  declarado/confirmado/sugerido.
+
+Esta sessão entrega a porta de entrada: `/convite` → onboarding → `/universo`. Tudo roda
+com dados de demonstração. O detalhe está em `web/src/components/universo/README.md`.
+
+## O que foi feito
+
+- **`/convite`:** a `FeelIDCard` existente vira o card vivo do convite. Ela ganha o nome
+  enquanto a pessoa digita e mostra o código do convite no número.
+- **Onboarding:** "O que faz parte do seu universo?". As escolhas declaram, não filiam, e
+  dá para pular para a demonstração.
+- **`/universo`:**
+  - três perspectivas: Meu Universo, Comunidades e Descobrir;
+  - pan, pinça, roda e botões, com zoom no ponto focal (deriva medida de 0,001 unidade);
+  - zoom semântico com histerese, foco em agrupamento com trilha, voltar e recentrar;
+  - painel de detalhe com "Apareceu porque…", sua relação e ações simuladas;
+  - modo lista equivalente, busca com "Ir até", legenda e preferências (tema e movimento);
+  - "Simular 30 dias" na perspectiva Comunidades.
+- **Estado de verdade = gramática da LINGUAGEM.md:**
+  - preenchimento contorno → bone → ink;
+  - peso do traço = quantidade de provas;
+  - glass só na sugestão (estado de descoberta);
+  - nenhuma distinção por matiz.
+- **D-18 — modo adaptativo:** o gerador de tokens emite a camada semântica `--tema-*`
+  (claro = paper, escuro = superfícies `ink*`) dentro de `[data-adaptativo]`. O resto de
+  `web/` continua no claro fixo.
+- **vitest** entrou em `web/` (24 testes do motor), e a CI ganhou o passo `npm test`.
+
+## Verificação
+
+- `npm run tokens:check`, `npx tsc --noEmit`, `npm test` (24/24) e `npm run build` limpos.
+- **Playwright (Chromium):**
+  - fluxo convite → onboarding → universo → foco → detalhe → ação → voltar → lista;
+  - telas de 390×844 e 1440×900, claro e escuro, movimento reduzido;
+  - sem overflow horizontal e sem erro de console.
+- **axe-core (WCAG 2 A/AA + 2.2 AA):** zero violações em convite, onboarding, universo,
+  lista e painel, nos modos claro e escuro.
+- **Auditoria de marca por grep:** nenhum hex fora de `tokens/`, nenhum `transition: all`,
+  `scale(0)`, Inter/JetBrains ou serifa.
+
+## Decisões
+
+- **D-18 registrada** (escolha do Gabriel). Os candidatos da sessão de 21/10 (holográfico
+  monocromático, shadcn como base) passam a ser D-19 e D-20, se aprovados.
+- **Limiares do zoom semântico:** 0.8/0.7 e 1.65/1.45. Abaixo de 0.8 os nomes não cabem
+  entre as vagas, então o macro mostra só agrupamentos e contagens.
+- **Texto ink sobre o botão coral:** paper sobre coral não passa AA.
+
+## O que ficou aberto
+
+- Glifos de comunidade, interesse, encontro e habilidade não existem na LINGUAGEM.md.
+- A copy do convite usa o manifesto em aprovação.
+- Pesquisa com usuários (handoff § 14.2): editorial × espacial × híbrida.
+- **Ondas seguintes do plano:**
+  - Onda 2: loop do negócio (criar necessidade → composição → acordo "Esperamos / Erramos
+    se" → resultado → prova co-assinada);
+  - Onda 3: schema unificado no Supabase `feel`;
+  - Onda 4: modo palco / FEEL Network Live com o mesmo canvas;
+  - Onda 5: console interno.
+- **`next@15.5.27` tem aviso crítico no `npm audit`** (pré-existente na `main`). Subir para
+  15.5.28 é uma decisão à parte (D-17 trava a versão).
+
+## Próximo passo
+
+Revisar `/convite` e `/universo?demo=1` no preview do PR e decidir se o modo espacial vai
+para a pesquisa com usuários.

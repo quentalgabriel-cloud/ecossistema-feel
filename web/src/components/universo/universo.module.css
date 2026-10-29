@@ -1,0 +1,850 @@
+/* Meu Universo — tudo via camada semântica (D-18) e tokens gerados (D-08).
+   Papéis semânticos entram como var(--tema-*): o @theme inline do Tailwind não
+   emite --color-<papel> como variável, só o usa dentro das utilities.
+   Anima só transform e opacity; entrada de traço = stroke-dashoffset (D-11). */
+
+.app {
+  --curva: var(--feel-curva-saida);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  background: var(--tema-superficie);
+  color: var(--tema-texto);
+}
+
+/* ---------- cabeçalho ---------- */
+
+.cabecalho {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--tema-linha);
+  background: var(--tema-superficie);
+}
+
+.marca {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spacing-xs);
+  flex: none;
+}
+
+.marcaNome {
+  white-space: nowrap;
+}
+
+.selo {
+  flex: 1;
+  min-width: 0;
+  text-align: right;
+  color: var(--tema-textoCorpo);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.barra {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-bottom: 1px solid var(--tema-linha);
+  background: var(--tema-superficie);
+}
+
+.perspectivas {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-pill);
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.perspectiva {
+  min-height: 36px;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--radius-pill);
+  color: var(--tema-textoCorpo);
+  white-space: nowrap;
+  transition:
+    background-color var(--feel-dur-curta) var(--curva),
+    color var(--feel-dur-curta) var(--curva);
+}
+
+.perspectiva[aria-pressed="true"] {
+  background: var(--tema-verificado);
+  color: var(--tema-sobreVerificado);
+}
+
+/* ---------- botões ---------- */
+
+.botao,
+.botaoIcone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  color: var(--tema-texto);
+  transition:
+    background-color var(--feel-dur-curta) var(--curva),
+    border-color var(--feel-dur-curta) var(--curva);
+}
+
+.botao {
+  padding: 0 var(--spacing-md);
+}
+
+.botaoIcone {
+  width: 44px;
+  flex: none;
+}
+
+.botao:hover,
+.botaoIcone:hover {
+  background: var(--tema-painel);
+}
+
+.contorno {
+  border: 1px solid var(--tema-texto);
+}
+
+/* O único coral da composição (regra do anel). Texto ink sobre coral: contraste AA. */
+.coral {
+  background: var(--color-coral);
+  color: var(--color-ink);
+}
+
+.coral:hover {
+  background: var(--color-coralHover);
+  color: var(--color-paper);
+}
+
+.botao:focus-visible,
+.botaoIcone:focus-visible,
+.perspectiva:focus-visible,
+.chip:focus-visible,
+.bolha:focus-visible .disco,
+.link:focus-visible {
+  outline: 2px solid var(--tema-texto);
+  outline-offset: 3px;
+}
+
+.link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--tema-texto);
+}
+
+.icone {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+/* ---------- viewport e mundo ---------- */
+
+.palco {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  touch-action: none;
+  cursor: grab;
+  outline: none;
+}
+
+.viewport:active {
+  cursor: grabbing;
+}
+
+.viewport:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--tema-texto);
+}
+
+.mundo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* ---------- bolhas ---------- */
+
+/* A caixa do botão é o próprio círculo (área de toque = bolha); o centro dela é
+   a coordenada do mundo. */
+.bolha {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--feel-dur-media) var(--curva);
+}
+
+/* Área de toque mínima de 44px na tela, qualquer que seja o zoom (WCAG 2.5.8). */
+.bolha[data-tipo="entidade"],
+.bolha[data-tipo="nucleo"] {
+  min-width: calc(44px / var(--k, 1));
+  min-height: calc(44px / var(--k, 1));
+}
+
+.bolha[data-recuada="true"] {
+  opacity: 0.28;
+}
+
+.disco {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transition: transform var(--feel-dur-longa) var(--curva);
+}
+
+.disco[data-preenchimento="nenhum"] {
+  background: var(--tema-superficie);
+}
+
+.disco[data-preenchimento="emProcesso"] {
+  background: var(--tema-emProcesso);
+}
+
+.disco[data-preenchimento="verificado"] {
+  background: var(--tema-verificado);
+  color: var(--tema-sobreVerificado);
+}
+
+.bolha[data-tipo="grupo"] .disco {
+  background: var(--tema-superficieAlt);
+}
+
+/* Glass: comportamento, não estilo — só no estado de descoberta (DESIGN.md § Glass). */
+.disco[data-vidro="true"] {
+  background: color-mix(in srgb, var(--tema-superficie) 55%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 0 color-mix(in srgb, var(--color-paper) 70%, transparent);
+}
+
+.contornoSvg {
+  position: absolute;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.traco {
+  fill: none;
+  stroke: var(--tema-texto);
+  vector-effect: non-scaling-stroke;
+}
+
+.bolha[data-tipo="grupo"] .traco {
+  stroke: var(--tema-linha);
+}
+
+.traco[data-tracejado="true"] {
+  stroke: var(--tema-textoMudo);
+  stroke-dasharray: 4 5;
+}
+
+.anelInterno {
+  fill: none;
+  stroke: var(--tema-textoMudo);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.anelSelecao {
+  fill: none;
+  stroke: var(--tema-texto);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  opacity: 0;
+  transition: opacity var(--feel-dur-curta) var(--curva);
+}
+
+.bolha[data-selecionada="true"] .anelSelecao {
+  opacity: 1;
+}
+
+.glifo {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  stroke-width: 1.6;
+}
+
+/* A marca se desenha: a máscara revela o contorno uma vez, na entrada.
+   Numa máscara só a luminância conta — o branco aqui é "visível", não cor. */
+.revelar {
+  fill: none;
+  stroke: white;
+  stroke-width: 40;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation: desenhar var(--feel-dur-longa) var(--curva) both;
+}
+
+@keyframes desenhar {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+.nucleoPonto {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-coral);
+  transition: opacity var(--feel-dur-curta) var(--curva);
+}
+
+.nucleoPonto[data-oculto="true"] {
+  opacity: 0;
+}
+
+/* Rótulos: posicionados no mundo, compensados pela escala para manter o corpo. */
+.rotulo {
+  position: absolute;
+  left: 50%;
+  width: max-content;
+  max-width: 160px;
+  text-align: center;
+  pointer-events: none;
+  transform-origin: 50% 0;
+  transform: translateX(-50%) scale(calc(1 / var(--k, 1)));
+  transition: opacity var(--feel-dur-media) var(--curva);
+}
+
+.rotuloCentro {
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) scale(calc(1 / var(--k, 1)));
+}
+
+.rotuloNome {
+  display: block;
+  color: var(--tema-texto);
+  text-wrap: balance;
+}
+
+.rotuloMeta {
+  display: block;
+  margin-top: 2px;
+  color: var(--tema-textoCorpo);
+}
+
+
+/* Zoom semântico: cada camada surge por opacidade, nunca por escala. */
+.viewport[data-nivel="macro"] .bolha[data-tipo="entidade"]:not([data-sempre-rotulo="true"]) .rotulo,
+.viewport[data-nivel="macro"] .rotuloMeta[data-nivel-min="contexto"],
+.viewport:not([data-nivel="detalhe"]) .rotuloMeta[data-nivel-min="detalhe"] {
+  opacity: 0;
+}
+
+.viewport[data-nivel="macro"]
+  .bolha[data-tipo="entidade"]:not([data-sempre-rotulo="true"])
+  .rotulo
+  .rotuloMeta {
+  display: none;
+}
+
+/* ---------- relações sob seleção ---------- */
+
+.relacoes {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.relacao {
+  fill: none;
+  stroke: var(--tema-textoMudo);
+  stroke-width: 1;
+  stroke-dasharray: 1;
+  vector-effect: non-scaling-stroke;
+  animation: desenhar var(--feel-dur-longa) var(--curva) both;
+}
+
+/* ---------- sobreposições fixas ---------- */
+
+.trilha {
+  position: absolute;
+  z-index: 2;
+  top: var(--spacing-sm);
+  left: var(--spacing-md);
+  right: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  pointer-events: none;
+}
+
+.trilha > * {
+  pointer-events: auto;
+}
+
+.trilhaLista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 6px var(--spacing-sm);
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-pill);
+  background: var(--tema-superficie);
+}
+
+.trilhaItem {
+  color: var(--tema-textoCorpo);
+}
+
+.trilhaItem[aria-current="location"] {
+  color: var(--tema-texto);
+}
+
+.controles {
+  position: absolute;
+  z-index: 2;
+  right: var(--spacing-md);
+  bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.controles .botaoIcone {
+  border: 1px solid var(--tema-linha);
+  background: var(--tema-superficie);
+}
+
+.legendaBotao {
+  position: absolute;
+  z-index: 2;
+  left: var(--spacing-md);
+  bottom: var(--spacing-md);
+  border: 1px solid var(--tema-linha);
+  background: var(--tema-superficie);
+}
+
+.cartao {
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-xl);
+  background: var(--tema-superficie);
+}
+
+.legenda {
+  position: absolute;
+  z-index: 4;
+  left: var(--spacing-md);
+  bottom: calc(var(--spacing-md) + 52px);
+  width: min(340px, calc(100% - var(--spacing-md) * 2 - 56px));
+  padding: var(--spacing-md);
+  animation: deslizar var(--feel-dur-media) var(--curva) both;
+}
+
+.legendaLista {
+  display: grid;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.legendaItem {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.amostra {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.previa {
+  position: absolute;
+  z-index: 3;
+  left: var(--spacing-md);
+  right: calc(var(--spacing-md) + 56px);
+  bottom: var(--spacing-md);
+  max-width: 440px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  animation: deslizar var(--feel-dur-media) var(--curva) both;
+}
+
+@keyframes deslizar {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+.previaAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+/* ---------- painel de contexto ---------- */
+
+.painel {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(400px, 100%);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--tema-linha);
+  background: var(--tema-superficie);
+  animation: deslizarLado var(--feel-dur-media) var(--curva) both;
+}
+
+@keyframes deslizarLado {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .painel {
+    top: auto;
+    width: 100%;
+    max-height: 72%;
+    border-left: 0;
+    border-top: 1px solid var(--tema-linha);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    animation-name: deslizar;
+  }
+}
+
+.painelTopo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-sm) 0 var(--spacing-md);
+}
+
+.painelCorpo {
+  overflow-y: auto;
+  padding: var(--spacing-xs) var(--spacing-md) var(--spacing-lg);
+}
+
+.secao {
+  margin-top: var(--spacing-lg);
+}
+
+.secaoTitulo {
+  color: var(--tema-textoCorpo);
+  margin-bottom: var(--spacing-xs);
+}
+
+.estadoLinha {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--spacing-sm);
+  align-items: start;
+}
+
+.numero {
+  font-variant-numeric: tabular-nums;
+}
+
+.acoes {
+  display: grid;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+}
+
+.relacionadas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  min-height: 40px;
+  padding: 0 var(--spacing-sm);
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-pill);
+  background: var(--tema-superficie);
+  color: var(--tema-texto);
+  transition:
+    background-color var(--feel-dur-curta) var(--curva),
+    border-color var(--feel-dur-curta) var(--curva);
+}
+
+.chip:hover {
+  border-color: var(--tema-textoMudo);
+}
+
+.chip[aria-pressed="true"] {
+  border-color: var(--tema-verificado);
+  background: var(--tema-verificado);
+  color: var(--tema-sobreVerificado);
+}
+
+.aviso {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  background: var(--tema-painel);
+  color: var(--tema-textoCorpo);
+}
+
+/* ---------- busca e preferências ---------- */
+
+.folha {
+  position: absolute;
+  z-index: 6;
+  top: var(--spacing-xs);
+  right: var(--spacing-md);
+  left: var(--spacing-md);
+  margin-left: auto;
+  max-width: 420px;
+  max-height: calc(100% - var(--spacing-md));
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  animation: deslizar var(--feel-dur-media) var(--curva) both;
+}
+
+.campo {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--spacing-sm);
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-md);
+  background: var(--tema-superficie);
+  color: var(--tema-texto);
+}
+
+.campo:focus {
+  outline: none;
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 1px var(--color-coral);
+}
+
+.resultados {
+  display: grid;
+  gap: 4px;
+  margin-top: var(--spacing-sm);
+}
+
+.resultado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--spacing-sm);
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.resultado:hover,
+.resultado:focus-visible {
+  background: var(--tema-painel);
+  outline: none;
+}
+
+.opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+/* ---------- lista ---------- */
+
+.lista {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-section);
+}
+
+.listaInterna {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.listaGrupo {
+  margin-top: var(--spacing-lg);
+}
+
+.listaItem {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--tema-linha);
+}
+
+/* ---------- onboarding e convite ---------- */
+
+.tela {
+  flex: 1;
+  overflow-y: auto;
+  /* Sem respiro embaixo: o rodapé fixo é o último elemento e cola na borda. */
+  padding: var(--spacing-lg) var(--spacing-md) 0;
+}
+
+.telaInterna {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.rodapeFixo {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-md) 0;
+  border-top: 1px solid var(--tema-linha);
+  background: var(--tema-superficie);
+}
+
+.semente {
+  height: 48px;
+  margin-top: var(--spacing-md);
+  overflow: visible;
+}
+
+.vivo {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.centro {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+/* ---------- movimento reduzido ---------- */
+
+.app[data-movimento="reduzido"] *,
+.app[data-movimento="reduzido"] *::before,
+.app[data-movimento="reduzido"] *::after {
+  animation: none !important;
+  transition-duration: 0s !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app:not([data-movimento="completo"]) *,
+  .app:not([data-movimento="completo"]) *::before,
+  .app:not([data-movimento="completo"]) *::after {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
+}
+
+.chip[aria-pressed="true"] span {
+  color: inherit;
+}
+
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Convite: página que rola (o .app do universo é tela cheia sem rolagem). */
+.paginaRolavel {
+  height: auto;
+  min-height: 100dvh;
+  overflow: visible;
+}
+
+/* Título do convite: degrau h2 no celular, h1 a partir do tablet — só tokens. */
+.tituloConvite {
+  font-family: var(--font-archivo);
+  font-size: var(--text-h2);
+  line-height: var(--text-h2--line-height);
+  font-weight: var(--font-weight-h2);
+  letter-spacing: var(--tracking-h2);
+  text-wrap: balance;
+}
+
+.subtituloConvite {
+  font-family: var(--font-archivo);
+  font-size: var(--text-body-lg);
+  line-height: var(--text-body-lg--line-height);
+  font-weight: var(--font-weight-ui);
+}
+
+@media (min-width: 768px) {
+  .tituloConvite {
+    font-size: var(--text-h1);
+    line-height: var(--text-h1--line-height);
+    font-weight: var(--font-weight-h1);
+    letter-spacing: var(--tracking-h1);
+  }
+
+  .subtituloConvite {
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+    font-weight: var(--font-weight-h2);
+    letter-spacing: var(--tracking-h2);
+  }
+}

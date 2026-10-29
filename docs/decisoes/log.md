@@ -483,3 +483,38 @@ registra que agora há código real para a proibição valer sobre.
 
 **Critério de reabertura.** Mudança de versão do Next.js (de 15 para 16, por decisão
 explícita) ou substituição do gerador de tokens por outro mecanismo.
+
+---
+
+## D-18 — O app (Meu Universo) segue o tema do aparelho; o claro continua a referência
+
+**Data:** 2026-10-29 · **Status:** ✅ Decidida pelo fundador · **Áreas:** `web/` (produto
+digital), tokens — **não** institucional, documentos nem boards
+
+**Decisão.** As superfícies de produto marcadas com `data-adaptativo` (hoje `/convite` e
+`/universo`) seguem `prefers-color-scheme`. A pessoa pode fixar claro ou escuro, e o
+modo palco (FEEL Network Live, evento) é o escuro forçado (`data-tema="escuro"`). O
+claro continua sendo a referência de design: toda peça é desenhada e passa pel'O Teste
+no claro primeiro. O escuro não inventa cor: usa as superfícies `ink*` que o
+`DESIGN.md` já define para o palco. O mapeamento papel → token (`superficie`, `texto`,
+`linha`, `emProcesso`, `verificado`…) é gerado por `web/scripts/generate-tokens.mjs`
+(objeto `SEMANTICA`). Nada é escrito à mão (D-08), e o gerador falha se um papel
+apontar para um token inexistente.
+
+**Por quê.** Escolha explícita do Gabriel em 2026-10-29, entre três opções: claro com
+escuro só no palco, escuro padrão, ou adaptativo. O Meu Universo é um app de uso
+pessoal e recorrente, aberto de noite no celular. Forçar paper num aparelho em modo
+escuro é atrito. O handoff do Meu Universo (26/10, §17.2) deixou o fundo "claro, escuro
+ou adaptativo" como questão aberta.
+
+**O que NÃO muda.** `DESIGN.md` § Modes continua valendo para institucional,
+documentos, propostas, boards e para o resto de `web/` (`/`, `/feelid`), que seguem no
+claro fixo. Dosagem 90/8/2, regra do anel, coral idêntico nos dois modos, entidades por
+forma (D-09), motion (D-11).
+
+**O que impede.** Nenhuma superfície de produto ganha paleta escura própria. Escuro =
+tokens `ink*` do `DESIGN.md`, sempre via a camada semântica. Componentes dentro de
+`data-adaptativo` não usam `bg-paper`/`text-ink` diretos, e sim `bg-superficie`/`text-texto`.
+
+**Critério de reabertura.** Teste com usuários mostrando que o escuro do produto
+confunde com o palco do evento, ou decisão de marca que reescreva `DESIGN.md` § Modes.
