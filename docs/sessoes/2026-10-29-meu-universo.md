@@ -74,3 +74,38 @@ com dados de demonstração. O detalhe está em `web/src/components/universo/REA
 
 Revisar `/convite` e `/universo?demo=1` no preview do PR e decidir se o modo espacial vai
 para a pesquisa com usuários.
+
+---
+
+# Onda 2 (mesma data) — Trabalhos: o ciclo do negócio
+
+Branch `claude/feel-trabalhos`, empilhada sobre a Onda 1. Detalhe em
+`web/src/components/trabalhos/README.md`.
+
+## O que foi feito
+
+- **`/trabalhos`:** necessidade em texto livre → "Entendemos assim…" (regras, sem IA,
+  citando o trecho original) → portão econômico com "para se pagar: N clientes" →
+  composição sem nota, com motivos, quem ficou de fora e lado a lado → acordo com
+  "Esperamos / Erramos se" carimbado e imutável → estágios e funil medido → custo por
+  cliente (gasto efetivo ÷ clientes) → veredito → duas assinaturas → glifo Prova.
+- **Evidence loop:** a prova volta para o Meu Universo (entidade `assinado`, provas+1) e
+  para o lastro da carta FEEL ID (convite e tela da prova).
+- **Núcleo:** barra Rede · Trabalhos no cabeçalho das duas superfícies.
+
+## Verificação
+
+- `tsc`, `npm test` (44/44) e `npm run build` limpos.
+- **Playwright**, fluxo completo convite → onboarding → Trabalhos → prova → Rede:
+  - telas de 390×844 (claro) e 1440×900 (escuro, movimento reduzido);
+  - custo por cliente conferido (R$ 80,00) e prova refletida no universo;
+  - axe-core sem violações em todos os passos;
+  - sem overflow horizontal e sem erro de console.
+- O fluxo da Onda 1 continua verde.
+
+## O que ficou aberto
+
+- O outro lado (quem cria) ainda é simulado. A versão real precisa de identidade e
+  permissão (Onda 3, Supabase `feel`).
+- A composição usa perfis de demonstração; com dado real, a regra de pares por porte e o
+  "precisa verificar" passam a valer sobre perfis reivindicados.

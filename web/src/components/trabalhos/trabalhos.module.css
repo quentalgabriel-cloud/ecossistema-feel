@@ -1,0 +1,286 @@
+/* Trabalhos — mesmas regras do Meu Universo: camada semântica (--tema-*, D-18),
+   tokens gerados (D-08), anima só transform e opacity, entrada = traço (D-11). */
+
+.pagina {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-section);
+}
+
+.coluna {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.passos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px var(--spacing-sm);
+  margin-top: var(--spacing-md);
+  counter-reset: passo;
+}
+
+.passo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--tema-textoCorpo);
+}
+
+.passo::before {
+  counter-increment: passo;
+  content: counter(passo);
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--tema-linha);
+  border-radius: 50%;
+  font-family: var(--font-ibm-plex-mono);
+  font-size: var(--text-data);
+  font-variant-numeric: tabular-nums;
+}
+
+.passo[data-estado="feito"]::before {
+  border-color: var(--tema-verificado);
+  background: var(--tema-verificado);
+  color: var(--tema-sobreVerificado);
+}
+
+.passo[aria-current="step"] {
+  color: var(--tema-texto);
+}
+
+.passo[aria-current="step"]::before {
+  border-color: var(--tema-texto);
+}
+
+.secao {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--tema-linha);
+  animation: deslizar var(--feel-dur-media) var(--feel-curva-saida) both;
+  scroll-margin-top: var(--spacing-md);
+}
+
+@keyframes deslizar {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+.rotulo {
+  display: block;
+  color: var(--tema-textoCorpo);
+  margin-bottom: var(--spacing-xs);
+}
+
+.areaTexto {
+  width: 100%;
+  min-height: 112px;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-md);
+  background: var(--tema-superficie);
+  color: var(--tema-texto);
+  resize: vertical;
+}
+
+.areaTexto:focus {
+  outline: none;
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 1px var(--color-coral);
+}
+
+.grade {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .gradeTres {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+  }
+
+  .gradeDois {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.campoLinha {
+  display: grid;
+  gap: var(--spacing-xs);
+  align-items: start;
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--tema-linha);
+}
+
+@media (min-width: 640px) {
+  .campoLinha {
+    grid-template-columns: minmax(96px, 140px) 1fr;
+    gap: var(--spacing-sm);
+  }
+}
+
+.trecho {
+  display: block;
+  margin-top: 4px;
+  color: var(--tema-textoCorpo);
+}
+
+/* O número que fecha a conversa: grande, tabular, sem cor. */
+.destaque {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background: var(--tema-painel);
+}
+
+.numeroGrande {
+  font-variant-numeric: tabular-nums;
+}
+
+.cartaoPerfil {
+  padding: var(--spacing-md);
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-xl);
+  background: var(--tema-superficie);
+}
+
+.cartaoPerfil[data-escolhido="true"] {
+  border-color: var(--tema-texto);
+  box-shadow: inset 0 0 0 1px var(--tema-texto);
+}
+
+.listaPerfis {
+  display: grid;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.motivos {
+  margin-top: var(--spacing-xs);
+  padding-left: 1.1em;
+  list-style: disc;
+  color: var(--tema-texto);
+}
+
+.acoesLinha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.tabela {
+  width: 100%;
+  margin-top: var(--spacing-sm);
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabela th,
+.tabela td {
+  padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--tema-linha);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela th {
+  color: var(--tema-textoCorpo);
+  font-weight: inherit;
+}
+
+.rolagemTabela {
+  overflow-x: auto;
+}
+
+.fora {
+  margin-top: var(--spacing-lg);
+}
+
+.foraItem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--tema-linha);
+}
+
+/* Acordo carimbado: leitura, não formulário. */
+.carimbo {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--tema-texto);
+  border-radius: var(--radius-lg);
+}
+
+.estagios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-sm);
+}
+
+.estagio {
+  padding: 6px var(--spacing-sm);
+  border: 1px solid var(--tema-linha);
+  border-radius: var(--radius-pill);
+  color: var(--tema-textoCorpo);
+}
+
+.estagio[data-estado="feito"] {
+  border-color: var(--tema-verificado);
+  background: var(--tema-verificado);
+  color: var(--tema-sobreVerificado);
+}
+
+.estagio[aria-current="step"] {
+  border-color: var(--tema-texto);
+  color: var(--tema-texto);
+}
+
+.prova {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--spacing-md);
+  align-items: center;
+  margin-top: var(--spacing-lg);
+}
+
+.glifoProva {
+  width: 72px;
+  height: 72px;
+  overflow: visible;
+}
+
+/* Peso em unidades do viewBox (2.4u = 72px → 2.6px ≈ 0.087u). Sem vector-effect:
+   o desenho por stroke-dashoffset precisa medir no comprimento do traço. */
+.glifoProva path {
+  fill: none;
+  stroke: var(--tema-texto);
+  stroke-width: 0.087;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  animation: desenhar var(--feel-dur-longa) var(--feel-curva-saida) both;
+}
+
+.glifoProva path + path {
+  animation-delay: 220ms;
+}
+
+@keyframes desenhar {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+.carta {
+  max-width: 300px;
+  margin-top: var(--spacing-md);
+}

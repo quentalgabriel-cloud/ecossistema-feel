@@ -62,3 +62,17 @@ export function glifoDe(tipo: TipoEntidade): Glifo | null {
       return null;
   }
 }
+
+/** Ângulo de cruzamento da Gramática do Fio — quando duas trajetórias se cruzam nele, houve prova. */
+export const ANGULO_PROVA = 32;
+
+/**
+ * Prova (LINGUAGEM.md § 2): dois arcos cruzando a 32°. O cruzamento É a
+ * co-assinatura. Devolve o arco e a rotação de cada traço (±16°).
+ */
+export function glifoProva(): { traco: string; rotacoes: [number, number] } {
+  return {
+    traco: normalizado(ARCO.t0, ARCO.t1, 0, 0.92),
+    rotacoes: [ANGULO_PROVA / 2, -ANGULO_PROVA / 2],
+  };
+}

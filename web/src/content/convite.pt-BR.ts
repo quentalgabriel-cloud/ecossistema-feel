@@ -28,6 +28,11 @@ export const conviteCopy = {
     praca: "[Bairro · Cidade]",
     disponibilidade: "A gente termina isso quando precisar.",
     lastro: "Ainda sem provas assinadas",
+    /** Contagem real das provas co-assinadas na demonstração (Trabalhos). */
+    lastroProvas: (n: number) =>
+      n === 0
+        ? "Ainda sem provas assinadas"
+        : `${n} ${n === 1 ? "prova assinada" : "provas assinadas"} · demonstração`,
   },
   dicaCarta: "Toque na carta para ver o verso.",
 } as const;
