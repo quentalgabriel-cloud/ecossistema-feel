@@ -518,3 +518,41 @@ tokens `ink*` do `DESIGN.md`, sempre via a camada semântica. Componentes dentro
 
 **Critério de reabertura.** Teste com usuários mostrando que o escuro do produto
 confunde com o palco do evento, ou decisão de marca que reescreva `DESIGN.md` § Modes.
+
+---
+
+## D-19 — O núcleo do produto mora em tabelas novas no Supabase `feel`, com as regras no banco
+
+**Data:** 2026-10-29 · **Status:** ✅ Decidida pelo fundador · **Áreas:** `supabase/`,
+`web/` (Rede e Trabalhos)
+
+**Decisão.** Relações, trabalhos, acordos, assinaturas e convites ficam em cinco tabelas
+novas do projeto Supabase `feel`: `feel_relacoes`, `feel_trabalhos`, `feel_acordos`,
+`feel_assinaturas` e `feel_convites` (migrações em `supabase/migrations/`). As tabelas da
+v12 (`feel_profiles`, `feel_user_preferences`, `feel_workspace_projects`) e as da Geração 1
+não são tocadas. As regras do ciclo valem no banco, e não só na tela:
+- a pessoa só grava o que pode afirmar sozinha (`declarado`, `em_processo`);
+- `assinado` e as provas só nascem de `feel_assinar`, com as duas assinaturas;
+- o acordo é carimbado pelo servidor e é imutável;
+- os estágios só andam para a frente;
+- quem cria entra pelo convite.
+
+A entrada é **anônima primeiro**: a pessoa usa sem cadastro, e o e-mail só é pedido na hora
+de assinar, porque assinatura vira prova. Sem entrada anônima ou sem rede, o app segue no
+modo local (neste aparelho), como na Onda 2, e diz isso no selo.
+
+**Por quê.** Escolha do Gabriel em 2026-10-29: "só tabelas novas", "direto no `feel`" e
+"anônimo primeiro". Prova co-assinada só vale se nenhum cliente consegue fabricá-la. Por
+isso a regra mora em RLS, triggers e funções `security definer`, e não no JavaScript.
+
+**O que NÃO muda.** A composição continua com perfis de demonstração (sem dado real de
+ninguém). Sem IA. As regras puras de `web/src/lib/trabalhos/ciclo.ts` continuam validando
+no cliente; o banco valida de novo e tem a palavra final.
+
+**O que impede.**
+- Escrever `assinado`, provas ou acordo direto pela API: não há política que permita.
+- Migração que altere tabela da v12 ou da Geração 1 sem decisão nova.
+- Chave secreta (`service_role`) no `web/`: lá só entra a chave publicável.
+
+**Critério de reabertura.** Necessidade de unificar com as tabelas da v12 (perfil real
+reivindicado) ou de trocar o provedor de identidade.

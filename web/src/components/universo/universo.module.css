@@ -126,9 +126,12 @@
   color: var(--color-ink);
 }
 
+/* Sobre coralHover nem ink nem paper passam AA (4,17 e 4,18): o hover mantém o coral
+   (ink sobre coral = 5,99) e se marca por um contorno interno. */
 .coral:hover {
-  background: var(--color-coralHover);
-  color: var(--color-paper);
+  background: var(--color-coral);
+  color: var(--color-ink);
+  box-shadow: inset 0 0 0 2px var(--color-ink);
 }
 
 .botao:focus-visible,
@@ -362,7 +365,6 @@
   margin-top: 2px;
   color: var(--tema-textoCorpo);
 }
-
 
 /* Zoom semântico: cada camada surge por opacidade, nunca por escala. */
 .viewport[data-nivel="macro"] .bolha[data-tipo="entidade"]:not([data-sempre-rotulo="true"]) .rotulo,
@@ -864,7 +866,9 @@
   padding: 0 var(--spacing-xs);
   color: var(--tema-textoCorpo);
   border-bottom: 2px solid transparent;
-  transition: color var(--feel-dur-curta) var(--curva), border-color var(--feel-dur-curta) var(--curva);
+  transition:
+    color var(--feel-dur-curta) var(--curva),
+    border-color var(--feel-dur-curta) var(--curva);
 }
 
 .nucleoLink:hover {

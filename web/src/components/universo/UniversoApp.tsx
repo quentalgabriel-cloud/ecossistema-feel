@@ -16,6 +16,7 @@ import type {
 import { useCameraUniverso } from "@/hooks/useCameraUniverso";
 import { useGestos } from "@/hooks/useGestos";
 import { usePreferencias } from "@/hooks/usePreferencias";
+import { sessaoAtual } from "@/lib/supabase/sessao";
 import { registrar } from "@/lib/telemetria";
 import { aplicarProvas } from "@/lib/trabalhos/evidencia";
 import { lerTrabalhos, provasDe, type ProvaRegistrada } from "@/lib/trabalhos/memoria";
@@ -25,6 +26,12 @@ import { raioBolha } from "@/lib/universo/escala";
 import { aposAcao } from "@/lib/universo/estadoVerdade";
 import type { MapaVagas } from "@/lib/universo/layout";
 import { atualizarMemoria, lerMemoria, memoriaVazia, type Memoria } from "@/lib/universo/memoria";
+import {
+  aplicarRemotas,
+  espelharAjuste,
+  espelharEscolhas,
+  lerRelacoesRemotas,
+} from "@/lib/universo/repositorioRelacoes";
 import { nivelEfetivo } from "@/lib/universo/zoomSemantico";
 
 import { Bolha } from "./Bolha";
@@ -36,6 +43,12 @@ import s from "./universo.module.css";
 
 const c = universoCopy;
 
+/** A conta da pessoa, quando há sessão (D-19): de onde vêm as provas verificadas. */
+interface Conta {
+  cliente: Parameters<typeof lerRelacoesRemotas>[0];
+  relacoes: Relacao[];
+}
+
 /**
  * Carrega a memória do aparelho e os dados (fixtures). Só depois disso monta o
  * universo — assim o servidor e o primeiro render do cliente não divergem.
@@ -44,6 +57,7 @@ export function UniversoApp({ demonstracao }: { demonstracao: boolean }) {
   const [memoria, setMemoria] = useState<Memoria | null>(null);
   const [provas, setProvas] = useState<ProvaRegistrada[]>([]);
   const [dados, setDados] = useState<DadosUniverso | null>(null);
+  const [conta, setConta] = useState<Conta | null>(null);
   const [erro, setErro] = useState(false);
 
   const carregar = useCallback(() => {
@@ -65,6 +79,16 @@ export function UniversoApp({ demonstracao }: { demonstracao: boolean }) {
     setMemoria(m);
     setProvas(provasDe(lerTrabalhos()));
     carregar();
+    // A conta chega depois, sem segurar o primeiro desenho do universo.
+    let vivo = true;
+    void sessaoAtual().then(async (sessao) => {
+      if (sessao.modo !== "remoto") return;
+      const relacoes = await lerRelacoesRemotas(sessao.cliente);
+      if (vivo) setConta({ cliente: sessao.cliente, relacoes });
+    });
+    return () => {
+      vivo = false;
+    };
   }, [demonstracao, carregar]);
 
   if (erro) {
@@ -90,20 +114,24 @@ export function UniversoApp({ demonstracao }: { demonstracao: boolean }) {
       </div>
     );
   }
-  return <Universo dados={dados} memoriaInicial={memoria} provas={provas} />;
+  return <Universo dados={dados} memoriaInicial={memoria} provas={provas} contaDaSessao={conta} />;
 }
 
 function Universo({
   dados,
   memoriaInicial,
   provas,
+  contaDaSessao,
 }: {
   dados: DadosUniverso;
   memoriaInicial: Memoria;
   /** Provas co-assinadas em Trabalhos: voltam para a identidade (evidence loop). */
   provas: ProvaRegistrada[];
+  contaDaSessao: Conta | null;
 }) {
   const [memoria, setMemoriaEstado] = useState(memoriaInicial);
+  // A persona da demonstração é fictícia: nada dela vai para a conta.
+  const conta = memoria.demonstracao ? null : contaDaSessao;
   const prefs = usePreferencias({
     tema: memoriaInicial.tema,
     movimento: memoriaInicial.movimento,
@@ -159,8 +187,8 @@ function Universo({
           provas: base.get(id)?.provas ?? 0,
         });
     }
-    return aplicarProvas(base, provas);
-  }, [memoria, provas]);
+    return conta ? aplicarRemotas(base, conta.relacoes) : aplicarProvas(base, provas);
+  }, [memoria, provas, conta]);
 
   const contagens = useMemo(
     () =>
@@ -371,6 +399,7 @@ function Universo({
       return;
     }
     salvar({ ajustes: { ...memoria.ajustes, [detalhes]: proximo } });
+    if (conta) void espelharAjuste(conta.cliente, detalhes, proximo);
     setMensagem(c.painel.feito[acao]);
     registrar("entidade_salva", { id: detalhes, acao });
   };
@@ -411,6 +440,7 @@ function Universo({
           dados={dados}
           aoConcluir={(ids) => {
             salvar({ escolhas: ids });
+            if (conta) void espelharEscolhas(conta.cliente, ids);
             registrar("onboarding_concluido", { escolhas: ids.length });
           }}
           aoPular={() => {

@@ -21,17 +21,23 @@ const ORDEM: Estagio[] = ["proposta", "aceita", "em_andamento", "entregue"];
 /** Passo 4: estágios, próximo passo e o funil medido. */
 export function Andamento({
   trabalho: t,
+  modo,
+  convite,
   aoAvancar,
   aoMedir,
 }: {
   trabalho: Trabalho;
+  modo: "local" | "remoto";
+  /** Na conta, o aceite vem de quem cria, pelo convite (o contratante não marca). */
+  convite: React.ReactNode;
   aoAvancar: () => void;
-  aoMedir: (f: Funil) => boolean;
+  aoMedir: (f: Funil) => Promise<boolean>;
 }) {
   const atual = ORDEM.indexOf(t.estagio);
   const proximo = proximoEstagio(t.estagio);
   const meta = clientesParaSePagar(t.economia.orcamento, t.economia.ticketMedio);
   const custo = custoPorCliente(t.funil);
+  const esperaAceite = modo === "remoto" && t.estagio === "proposta";
 
   return (
     <div>
@@ -49,13 +55,17 @@ export function Andamento({
         ))}
       </ol>
 
-      {proximo && a.acoes[t.estagio] && (
+      {esperaAceite && convite}
+
+      {proximo && a.acoes[t.estagio] && !esperaAceite && (
         <div className={s.destaque}>
           <p className="text-style-label-caps text-textoCorpo">{a.proximo}</p>
           <button type="button" className={`${u.botao} ${u.coral} mt-xs`} onClick={aoAvancar}>
             {a.acoes[t.estagio]}
           </button>
-          <p className="text-style-body-md mt-xs text-textoCorpo">{a.simulacao}</p>
+          {modo === "local" && (
+            <p className="text-style-body-md mt-xs text-textoCorpo">{a.simulacao}</p>
+          )}
         </div>
       )}
 
@@ -87,7 +97,7 @@ function MedicaoFunil({
 }: {
   funil: Funil;
   bloqueado: boolean;
-  aoSalvar: (f: Funil) => boolean;
+  aoSalvar: (f: Funil) => Promise<boolean>;
 }) {
   const ids = { contatos: useId(), agendados: useId(), clientes: useId(), gasto: useId() };
   const texto = (n: number | null) => (n == null ? "" : String(n).replace(".", ","));
@@ -99,7 +109,7 @@ function MedicaoFunil({
   });
   const [msg, setMsg] = useState<string | null>(null);
 
-  const salvar = () => {
+  const salvar = async () => {
     const inteiro = (t: string) => {
       const n = lerValor(t);
       return n == null ? null : Number.isInteger(n) ? n : NaN;
@@ -114,7 +124,7 @@ function MedicaoFunil({
       setMsg(a.invalido);
       return;
     }
-    setMsg(aoSalvar(novo) ? a.salvo : trabalhosCopy.erro);
+    setMsg((await aoSalvar(novo)) ? a.salvo : trabalhosCopy.erro);
   };
 
   return (
@@ -157,15 +167,22 @@ function MedicaoFunil({
 /** Passo 5: veredito contra o critério carimbado, assinaturas, prova. */
 export function Encerramento({
   trabalho: t,
+  modo,
+  pedeEmail,
   nomeNicho,
   carta,
+  aoAtualizar,
   aoVeredito,
   aoAssinar,
   aoNovo,
 }: {
   trabalho: Trabalho;
+  modo: "local" | "remoto";
+  /** Formulário de e-mail, quando a sessão anônima tentou assinar. */
+  pedeEmail: React.ReactNode;
   nomeNicho: string;
   carta: CartaPerfil;
+  aoAtualizar: () => void;
   aoVeredito: (v: string) => void;
   aoAssinar: (lado: "contratante" | "profissional") => void;
   aoNovo: () => void;
@@ -233,7 +250,9 @@ export function Encerramento({
               ) : null,
             )}
           </ul>
-          {!prova && (
+          {!prova && pedeEmail && !t.assinaturas.contratante ? (
+            pedeEmail
+          ) : !prova ? (
             <div className={s.acoesLinha}>
               {!t.assinaturas.contratante && (
                 <button
@@ -244,7 +263,7 @@ export function Encerramento({
                   {f.assinarContratante}
                 </button>
               )}
-              {!t.assinaturas.profissional && (
+              {modo === "local" && !t.assinaturas.profissional && (
                 <button
                   type="button"
                   className={`${u.botao} ${u.contorno}`}
@@ -254,9 +273,21 @@ export function Encerramento({
                 </button>
               )}
             </div>
-          )}
-          {!prova && (
+          ) : null}
+          {!prova && modo === "local" && (
             <p className="text-style-body-md mt-xs text-textoCorpo">{f.simulacaoProfissional}</p>
+          )}
+          {!prova && modo === "remoto" && !t.assinaturas.profissional && (
+            <p className="text-style-body-md mt-xs text-textoCorpo">
+              {f.aguardandoProfissional}{" "}
+              <button
+                type="button"
+                className={`${u.link} text-style-body-md`}
+                onClick={aoAtualizar}
+              >
+                {f.verSeAssinou}
+              </button>
+            </p>
           )}
         </section>
       )}
