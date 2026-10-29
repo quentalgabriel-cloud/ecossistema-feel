@@ -109,3 +109,61 @@ Branch `claude/feel-trabalhos`, empilhada sobre a Onda 1. Detalhe em
   permissão (Onda 3, Supabase `feel`).
 - A composição usa perfis de demonstração; com dado real, a regra de pares por porte e o
   "precisa verificar" passam a valer sobre perfis reivindicados.
+
+---
+
+# Onda 3 (mesma data) — O núcleo no Supabase `feel`
+
+Branch `claude/feel-nucleo-supabase`, empilhada sobre a Onda 2. Decisão: **D-19**. Detalhe
+em `supabase/README.md` e na seção "Na conta" de `web/src/components/trabalhos/README.md`.
+
+## O que foi feito
+
+- **Banco** (só tabelas novas; v12 e Geração 1 intactas): duas migrações aplicadas no
+  `feel`.
+  - `feel_nucleo`: relações, trabalhos, acordos, assinaturas e convites, todos com RLS,
+    mais o trigger das regras do ciclo e as funções de carimbo, convite e assinatura.
+  - `feel_convite_previa`: quem cria vê o combinado antes de aceitar.
+- **App:**
+  - **Sessão:** anônimo primeiro, com o e-mail pedido só para assinar. Se o projeto não
+    aceita entrada anônima ou não há rede, o app segue neste aparelho e o selo diz isso.
+  - **Bundle:** o cliente Supabase é carregado sob demanda (/trabalhos tem 161 kB de
+    primeiro carregamento).
+  - **Trabalhos na conta:** "Convidar quem cria" no lugar do aceite simulado, e a rota
+    `/trabalhos/convite/[token]` para o outro lado.
+  - **Rede:** as escolhas e ações da pessoa são espelhadas em `feel_relacoes`, e as provas
+    verificadas vêm do banco.
+- **Acessibilidade:** o hover do botão coral passava paper sobre `coralHover` (4,18:1).
+  Agora o hover mantém o coral (ink, 5,99:1) e marca o estado com um contorno interno.
+
+## Verificação
+
+- `tsc`, `npm test` (64/64, 20 novos com cliente Supabase falso) e `npm run build` limpos.
+- **Playwright no modo local** (como o `feel` está hoje):
+  - os fluxos das Ondas 1 e 2 continuam verdes, sem erro de console;
+  - selo "neste aparelho";
+  - o convite explica que precisa de conta e está com `noindex`.
+- **Playwright na conta, com Supabase simulado no navegador** (dois contextos:
+  contratante no celular claro, quem cria no desktop escuro):
+  - rascunho gravado → carimbo com a data do servidor → link do convite → prévia → aceite;
+  - medição → veredito → pedido de e-mail → as duas assinaturas → prova de volta no
+    universo pela conta;
+  - um coral por tela.
+- **axe:** sem violações em todas as telas novas.
+- **Verificador de segurança do Supabase:** nada novo para corrigir. Os avisos sobre as
+  funções `feel_*` são intencionais, e os outros já existiam.
+- **Não rodado:** `supabase/testes/nucleo.sql` (30 casos das regras no banco). O painel pede
+  confirmação, e ela expirou três vezes.
+
+## O que ficou aberto
+
+- **Teste SQL:** rodar `supabase/testes/nucleo.sql` no SQL Editor.
+- **Painel do Supabase:**
+  - ligar a entrada anônima;
+  - incluir as URLs do app em Redirect URLs;
+  - configurar um SMTP próprio (o padrão só entrega para membros da organização).
+- **Variante `coral` de `components/ui/button.tsx`** (shadcn, anterior a esta onda): usa
+  `hover:bg-coralHover` com texto paper, o mesmo contraste insuficiente. Não é usada nas
+  superfícies do app.
+- **Numeração das decisões:** os candidatos antigos a D-19/D-20 (holográfico monocromático,
+  shadcn como base) passam a D-20/D-21.

@@ -1,8 +1,9 @@
 # Trabalhos — o ciclo do negócio
 
 Rota: `/trabalhos` (`noindex`). Navegação do núcleo: **Rede** (`/universo`) · **Trabalhos**.
-Fontes: Handoff Mestre § 5, § 15–16 e § 21. Tudo é demonstração: perfis fictícios
-(primeiro nome + "(demo)", sem foto, sem @), sem backend, sem IA.
+Fontes: Handoff Mestre § 5, § 15–16 e § 21. Os perfis são de demonstração (primeiro nome +
+"(demo)", sem foto, sem @), e não há IA. O trabalho mora neste aparelho ou na conta da
+pessoa (ver "Na conta").
 
 ```
 O que precisa acontecer → Quem faz sentido → O combinado → Acontecendo → O que voltou
@@ -35,10 +36,33 @@ O que precisa acontecer → Quem faz sentido → O combinado → Acontecendo →
 - Mesma camada semântica do Meu Universo (`--tema-*`, D-18): claro, escuro e movimento
   reduzido.
 
+## Na conta (D-19)
+
+`TrabalhosApp` escolhe onde o trabalho mora pela sessão (`lib/supabase/sessao.ts`):
+
+- **Neste aparelho** (selo "Demonstração · neste aparelho"): sem entrada anônima no
+  projeto ou sem rede. É o comportamento da Onda 2: a pessoa faz os dois lados, e a
+  assinatura de quem criou é simulada.
+- **Na conta** (selo "Salvo na sua conta"): `repositorioRemoto` em
+  `lib/trabalhos/repositorio.ts`.
+  - O rascunho é gravado com espera, e o carimbo leva a data do servidor.
+  - Em "Proposta enviada", no lugar de "Marcar como aceita" aparece **"Convidar quem
+    cria"**, que gera o link `/trabalhos/convite/[token]`.
+  - Quem cria abre o link (`ConviteRecebido.tsx`), vê o combinado carimbado antes de
+    aceitar, aceita, acompanha e assina.
+  - Não há simulação na conta.
+  - Ao voltar para a aba, o trabalho é relido.
+
+Assinar pede **e-mail confirmado**: a sessão anônima recebe "Para assinar, confirme seu
+e-mail" (`Conta.tsx`), e o link de confirmação volta para a mesma tela. As regras puras
+de `ciclo.ts` validam antes; o banco valida de novo e tem a palavra final
+(`supabase/README.md`).
+
 ## Limitações
 
 - Na demonstração, a pessoa faz os dois lados: os estágios e a assinatura de quem criou
   são simulados e rotulados assim.
-- Um trabalho por vez, guardado neste aparelho (`feel:trabalhos:v1`).
+- Neste aparelho, um trabalho por vez (`feel:trabalhos:v1`). Na conta, a tela mostra o
+  mais recente; os encerrados contam no lastro.
 - O vocabulário de extração cobre só o catálogo de demonstração e a RMR (mais Caruaru, para
   exercitar o "fora da praça").

@@ -30,7 +30,10 @@ const dataHora = (iso: string) =>
 
 export const trabalhosCopy = {
   titulo: "Trabalhos",
-  seloDemo: "Demonstração · dados fictícios",
+  selo: {
+    local: "Demonstração · neste aparelho",
+    remoto: "Salvo na sua conta",
+  },
 
   nucleo: { rotulo: "Navegação principal", rede: "Rede", trabalhos: "Trabalhos" },
 
@@ -221,6 +224,9 @@ export const trabalhosCopy = {
       em_andamento: "Marcar como entregue",
     } as Partial<Record<Estagio, string>>,
     simulacao: "Simulação: na demonstração, você faz os dois lados.",
+    aguardandoAceite:
+      "Quem cria entra pelo convite. Quando aceitar, o trabalho passa para “Aceita”.",
+    verSeAceitou: "Ver se já aceitou",
     funil: "O que foi medido",
     funilDica: "O que não foi medido fica em branco. Nada é estimado.",
     campos: {
@@ -250,6 +256,8 @@ export const trabalhosCopy = {
     assinarContratante: "Assino como contratante",
     simularProfissional: "Simular a assinatura de quem criou",
     simulacaoProfissional: "Na demonstração, a outra assinatura é simulada.",
+    aguardandoProfissional: "Falta a assinatura de quem criou, que assina pelo link do convite.",
+    verSeAssinou: "Ver se já assinou",
     assinadoEm: (lado: string, iso: string) => `${lado}: assinado em ${dataHora(iso)}`,
     lados: { contratante: "Contratante", profissional: "Quem criou" },
     prova: "Prova assinada pelos dois lados",
@@ -261,6 +269,51 @@ export const trabalhosCopy = {
     novo: "Começar outro trabalho",
   },
 
+  convidar: {
+    titulo: "Convidar quem cria",
+    dica: (nome: string) =>
+      `Mande este link para ${nome}. Pelo link, a pessoa vê o combinado carimbado antes de aceitar.`,
+    gerar: "Gerar link do convite",
+    rotulo: "Link do convite",
+    copiar: "Copiar link",
+    copiado: "Link copiado.",
+    falhou: "Não deu para gerar o convite agora. Tente de novo.",
+  },
+
+  email: {
+    titulo: "Para assinar, confirme seu e-mail",
+    dica: "A assinatura vira prova, então pede um e-mail confirmado. O resto já está salvo na sua conta.",
+    rotulo: "Seu e-mail",
+    enviar: "Enviar link de confirmação",
+    enviado: (email: string) =>
+      `Enviamos um link para ${email}. Abra neste aparelho e volte aqui para assinar.`,
+    invalido: "Confira o e-mail: parece faltar alguma parte.",
+    falhou: "Não deu para enviar agora. Tente de novo em alguns minutos.",
+  },
+
+  conviteRecebido: {
+    titulo: "Um convite para criar",
+    carregando: "Abrindo o convite…",
+    local:
+      "Este convite precisa de uma conta, e as contas ainda não estão abertas por aqui. Peça para quem contratou tentar de novo mais tarde.",
+    invalido: "Este convite não vale mais: venceu ou já foi aceito por outra pessoa.",
+    proprio: "Este é o convite que você criou. Mande o link para quem vai criar.",
+    voltar: "Voltar para Trabalhos",
+    necessidade: "O que precisa acontecer",
+    praca: "Praça",
+    combinado: "O combinado carimbado",
+    aceitar: "Aceitar o convite",
+    aceitarDica: "Ao aceitar, você entra no trabalho. O combinado não muda.",
+    aceito: "Você está neste trabalho.",
+    estagio: "Agora",
+    aguardandoEntrega:
+      "Quando o trabalho for entregue e o veredito estiver registrado, você assina aqui.",
+    veredito: "Veredito de quem contratou",
+    assinar: "Assino como quem criou",
+    aguardandoContratante: "Sua assinatura está registrada. Falta a de quem contratou.",
+    atualizar: "Atualizar",
+  },
+
   historico: {
     titulo: "Provas assinadas",
     item: (perfil: string, quando: string) => `${perfil} (demo) · ${quando}`,
@@ -268,4 +321,5 @@ export const trabalhosCopy = {
 
   recomecar: "Descartar este trabalho",
   erro: "Isso não pode ser feito agora.",
+  erroServidor: "Não deu para salvar agora. Confira a conexão e tente de novo.",
 } as const;
