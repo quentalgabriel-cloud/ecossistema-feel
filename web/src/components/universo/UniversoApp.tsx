@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
+import { BarraNucleo } from "@/components/nucleo/BarraNucleo";
 import { EscolhaInteresses } from "@/components/onboarding/EscolhaInteresses";
 import { universoCopy } from "@/content/universo.pt-BR";
 import { fonteDemo } from "@/data/universo/adaptador";
@@ -16,6 +17,8 @@ import { useCameraUniverso } from "@/hooks/useCameraUniverso";
 import { useGestos } from "@/hooks/useGestos";
 import { usePreferencias } from "@/hooks/usePreferencias";
 import { registrar } from "@/lib/telemetria";
+import { aplicarProvas } from "@/lib/trabalhos/evidencia";
+import { lerTrabalhos, provasDe, type ProvaRegistrada } from "@/lib/trabalhos/memoria";
 import { caixaDeCirculos, deslocar, enquadrar } from "@/lib/universo/camera";
 import { montarCena, relacoesDeEscolhas, type BolhaCena } from "@/lib/universo/cena";
 import { raioBolha } from "@/lib/universo/escala";
@@ -39,6 +42,7 @@ const c = universoCopy;
  */
 export function UniversoApp({ demonstracao }: { demonstracao: boolean }) {
   const [memoria, setMemoria] = useState<Memoria | null>(null);
+  const [provas, setProvas] = useState<ProvaRegistrada[]>([]);
   const [dados, setDados] = useState<DadosUniverso | null>(null);
   const [erro, setErro] = useState(false);
 
@@ -59,6 +63,7 @@ export function UniversoApp({ demonstracao }: { demonstracao: boolean }) {
         descartadas: [],
       });
     setMemoria(m);
+    setProvas(provasDe(lerTrabalhos()));
     carregar();
   }, [demonstracao, carregar]);
 
@@ -85,10 +90,19 @@ export function UniversoApp({ demonstracao }: { demonstracao: boolean }) {
       </div>
     );
   }
-  return <Universo dados={dados} memoriaInicial={memoria} />;
+  return <Universo dados={dados} memoriaInicial={memoria} provas={provas} />;
 }
 
-function Universo({ dados, memoriaInicial }: { dados: DadosUniverso; memoriaInicial: Memoria }) {
+function Universo({
+  dados,
+  memoriaInicial,
+  provas,
+}: {
+  dados: DadosUniverso;
+  memoriaInicial: Memoria;
+  /** Provas co-assinadas em Trabalhos: voltam para a identidade (evidence loop). */
+  provas: ProvaRegistrada[];
+}) {
   const [memoria, setMemoriaEstado] = useState(memoriaInicial);
   const prefs = usePreferencias({
     tema: memoriaInicial.tema,
@@ -145,8 +159,8 @@ function Universo({ dados, memoriaInicial }: { dados: DadosUniverso; memoriaInic
           provas: base.get(id)?.provas ?? 0,
         });
     }
-    return base;
-  }, [memoria]);
+    return aplicarProvas(base, provas);
+  }, [memoria, provas]);
 
   const contagens = useMemo(
     () =>
@@ -738,10 +752,12 @@ function Cabecalho({
 }) {
   return (
     <header className={s.cabecalho}>
-      <div className={s.marca}>
-        <h1 className={`${s.marcaNome} text-style-ui`}>{c.titulo}</h1>
-        {nome.trim() && <span className={`${s.selo} text-style-body-md`}>· {nome.trim()}</span>}
-      </div>
+      {/* O título continua para leitores de tela; visualmente, o núcleo diz onde se está. */}
+      <h1 className={s.vivo}>
+        {c.titulo}
+        {nome.trim() ? ` · ${nome.trim()}` : ""}
+      </h1>
+      <BarraNucleo atual="rede" />
       {/* Todo dado desta entrega é fixture: o selo aparece sempre, não só na demonstração. */}
       <span className={`${s.selo} text-style-label-caps`}>{c.seloDemo}</span>
       {aoBuscar && (

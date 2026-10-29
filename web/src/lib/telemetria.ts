@@ -18,7 +18,12 @@ export type EventoTelemetria =
   | "entidade_salva"
   | "modo_lista_aberto"
   | "camera_recentrada"
-  | "navegacao_voltar";
+  | "navegacao_voltar"
+  // Trabalhos (Onda 2)
+  | "necessidade_criada"
+  | "composicao_vista"
+  | "acordo_carimbado"
+  | "prova_assinada";
 
 type Dados = Record<string, string | number | boolean | null>;
 

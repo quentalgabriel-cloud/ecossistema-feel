@@ -848,3 +848,35 @@
     letter-spacing: var(--tracking-h2);
   }
 }
+
+/* ---------- núcleo: Rede · Trabalhos ---------- */
+
+.nucleo {
+  display: flex;
+  gap: var(--spacing-xs);
+  flex: none;
+}
+
+.nucleoLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--spacing-xs);
+  color: var(--tema-textoCorpo);
+  border-bottom: 2px solid transparent;
+  transition: color var(--feel-dur-curta) var(--curva), border-color var(--feel-dur-curta) var(--curva);
+}
+
+.nucleoLink:hover {
+  color: var(--tema-texto);
+}
+
+.nucleoLink[aria-current="page"] {
+  color: var(--tema-texto);
+  border-bottom-color: var(--tema-texto);
+}
+
+.nucleoLink:focus-visible {
+  outline: 2px solid var(--tema-texto);
+  outline-offset: 2px;
+}

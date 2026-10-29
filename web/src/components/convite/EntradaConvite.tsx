@@ -10,6 +10,7 @@ import { conviteCopy } from "@/content/convite.pt-BR";
 import type { CartaPerfil } from "@/data/feelid/tipos";
 import { usePrefereMovimentoReduzido } from "@/hooks/usePrefereMovimentoReduzido";
 import { registrar } from "@/lib/telemetria";
+import { lerTrabalhos, provasDe } from "@/lib/trabalhos/memoria";
 import { atualizarMemoria, lerMemoria } from "@/lib/universo/memoria";
 
 const c = conviteCopy;
@@ -28,10 +29,12 @@ export function EntradaConvite({ codigoInicial }: { codigoInicial: string }) {
   const idNome = useId();
   const idCodigo = useId();
   const [prefsIniciais, setPrefsIniciais] = useState<ReturnType<typeof lerMemoria> | null>(null);
+  const [provas, setProvas] = useState(0);
 
   useEffect(() => {
     const m = lerMemoria();
     setPrefsIniciais(m);
+    setProvas(provasDe(lerTrabalhos()).length);
     if (m.nome) setNome(m.nome);
     if (!codigoInicial && m.codigo) setCodigo(m.codigo);
     registrar("convite_aberto", { comCodigo: !!codigoInicial });
@@ -60,10 +63,10 @@ export function EntradaConvite({ codigoInicial }: { codigoInicial: string }) {
         repertorio: [c.carta.repertorio],
         praca: c.carta.praca,
         disponibilidade: c.carta.disponibilidade,
-        lastro: c.carta.lastro,
+        lastro: c.carta.lastroProvas(provas),
       },
     }),
-    [nome, codigo],
+    [nome, codigo, provas],
   );
 
   const comecar = () => {
